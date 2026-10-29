@@ -13,12 +13,14 @@
       --color-base-text: #121212;
       --color-base-background: #ffffff;
       --color-scheme-1-bg: #ffffff;
-      --color-scheme-2-bg: #f3f3f3;
+      --color-scheme-2-bg: #f5f5f5;
       --color-scheme-3-bg: #121212;
       --color-scheme-3-text: #ffffff;
-      --color-base-border: #e8e8e8;
+      --color-base-border: #e2e2e2;
       --color-accent: #121212;
       --color-gold: #c29b38;
+      --color-holiday: #9b2226;
+      --color-success: #137333;
       --page-width: 1200px;
     }
 
@@ -42,13 +44,13 @@
       padding: 0 1.5rem;
     }
 
-    /* PROTOTYPE CONTROL BAR */
+    /* PROTOTYPE CONTROLLER BAR */
     .proto-bar {
-      background: #1c1c1c;
+      background: #181818;
       color: #fff;
-      padding: 8px 16px;
+      padding: 10px 16px;
       font-size: 13px;
-      border-bottom: 1px solid #333;
+      border-bottom: 2px solid #333;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -57,23 +59,25 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
     }
     .proto-badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: #2a2a2a;
-      padding: 3px 8px;
+      background: #262626;
+      padding: 4px 10px;
       border-radius: 4px;
       font-size: 11px;
       letter-spacing: 0.5px;
       text-transform: uppercase;
-      font-weight: 600;
-      color: #8be9fd;
+      font-weight: 700;
+      color: #50fa7b;
+      border: 1px solid #3a3a3a;
     }
     .proto-badge .dot {
-      width: 7px;
-      height: 7px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: #50fa7b;
       animation: pulse 1.8s infinite;
@@ -87,21 +91,25 @@
       align-items: center;
       gap: 6px;
       overflow-x: auto;
+      max-width: 100%;
+      padding-bottom: 2px;
     }
     .proto-tab-btn {
-      padding: 5px 12px;
+      padding: 6px 12px;
       font-size: 12px;
       font-weight: 600;
       border-radius: 4px;
-      color: #ddd;
-      background: #2b2b2b;
+      color: #bbb;
+      background: #262626;
       transition: all 0.15s ease;
       white-space: nowrap;
+      border: 1px solid #383838;
     }
-    .proto-tab-btn:hover { background: #3d3d3d; color: #fff; }
+    .proto-tab-btn:hover { background: #333; color: #fff; }
     .proto-tab-btn.active {
-      background: #fff;
+      background: #ffffff;
       color: #121212;
+      border-color: #fff;
     }
     .proto-note-toggle {
       display: flex;
@@ -127,11 +135,12 @@
       align-items: center;
       justify-content: center;
       gap: 16px;
+      flex-wrap: wrap;
     }
-    .announcement-bar a { text-decoration: underline; font-weight: 600; }
+    .announcement-bar a { text-decoration: underline; font-weight: 700; color: #fff; }
     .announcement-bar .divider { opacity: 0.4; }
 
-    /* SHOPIFY DAWN HEADER (Top-Center Layout matching live site) */
+    /* SHOPIFY DAWN HEADER */
     .header-wrapper {
       background: #ffffff;
       border-bottom: 1px solid var(--color-base-border);
@@ -140,12 +149,12 @@
       display: grid;
       grid-template-columns: 1fr auto 1fr;
       align-items: center;
-      padding: 24px 0 16px;
+      padding: 22px 0 14px;
     }
     .header-left {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 12px;
     }
     .header-logo-container {
       text-align: center;
@@ -188,10 +197,10 @@
       justify-content: center;
     }
 
-    /* INLINE NAVIGATION MENU (Centered under logo, exact Dawn style) */
+    /* INLINE NAVIGATION MENU */
     .header-nav {
       border-top: 1px solid transparent;
-      padding: 10px 0 16px;
+      padding: 8px 0 16px;
       text-align: center;
     }
     .header-nav ul {
@@ -200,7 +209,7 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      gap: 28px;
+      gap: 24px;
     }
     .header-nav a {
       font-size: 13px;
@@ -215,6 +224,7 @@
     .header-nav a:hover,
     .header-nav a.active {
       color: #121212;
+      font-weight: 700;
     }
     .header-nav a.active::after {
       content: '';
@@ -225,19 +235,24 @@
       height: 2px;
       background: #121212;
     }
-    .nav-badge-new {
+    .nav-badge {
       display: inline-block;
       font-size: 9px;
       background: #121212;
       color: #fff;
-      padding: 1px 5px;
+      padding: 2px 6px;
       border-radius: 3px;
       vertical-align: middle;
       margin-left: 4px;
       letter-spacing: 0.5px;
+      font-weight: 700;
+    }
+    .nav-badge-holiday {
+      background: #9b2226;
+      color: #fff;
     }
 
-    /* CRO IMPROVEMENT PILL (Subtle highlight in prototype) */
+    /* CRO HIGHLIGHT PILL */
     .cro-pill {
       display: inline-flex;
       align-items: center;
@@ -245,14 +260,15 @@
       background: #eef8f2;
       color: #137333;
       border: 1px solid #c6ebd2;
-      padding: 4px 10px;
+      padding: 5px 12px;
       border-radius: 4px;
       font-size: 11px;
       font-weight: 600;
       margin-bottom: 14px;
+      line-height: 1.4;
     }
 
-    /* DAWN HERO IMAGE BANNER (Exact background image from waywardgentcocktails.ca) */
+    /* DAWN HERO BANNER */
     .banner {
       position: relative;
       min-height: 520px;
@@ -268,33 +284,34 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.15);
+      background: rgba(0, 0, 0, 0.25);
     }
     .banner-box {
       position: relative;
-      background: rgba(18, 18, 18, 0.88);
-      backdrop-filter: blur(4px);
+      background: rgba(18, 18, 18, 0.90);
+      backdrop-filter: blur(6px);
       color: #ffffff;
-      padding: 32px 48px;
+      padding: 36px 44px;
       text-align: center;
-      max-width: 640px;
+      max-width: 680px;
       width: 100%;
+      border-radius: 2px;
     }
     .banner-heading {
-      font-size: 26px;
-      letter-spacing: 2.5px;
+      font-size: 28px;
+      letter-spacing: 2px;
       font-weight: 700;
       text-transform: uppercase;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
     .btn-dawn-secondary {
       display: inline-block;
       background: #ffffff;
       color: #121212;
-      padding: 12px 30px;
+      padding: 12px 28px;
       font-size: 13px;
       letter-spacing: 1.5px;
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
       transition: all 0.2s ease;
       border: 1px solid #ffffff;
@@ -307,10 +324,10 @@
       display: inline-block;
       background: #121212;
       color: #ffffff;
-      padding: 12px 30px;
+      padding: 12px 28px;
       font-size: 13px;
       letter-spacing: 1.5px;
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
       border: 1px solid #121212;
       transition: all 0.2s ease;
@@ -320,11 +337,11 @@
       color: #121212;
     }
 
-    /* VALUE PROPOSITION STRIP (Dawn Multi-column look) */
+    /* VALUE PROPOSITION STRIP */
     .value-strip {
-      background: #fafafa;
+      background: #fbfbfb;
       border-bottom: 1px solid var(--color-base-border);
-      padding: 24px 0;
+      padding: 22px 0;
     }
     .value-grid {
       display: grid;
@@ -344,15 +361,7 @@
       color: #666;
     }
 
-    /* DAWN RICH TEXT WELCOME SECTION */
-    .rich-text-section {
-      padding: 60px 0 40px;
-      text-align: center;
-    }
-    .rich-text-content {
-      max-width: 780px;
-      margin: 0 auto;
-    }
+    /* SECTION HEADINGS */
     .section-heading-dawn {
       font-size: 24px;
       letter-spacing: 2px;
@@ -363,55 +372,73 @@
     .section-heading-dawn strong {
       font-weight: 700;
     }
-    .rich-text-content p {
-      font-size: 15px;
-      line-height: 1.8;
-      color: rgba(18, 18, 18, 0.85);
-      margin-bottom: 14px;
-    }
-    .rich-text-content a {
-      text-decoration: underline;
-      font-weight: 600;
-    }
 
-    /* 3-STEP HOW IT WORKS SECTION (Dawn Multi-Column / Collapsible) */
+    /* 3-STEP "HOW IT WORKS" WITH VISUAL 72-HOUR TIMER */
     .how-it-works-strip {
-      padding: 40px 0 60px;
+      padding: 50px 0 60px;
       border-bottom: 1px solid var(--color-base-border);
+      background: #ffffff;
     }
     .steps-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 28px;
+    }
+    @media (max-width: 850px) {
+      .steps-grid { grid-template-columns: 1fr; }
     }
     .step-card {
       border: 1px solid var(--color-base-border);
-      padding: 28px 24px;
+      padding: 30px 24px;
       background: #ffffff;
       position: relative;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
     }
-    .step-number {
-      font-size: 12px;
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: 1px;
-      color: #777;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      margin-bottom: 8px;
+      color: #666;
+      margin-bottom: 12px;
     }
     .step-card h3 {
-      font-size: 17px;
+      font-size: 18px;
       letter-spacing: 0.5px;
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 10px;
     }
     .step-card p {
       font-size: 13px;
       color: #555;
       line-height: 1.6;
+      margin-bottom: 14px;
+    }
+    .timer-visual {
+      background: #f7f7f7;
+      border: 1px solid #ebebeb;
+      border-radius: 4px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      font-size: 12px;
+    }
+    .clock-ticker {
+      font-weight: 700;
+      font-family: monospace;
+      color: #9b2226;
+      font-size: 13px;
     }
 
-    /* DAWN FEATURED COLLECTION (Product Grid with Authentic Dawn Card Styling) */
+    /* PRODUCT GRID */
     .featured-collection-section {
       padding: 60px 0;
     }
@@ -432,20 +459,19 @@
       font-size: 12px;
       letter-spacing: 1px;
       text-transform: uppercase;
-      padding: 6px 14px;
+      padding: 7px 16px;
       border: 1px solid var(--color-base-border);
       background: #ffffff;
       color: #555;
-      font-weight: 500;
+      font-weight: 600;
       transition: all 0.15s ease;
+      border-radius: 2px;
     }
     .filter-pill.active {
       border-color: #121212;
       background: #121212;
       color: #ffffff;
     }
-
-    /* DAWN PRODUCT CARD */
     .product-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -457,7 +483,6 @@
     @media (max-width: 550px) {
       .product-grid { grid-template-columns: 1fr; }
     }
-
     .dawn-card {
       display: flex;
       flex-direction: column;
@@ -486,10 +511,13 @@
       background: #121212;
       color: #ffffff;
       font-size: 10px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
       padding: 3px 8px;
+    }
+    .dawn-card-badge.holiday {
+      background: #9b2226;
     }
     .dawn-card-info {
       padding-top: 4px;
@@ -508,7 +536,7 @@
     }
     .dawn-card-title {
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.8px;
       text-transform: uppercase;
       margin-bottom: 4px;
@@ -528,7 +556,7 @@
     }
     .price-regular {
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.5px;
     }
     .price-unit {
@@ -536,7 +564,7 @@
       color: #777;
     }
 
-    /* CARD VESSEL TOGGLE (JAR VS SACHET) - PROTOTYPE CONVERSION UPGRADE */
+    /* CARD VESSEL SWITCHER */
     .card-vessel-switcher {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -548,9 +576,9 @@
     }
     .vessel-btn {
       font-size: 11px;
-      padding: 4px 6px;
+      padding: 5px 6px;
       text-align: center;
-      font-weight: 500;
+      font-weight: 600;
       color: #666;
       border-radius: 3px;
       transition: all 0.15s ease;
@@ -561,17 +589,16 @@
       font-weight: 700;
       box-shadow: 0 1px 3px rgba(0,0,0,0.08);
     }
-
     .btn-card-atc {
       width: 100%;
       background: #ffffff;
       color: #121212;
       border: 1px solid #121212;
-      padding: 8px 12px;
+      padding: 9px 12px;
       font-size: 11px;
       letter-spacing: 1px;
       text-transform: uppercase;
-      font-weight: 600;
+      font-weight: 700;
       transition: all 0.2s ease;
       margin-top: auto;
     }
@@ -580,16 +607,56 @@
       color: #ffffff;
     }
 
-    /* AOV BUNDLE BUILDER SECTION (DAWN STYLED) */
+    /* BUNDLE BUILDER SECTION (4 Specific Bundle Modes) */
     .bundle-builder-section {
       background: #fafafa;
       border-top: 1px solid var(--color-base-border);
       border-bottom: 1px solid var(--color-base-border);
       padding: 60px 0;
     }
+    .bundle-modes-strip {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .bundle-mode-card {
+      background: #ffffff;
+      border: 1px solid var(--color-base-border);
+      padding: 12px 18px;
+      cursor: pointer;
+      text-align: left;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+      min-width: 220px;
+    }
+    .bundle-mode-card.active {
+      border: 2px solid #121212;
+      background: #ffffff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .bundle-mode-card h4 {
+      font-size: 13px;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .bundle-mode-card p {
+      font-size: 11px;
+      color: #777;
+    }
+    .bundle-mode-card .mode-price {
+      font-size: 13px;
+      font-weight: 700;
+      color: #121212;
+      margin-top: 6px;
+    }
+
     .bundle-layout {
       display: grid;
-      grid-template-columns: 1fr 360px;
+      grid-template-columns: 1fr 380px;
       gap: 36px;
       margin-top: 24px;
     }
@@ -608,6 +675,7 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
+      border-radius: 4px;
     }
     .flavor-picker-card img {
       aspect-ratio: 1 / 1;
@@ -616,7 +684,7 @@
     }
     .flavor-name {
       font-size: 12px;
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
@@ -626,12 +694,13 @@
     }
     .btn-flavor-add {
       border: 1px solid #121212;
-      padding: 6px;
+      padding: 7px;
       font-size: 11px;
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       transition: all 0.15s ease;
+      background: #fff;
     }
     .btn-flavor-add:hover {
       background: #121212;
@@ -643,6 +712,7 @@
       padding: 24px;
       position: sticky;
       top: 90px;
+      border-radius: 4px;
     }
     .bundle-slots {
       margin: 16px 0;
@@ -655,95 +725,139 @@
       align-items: center;
       justify-content: space-between;
       border: 1px dashed var(--color-base-border);
-      padding: 8px 12px;
+      padding: 10px 12px;
       font-size: 12px;
       background: #fafafa;
+      border-radius: 4px;
     }
     .bundle-slot-item.filled {
       border-style: solid;
       border-color: #121212;
       background: #ffffff;
     }
-
-    /* ON-SITE LEAD CAPTURE (DAWN EMAIL SIGNUP SECTION LOOK) */
-    .newsletter-section-dawn {
-      padding: 60px 0;
-      background: #ffffff;
-      text-align: center;
-    }
-    .newsletter-box {
-      max-width: 580px;
-      margin: 0 auto;
-    }
-    .newsletter-form-row {
+    .gift-box-toggle-card {
+      background: #fff9f0;
+      border: 1px solid #ecd8b8;
+      border-radius: 4px;
+      padding: 12px;
+      margin: 16px 0;
       display: flex;
-      gap: 8px;
-      margin-top: 20px;
+      align-items: flex-start;
+      gap: 10px;
     }
-    .newsletter-input {
-      flex: 1;
-      padding: 12px 16px;
-      border: 1px solid var(--color-base-border);
-      font-size: 14px;
-      font-family: inherit;
-    }
-    .newsletter-input:focus {
-      outline: 1px solid #121212;
+    .gift-box-toggle-card input {
+      margin-top: 3px;
+      accent-color: #9b2226;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
     }
 
-    /* SHOPIFY DAWN FOOTER */
-    .footer {
-      background: #ffffff;
-      border-top: 1px solid var(--color-base-border);
-      padding: 50px 0 30px;
-    }
-    .footer-grid {
+    /* HOLIDAY KITS SECTION */
+    .holiday-kits-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 36px;
-      margin-bottom: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+    .holiday-kit-card {
+      border: 1px solid var(--color-base-border);
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+    }
+    .holiday-tag {
+      background: #9b2226;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      display: inline-block;
+      margin-bottom: 10px;
+      border-radius: 2px;
+      align-self: flex-start;
+    }
+
+    /* COCKTAIL HOUR SOCIETY SUBSCRIPTIONS & CAKEHOUSE UPSELL */
+    .sub-tier-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 30px;
     }
     @media (max-width: 900px) {
-      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .sub-tier-grid { grid-template-columns: 1fr; }
     }
-    @media (max-width: 550px) {
-      .footer-grid { grid-template-columns: 1fr; }
-    }
-    .footer-heading {
-      font-size: 13px;
-      letter-spacing: 1.5px;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-    .footer ul {
-      list-style: none;
-    }
-    .footer li {
-      margin-bottom: 10px;
-    }
-    .footer a {
-      font-size: 13px;
-      color: rgba(18, 18, 18, 0.75);
-      transition: color 0.15s ease;
-    }
-    .footer a:hover {
-      color: #121212;
-      text-decoration: underline;
-    }
-    .footer-bottom {
-      border-top: 1px solid var(--color-base-border);
-      padding-top: 24px;
+    .sub-tier-card {
+      border: 1px solid var(--color-base-border);
+      background: #ffffff;
+      padding: 30px 24px;
+      border-radius: 4px;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      font-size: 12px;
+      flex-direction: column;
+      position: relative;
+    }
+    .sub-tier-card.featured {
+      border: 2px solid #121212;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .tier-ribbon {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: #121212;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 3px;
+    }
+    .sub-price {
+      font-size: 28px;
+      font-weight: 700;
+      margin: 12px 0 6px;
+    }
+    .sub-price span {
+      font-size: 14px;
+      font-weight: 400;
       color: #777;
     }
+    .tier-features {
+      list-style: none;
+      margin: 20px 0;
+      font-size: 13px;
+      line-height: 1.8;
+      color: #444;
+      flex: 1;
+    }
+    .tier-features li {
+      margin-bottom: 8px;
+    }
+    .tier-features li::before {
+      content: '✓ ';
+      color: #137333;
+      font-weight: bold;
+    }
+    .cakehouse-upsell-box {
+      background: #fff5f7;
+      border: 1px solid #fed2dc;
+      padding: 24px;
+      border-radius: 4px;
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
 
-    /* SLIDE-OUT CART DRAWER (Native Dawn styling) */
+    /* SLIDE-OUT CART DRAWER */
     .drawer-overlay {
       position: fixed;
       inset: 0;
@@ -756,7 +870,7 @@
       top: 0;
       right: 0;
       width: 100%;
-      max-width: 420px;
+      max-width: 440px;
       height: 100%;
       background: #ffffff;
       z-index: 2001;
@@ -785,7 +899,7 @@
     .free-shipping-bar-container {
       background: #f7f7f7;
       border-bottom: 1px solid var(--color-base-border);
-      padding: 14px 20px;
+      padding: 16px 20px;
     }
     .free-shipping-label {
       font-size: 12px;
@@ -793,9 +907,9 @@
       margin-bottom: 8px;
     }
     .shipping-progress-track {
-      height: 6px;
+      height: 7px;
       background: #e0e0e0;
-      border-radius: 3px;
+      border-radius: 4px;
       overflow: hidden;
     }
     .shipping-progress-fill {
@@ -824,10 +938,11 @@
       height: 64px;
       object-fit: cover;
       background: #f5f5f5;
+      border-radius: 2px;
     }
     .drawer-item-title {
       font-size: 12px;
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
@@ -837,7 +952,7 @@
     }
     .drawer-item-price {
       font-size: 12px;
-      font-weight: 600;
+      font-weight: 700;
       margin-top: 4px;
     }
     .drawer-footer {
@@ -848,13 +963,13 @@
     .drawer-subtotal-row {
       display: flex;
       justify-content: space-between;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 700;
       margin-bottom: 14px;
       letter-spacing: 0.5px;
     }
 
-    /* INNER PAGES PREVIEW MODAL / CONTAINER */
+    /* INNER VIEWS */
     .inner-page-view {
       display: none;
       padding: 40px 0 80px;
@@ -863,22 +978,70 @@
       display: block;
     }
     .inner-page-content {
-      max-width: 800px;
+      max-width: 820px;
       margin: 0 auto;
     }
     .page-title {
-      font-size: 30px;
+      font-size: 32px;
       letter-spacing: 2px;
       font-weight: 400;
       text-transform: uppercase;
       margin-bottom: 24px;
       text-align: center;
     }
+    .page-title strong {
+      font-weight: 700;
+    }
     .page-body-text p {
       font-size: 15px;
       line-height: 1.8;
       color: rgba(18, 18, 18, 0.85);
       margin-bottom: 18px;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #ffffff;
+      border-top: 1px solid var(--color-base-border);
+      padding: 50px 0 30px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 36px;
+      margin-bottom: 40px;
+    }
+    @media (max-width: 900px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 550px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+    .footer-heading {
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .footer ul { list-style: none; }
+    .footer li { margin-bottom: 10px; }
+    .footer a {
+      font-size: 13px;
+      color: rgba(18, 18, 18, 0.75);
+      transition: color 0.15s ease;
+    }
+    .footer a:hover { color: #121212; text-decoration: underline; }
+    .footer-bottom {
+      border-top: 1px solid var(--color-base-border);
+      padding-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      font-size: 12px;
+      color: #777;
     }
   </style>
 </head>
@@ -889,46 +1052,50 @@
     <div style="display:flex; align-items:center; gap:10px;">
       <span class="proto-badge">
         <span class="dot"></span>
-        Authentic Dawn Theme Prototype
+        v2.0 Sister Feedback Release
       </span>
-      <span style="font-size:12px; color:#aaa;">Matches your sister's exact store styling &amp; fonts</span>
+      <span style="font-size:12px; color:#bbb;">Updated with Tam's requirements (Oct 28 Chat)</span>
     </div>
 
     <!-- View Switcher -->
     <div class="proto-tabs">
-      <button onclick="setView('home')" id="tab-home" class="proto-tab-btn active">1. Optimized Homepage</button>
-      <button onclick="setView('bundle')" id="tab-bundle" class="proto-tab-btn">2. Build-a-3-Pack (+AOV)</button>
-      <button onclick="setView('howto')" id="tab-howto" class="proto-tab-btn">3. Fixed How-To Page</button>
-      <button onclick="setView('story')" id="tab-story" class="proto-tab-btn">4. Fixed Our Story Page</button>
-      <button onclick="setView('wholesale')" id="tab-wholesale" class="proto-tab-btn">5. Fixed Wholesale Page</button>
+      <button onclick="setView('home')" id="tab-home" class="proto-tab-btn active">1. Homepage</button>
+      <button onclick="setView('bundle')" id="tab-bundle" class="proto-tab-btn">2. 4 Build-a-Pack Modes</button>
+      <button onclick="setView('holiday')" id="tab-holiday" class="proto-tab-btn">3. Holiday Kits &amp; Gifts</button>
+      <button onclick="setView('society')" id="tab-society" class="proto-tab-btn">4. Cocktail Club &amp; Bakery Box</button>
+      <button onclick="setView('howto')" id="tab-howto" class="proto-tab-btn">5. How-To (72h Timer)</button>
+      <button onclick="setView('wholesale')" id="tab-wholesale" class="proto-tab-btn">6. Wholesale ($250 Min + Login)</button>
+      <button onclick="setView('story')" id="tab-story" class="proto-tab-btn">7. Our Story</button>
     </div>
 
     <label class="proto-note-toggle">
       <input type="checkbox" id="badge-toggle" checked onchange="togglePills(this.checked)">
-      <span>Show Conversion Notes</span>
+      <span>Show Sister Feedback Notes</span>
     </label>
   </div>
 
-  <!-- ANNOUNCEMENT BAR (Real Dawn header bar with High-Converting Canada Shipping threshold) -->
+  <!-- ANNOUNCEMENT BAR (Updated: $200 CAD Free Shipping Threshold as requested by Tam) -->
   <div class="announcement-bar">
     <span>HIGH BROW COCKTAILS MADE SIMPLE</span>
     <span class="divider">|</span>
-    <span><strong>FREE SHIPPING ACROSS CANADA</strong> ON ORDERS OVER $75 CAD</span>
+    <span><strong>FREE SHIPPING ACROSS CANADA</strong> ON ORDERS OVER $200 CAD</span>
     <span class="divider">|</span>
-    <a href="javascript:void(0)" onclick="setView('bundle')">BUILD A 3-PACK &amp; SAVE 15%</a>
+    <span>FREE LOCAL PICKUP AT THE CAKEHOUSE IN NORWOOD, ON</span>
+    <span class="divider">|</span>
+    <a href="javascript:void(0)" onclick="setView('bundle')">BUILD A PACK &amp; SAVE 15%</a>
   </div>
 
-  <!-- SHOPIFY DAWN HEADER (Top-Center Logo Layout with real logo image) -->
+  <!-- SHOPIFY DAWN HEADER -->
   <div class="header-wrapper">
     <header class="header page-width">
-      <!-- Left: Country/Region selector -->
+      <!-- Left: Region -->
       <div class="header-left">
         <span style="font-size:12px; letter-spacing:1px; text-transform:uppercase; color:#777;">
-          Canada | CAD $
+          🇨🇦 Canada | CAD $
         </span>
       </div>
 
-      <!-- Center: EXACT WAYWARD GENT LOGO -->
+      <!-- Center: WAYWARD GENT LOGO -->
       <div class="header-logo-container">
         <a href="javascript:void(0)" onclick="setView('home')">
           <img src="https://waywardgentcocktails.ca/cdn/shop/files/feb3b897-2766-4d75-b66e-54f961e18caa_a684ab8c-0a9f-4da5-aa38-53a496cb2b7b.jpg?v=1722271940&width=210" alt="Wayward Gent Cocktails" width="210">
@@ -937,15 +1104,12 @@
 
       <!-- Right: Search, Account & Cart -->
       <div class="header-right">
-        <!-- Search Icon -->
-        <button class="header-icon-btn" aria-label="Search">
+        <button class="header-icon-btn" aria-label="Search" onclick="alert('Shopify Predictive Search: Search all 42 flavours!')">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         </button>
-        <!-- Account Icon -->
-        <button class="header-icon-btn" aria-label="Account">
+        <button class="header-icon-btn" aria-label="Account" onclick="setView('wholesale')">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
         </button>
-        <!-- Cart Icon with Drawer Trigger -->
         <button onclick="toggleCartDrawer(true)" class="header-icon-btn" aria-label="Cart">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
           <span class="cart-bubble" id="header-cart-count">2</span>
@@ -953,113 +1117,128 @@
       </div>
     </header>
 
-    <!-- INLINE NAVIGATION (Exact menu items from her current store) -->
+    <!-- INLINE NAVIGATION (Includes Build a Pack, Holiday Kits, and Wholesale) -->
     <nav class="header-nav page-width">
       <ul>
         <li><a href="javascript:void(0)" onclick="setView('home')" id="nav-home" class="active">HOME</a></li>
         <li><a href="javascript:void(0)" onclick="setView('home'); scrollToId('featured-grid');">SHOP ALL</a></li>
-        <li><a href="javascript:void(0)" onclick="setView('bundle')" id="nav-bundle">BUILD A 3-PACK <span class="nav-badge-new">SAVE 15%</span></a></li>
+        <li><a href="javascript:void(0)" onclick="setView('bundle')" id="nav-bundle">BUILD A PACK <span class="nav-badge">SAVE 15%</span></a></li>
+        <li><a href="javascript:void(0)" onclick="setView('holiday')" id="nav-holiday">HOLIDAY KITS <span class="nav-badge nav-badge-holiday">NEW</span></a></li>
         <li><a href="javascript:void(0)" onclick="setView('howto')" id="nav-howto">HOW TO USE</a></li>
-        <li><a href="javascript:void(0)" onclick="openSocietyModal()">COCKTAIL HOUR SOCIETY</a></li>
-        <li><a href="javascript:void(0)" onclick="setView('story')" id="nav-story">OUR STORY</a></li>
+        <li><a href="javascript:void(0)" onclick="setView('society')" id="nav-society">COCKTAIL HOUR SOCIETY</a></li>
         <li><a href="javascript:void(0)" onclick="setView('wholesale')" id="nav-wholesale">WHOLESALE</a></li>
+        <li><a href="javascript:void(0)" onclick="setView('story')" id="nav-story">OUR STORY</a></li>
       </ul>
     </nav>
   </div>
 
   <!-- ============================================================== -->
-  <!-- VIEW: HOMEPAGE (Authentic Dawn Sections + Critical Upgrades)   -->
+  <!-- VIEW 1: HOMEPAGE                                              -->
   <!-- ============================================================== -->
   <div id="view-home" class="inner-page-view active">
 
-    <!-- HERO IMAGE BANNER (Exact Dawn Banner from waywardgentcocktails.ca) -->
+    <!-- HERO IMAGE BANNER -->
     <section class="banner">
       <div class="banner-box">
         <div class="cro-pill">
-          âœ¨ SEO &amp; CRO: Real H1 + Dual Buttons (Shop All &amp; Build a 3-Pack)
+          ✨ Sister Note: Direct call-to-actions to purchase right away + $200 free shipping threshold
         </div>
         <h1 class="banner-heading">PICK YOUR POISON</h1>
-        <p style="font-size:13px; color:#ddd; margin-bottom:20px; letter-spacing:0.5px;">
-          High-brow craft cocktail infusions, freeze-dried simple syrup pucks, and rimmers. Handcrafted in Norwood, Ontario.
+        <p style="font-size:14px; color:#ddd; margin-bottom:22px; letter-spacing:0.5px; line-height:1.6;">
+          Handcrafted cocktail infusions, freeze-dried simple syrup pucks, and flavoured rimmers. Hand-packed in Norwood, Ontario.
         </p>
         <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
-          <a href="#featured-grid" class="btn-dawn-secondary">SHOP ALL</a>
-          <a href="javascript:void(0)" onclick="setView('bundle')" class="btn-dawn-secondary" style="background:#121212; color:#fff; border-color:#fff;">BUILD A 3-PACK (SAVE 15%)</a>
+          <a href="#featured-grid" class="btn-dawn-secondary">SHOP ALL FLAVOURS</a>
+          <a href="javascript:void(0)" onclick="setView('bundle')" class="btn-dawn-secondary" style="background:#121212; color:#fff; border-color:#fff;">BUILD A PACK (SAVE 15%)</a>
         </div>
       </div>
     </section>
 
-    <!-- TRUST STRIP (Solves Canadian Shipping Objection & Highlights The CakeHouse) -->
+    <!-- TRUST STRIP -->
     <div class="value-strip">
       <div class="page-width value-grid">
         <div class="value-item">
-          <h4>ðŸšš FREE SHIPPING OVER $75</h4>
+          <h4>🚚 FREE SHIPPING OVER $200 CAD</h4>
           <p>Dispatched across Canada from Norwood, ON</p>
         </div>
         <div class="value-item">
-          <h4>ðŸ§ HAND-PACKED IN-HOUSE</h4>
-          <p>Crafted at our bakery, The CakeHouse</p>
+          <h4>🧁 HAND-PACKED AT THE CAKEHOUSE</h4>
+          <p>Crafted locally at our boutique bakery</p>
         </div>
         <div class="value-item">
-          <h4>ðŸ¥ƒ 1 JAR = 8â€“12 DRINKS</h4>
-          <p>Just add your favourite spirit or mocktail soda</p>
+          <h4>🥃 1 INFUSION = 8–12 COCKTAILS</h4>
+          <p>Steep with your favourite spirits or mocktails</p>
         </div>
         <div class="value-item">
-          <h4>â™»ï¸ $16 REFILL SACHETS</h4>
-          <p>Save $4 and reuse your own mason jars</p>
+          <h4>♻️ $16 REFILL SACHETS</h4>
+          <p>Use your own mason jar &amp; save on shipping</p>
         </div>
       </div>
     </div>
 
-    <!-- RICH TEXT WELCOME SECTION (Exact copy from live site) -->
-    <section class="rich-text-section page-width">
-      <div class="rich-text-content">
+    <!-- RICH TEXT WELCOME -->
+    <section class="page-width" style="padding: 50px 0 30px; text-align: center;">
+      <div style="max-width: 780px; margin: 0 auto;">
         <h2 class="section-heading-dawn">WELCOME TO <strong>WAYWARD GENT COCKTAILS</strong></h2>
-        <p>
+        <p style="font-size:15px; line-height:1.8; color:#333; margin-bottom:12px;">
           We are a small business located in <strong>Norwood, Ontario</strong> with a big dream of creating high brow cocktails made simple for the home bartender.
         </p>
-        <p>
+        <p style="font-size:15px; line-height:1.8; color:#555;">
           Our products are locally sourced when possible, hand packed in house at our bakery 
-          <a href="https://thecakehousebakery.ca" target="_blank">The CakeHouse</a> 
-          and curated with the utmost attention paid to flavours &amp; appearance. We hope you enjoy them as much as we do.
+          <a href="javascript:void(0)" onclick="setView('story')" style="text-decoration:underline; font-weight:700;">The CakeHouse</a> 
+          and curated with the utmost attention paid to flavours &amp; appearance.
         </p>
       </div>
     </section>
 
-    <!-- 3-STEP "HOW IT WORKS" (Solves the unreadable image issue on the live site) -->
+    <!-- 3-STEP "HOW IT WORKS" WITH VISUAL 72-HOUR TIMER -->
     <section class="how-it-works-strip page-width">
       <div style="text-align:center;">
         <div class="cro-pill">
-          âœ¨ Fixes Customer Confusion: Clear 3-step text strip so shoppers understand how Infusions &amp; Syrup Pucks work
+          ✨ Sister Note: Added visual 72h timer animation ("tick, tick, tick") so shoppers see how easy it is!
         </div>
         <h2 class="section-heading-dawn">HOW <strong>WAYWARD GENT</strong> WORKS</h2>
       </div>
 
       <div class="steps-grid">
         <div class="step-card">
-          <div class="step-number">STEP 01</div>
+          <div class="step-badge">STEP 01 • PREP</div>
           <h3>Pour Your Spirit</h3>
-          <p>Pour 12oz (a mickey) of vodka, gin, tequila, rum, or bourbon into your jar. Prefer mocktails? Use hot water or zero-proof spirits.</p>
+          <p>Pour 12oz (a standard mickey) of vodka, gin, tequila, rum, or bourbon into your jar. Prefer mocktails? Steep in boiling water!</p>
+          <div class="timer-visual">
+            <span>🥃 Recommended Spirit:</span>
+            <span style="font-weight:700;">12oz (375ml)</span>
+          </div>
         </div>
+
         <div class="step-card">
-          <div class="step-number">STEP 02</div>
+          <div class="step-badge">STEP 02 • INFUSE</div>
           <h3>Infuse for 72+ Hours</h3>
-          <p>Let our real dehydrated fruits, herbs, and spices steep. Want deeper flavour? Leave it a few days longer, or infuse a second time!</p>
+          <p>Real dehydrated fruits, botanicals, and spices steep. The longer it steeps, the deeper the flavour!</p>
+          <div class="timer-visual">
+            <span>⏱️ Steep Countdown:</span>
+            <span class="clock-ticker" id="clock-display">72:00:00</span>
+          </div>
         </div>
+
         <div class="step-card">
-          <div class="step-number">STEP 03</div>
+          <div class="step-badge">STEP 03 • SIP</div>
           <h3>Strain, Rim &amp; Sip</h3>
-          <p>Pour 1.5â€“2 oz over ice. Finish with our flavoured rimmers or a splash of our zero-panic freeze-dried simple syrup pucks.</p>
+          <p>Pour 1.5–2 oz over ice. Finish with our flavoured rimmers or zero-panic freeze-dried syrup pucks. Makes 8–12 drinks!</p>
+          <div class="timer-visual">
+            <span>🍹 Yield:</span>
+            <span style="font-weight:700; color:#137333;">8–12 Cocktails</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- FEATURED COLLECTION (Product Grid with Authentic Dawn Card Styling + Jar/Sachet Switcher) -->
+    <!-- FEATURED PRODUCTS GRID -->
     <section id="featured-grid" class="featured-collection-section page-width">
       <div class="collection-header-row">
         <div>
           <div class="cro-pill">
-            âœ¨ CRO Fix: Curated Best Sellers + Instant Jar ($20) vs. Refill Sachet ($16) selector on cards
+            ✨ Instant Jar ($20) vs. Eco Refill Sachet ($16) toggle right on the product card
           </div>
           <h2 class="section-heading-dawn" style="margin-bottom:0;">FEATURED <strong>PRODUCTS</strong></h2>
         </div>
@@ -1067,58 +1246,57 @@
         <!-- Category Filters -->
         <div class="collection-filter-pills">
           <button onclick="filterGrid('all')" class="filter-pill active" id="pill-all">ALL</button>
-          <button onclick="filterGrid('infusion')" class="filter-pill" id="pill-infusion">INFUSIONS ($16â€“$20)</button>
+          <button onclick="filterGrid('infusion')" class="filter-pill" id="pill-infusion">INFUSIONS ($16–$20)</button>
           <button onclick="filterGrid('syrup')" class="filter-pill" id="pill-syrup">SYRUP PUCKS ($7)</button>
           <button onclick="filterGrid('rimmer')" class="filter-pill" id="pill-rimmer">RIMMERS ($13)</button>
         </div>
       </div>
 
-      <!-- Real Products from Wayward Gent Cocktails -->
       <div class="product-grid" id="main-product-grid">
-        <!-- Populated via JS -->
-      </div>
-    </section>
-
-    <!-- ON-SITE COCKTAIL HOUR SOCIETY (Replaces the off-site Flodesk link) -->
-    <section class="newsletter-section-dawn page-width">
-      <div class="newsletter-box">
-        <div class="cro-pill">
-          âœ¨ Lead Capture Fix: Keeps shoppers ON the site while capturing their email with a 10% coupon + recipe guide
-        </div>
-        <h2 class="section-heading-dawn">JOIN THE <strong>COCKTAIL HOUR SOCIETY</strong></h2>
-        <p style="font-size:14px; color:#555; line-height:1.6;">
-          Subscribe for <strong>10% off your first order</strong>, secret seasonal releases, and Tam's free 5-minute cocktail &amp; CakeHouse dessert pairing guide.
-        </p>
-
-        <form onsubmit="handleNewsletter(event)" class="newsletter-form-row">
-          <input type="email" required placeholder="Enter your email" class="newsletter-input" id="nl-email">
-          <button type="submit" class="btn-dawn-primary" style="padding:12px 24px; white-space:nowrap;">SUBSCRIBE</button>
-        </form>
-        <p id="nl-success-msg" style="font-size:12px; color:#137333; font-weight:600; margin-top:10px; display:none;">
-          âœ“ Welcome! Use code <strong>WAYWARD10</strong> at checkout for 10% off your order.
-        </p>
+        <!-- Rendered via JS -->
       </div>
     </section>
 
   </div>
 
   <!-- ============================================================== -->
-  <!-- VIEW: BUNDLE BUILDER (AOV Booster: 3-Pack Save 15%)            -->
+  <!-- VIEW 2: 4 BUILD-A-PACK MODES (Tam's Exact Requirement)         -->
   <!-- ============================================================== -->
   <div id="view-bundle" class="inner-page-view">
     <div class="page-width">
       <div class="cro-pill">
-        âœ¨ #1 AOV Booster: Solves the Canadian shipping problem by encouraging 3-jar bundles ($51) instead of single-jar carts
+        ✨ Sister Requirement: Tam specified 4 strict bundle choices (don't mix jars and sachets) + optional Holiday Gift Box add-on!
       </div>
-      <h1 class="page-title">BUILD YOUR OWN <strong>3-PACK BOX</strong></h1>
-      <p style="text-align:center; max-width:600px; margin:0 auto 20px; font-size:14px; color:#666;">
-        Select any 3 flavours below to unlock <strong>15% OFF</strong>. Perfect for gifts or stocking your cottage bar!
+      <h1 class="page-title">BUILD YOUR OWN <strong>CUSTOM PACK</strong></h1>
+      <p style="text-align:center; max-width:680px; margin:0 auto 24px; font-size:14px; color:#555;">
+        Save 15% when you bundle! Choose between our refill sachets (use your own mason jars and save on shipping) or complete reusable glass jars.
       </p>
 
-      <div style="text-align:center; margin-bottom:24px;">
-        <span style="font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-right:8px;">Choose Vessel:</span>
-        <button onclick="setBundleVesselMode('jar')" id="b-mode-jar" class="filter-pill active">3x GLASS JARS ($51.00 â€¢ REG $60)</button>
-        <button onclick="setBundleVesselMode('sachet')" id="b-mode-sachet" class="filter-pill">3x REFILL SACHETS ($40.80 â€¢ REG $48)</button>
+      <!-- 4 Bundle Mode Cards (Tam's exact list from transcript) -->
+      <div class="bundle-modes-strip">
+        <div class="bundle-mode-card active" id="bmode-sachet3" onclick="setBundleType('sachet3')">
+          <h4>1. 3x Refill Sachets</h4>
+          <p>Use your own jars • Ships lightweight</p>
+          <div class="mode-price">$40.80 CAD <span style="text-decoration:line-through; font-size:11px; color:#888;">$48.00</span></div>
+        </div>
+
+        <div class="bundle-mode-card" id="bmode-jar3" onclick="setBundleType('jar3')">
+          <h4>2. 3x Glass Jars</h4>
+          <p>3 reusable 12oz jars with lids</p>
+          <div class="mode-price">$51.00 CAD <span style="text-decoration:line-through; font-size:11px; color:#888;">$60.00</span></div>
+        </div>
+
+        <div class="bundle-mode-card" id="bmode-trio-sachet" onclick="setBundleType('trio-sachet')">
+          <h4>3. Sachet Cocktail Trio</h4>
+          <p>1 Sachet + 1 Rimmer + 1 Syrup Puck</p>
+          <div class="mode-price">$30.60 CAD <span style="text-decoration:line-through; font-size:11px; color:#888;">$36.00</span></div>
+        </div>
+
+        <div class="bundle-mode-card" id="bmode-trio-jar" onclick="setBundleType('trio-jar')">
+          <h4>4. Jar Cocktail Trio</h4>
+          <p>1 Jar + 1 Rimmer + 1 Syrup Puck</p>
+          <div class="mode-price">$34.00 CAD <span style="text-decoration:line-through; font-size:11px; color:#888;">$40.00</span></div>
+        </div>
       </div>
 
       <div class="bundle-layout">
@@ -1130,7 +1308,7 @@
         <!-- Sticky Box Summary -->
         <div>
           <div class="bundle-summary-box">
-            <h3 style="font-size:14px; font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-bottom:12px;">
+            <h3 style="font-size:14px; font-weight:700; letter-spacing:1px; text-transform:uppercase;" id="bundle-box-title">
               YOUR 3-PACK BUNDLE
             </h3>
 
@@ -1138,19 +1316,28 @@
               <!-- Rendered via JS -->
             </div>
 
+            <!-- Optional Holiday Gift Box Add-on (Tam's transcript note) -->
+            <div class="gift-box-toggle-card">
+              <input type="checkbox" id="gift-box-addon" onchange="toggleGiftBox(this.checked)">
+              <label for="gift-box-addon" style="font-size:12px; cursor:pointer;">
+                <strong>🎁 Add Holiday Gift Box Packaging (+ $10.00 CAD)</strong><br>
+                <span style="color:#666;">Includes kraft gift box, fillable holiday ornament packed with dehydrated citrus slices, and gold cocktail picks!</span>
+              </label>
+            </div>
+
             <div style="border-top:1px solid #eee; padding-top:14px; margin-top:14px; font-size:13px;">
               <div style="display:flex; justify-content:space-between; color:#777; margin-bottom:4px;">
                 <span>Regular Price:</span>
-                <span id="b-reg-price" style="text-decoration:line-through;">$60.00 CAD</span>
+                <span id="b-reg-price" style="text-decoration:line-through;">$48.00 CAD</span>
               </div>
-              <div style="display:flex; justify-content:space-between; font-weight:700; font-size:15px;">
-                <span>Bundle Price:</span>
-                <span id="b-bundle-price">$51.00 CAD</span>
+              <div style="display:flex; justify-content:space-between; font-weight:700; font-size:16px;">
+                <span>Bundle Total:</span>
+                <span id="b-bundle-price">$40.80 CAD</span>
               </div>
             </div>
 
             <button onclick="addBundleBoxToCart()" id="btn-add-bundle" disabled class="btn-dawn-primary" style="width:100%; margin-top:16px; opacity:0.5;">
-              SELECT 3 FLAVOURS
+              SELECT FLAVOURS
             </button>
           </div>
         </div>
@@ -1159,12 +1346,151 @@
   </div>
 
   <!-- ============================================================== -->
-  <!-- VIEW: FIXED HOW TO USE PAGE                                    -->
+  <!-- VIEW 3: HOLIDAY KITS & PRE-MADE GIFTS (Tam's Transcript)       -->
+  <!-- ============================================================== -->
+  <div id="view-holiday" class="inner-page-view">
+    <div class="page-width">
+      <div class="cro-pill">
+        ✨ Sister Feature: Tam's pre-made holiday kits, fillable citrus ornaments, and holiday gift packs
+      </div>
+      <h1 class="page-title">HANDCRAFTED <strong>HOLIDAY KITS</strong></h1>
+      <p style="text-align:center; max-width:680px; margin:0 auto 24px; font-size:14px; color:#555;">
+        Complete, ready-to-gift holiday cocktail kits hand-packed at The CakeHouse in Norwood. Each kit includes decorative holiday packaging with custom fillable ornaments!
+      </p>
+
+      <div class="holiday-kits-grid">
+        <!-- Kit 1: Old Fashioned -->
+        <div class="holiday-kit-card">
+          <span class="holiday-tag">HOLIDAY BESTSELLER</span>
+          <img src="https://cdn.shopify.com/s/files/1/0891/0277/8667/files/168AB2BE-7368-4162-B843-FE0B995A78F5.jpg?v=1732619825&width=533" alt="Old Fashioned Kit" style="aspect-ratio:1/1; object-fit:cover; margin-bottom:12px;">
+          <h3 style="font-size:16px; font-weight:700; text-transform:uppercase; margin-bottom:6px;">THE OLD FASHIONED HOLIDAY KIT</h3>
+          <p style="font-size:12px; color:#666; margin-bottom:12px; line-height:1.5;">
+            Includes 1x Old Fashioned Cocktail Infusion Jar + Aromatic Bitters Cocktail Picks + Fillable Holiday Citrus Ornament.
+          </p>
+          <div style="font-size:16px; font-weight:700; margin-bottom:14px;">$35.00 CAD</div>
+          <button onclick="addItemToCart('The Old Fashioned Holiday Kit', 'Gift Boxed Set', 35, 'https://cdn.shopify.com/s/files/1/0891/0277/8667/files/168AB2BE-7368-4162-B843-FE0B995A78F5.jpg?v=1732619825&width=533')" class="btn-dawn-primary" style="margin-top:auto;">
+            ADD TO CART
+          </button>
+        </div>
+
+        <!-- Kit 2: Mistletoe Mule -->
+        <div class="holiday-kit-card">
+          <span class="holiday-tag">LIMITED EDITION</span>
+          <img src="https://cdn.shopify.com/s/files/1/0891/0277/8667/files/6719FBF5-9D67-475E-8ACD-42E5E7D27599.jpg?v=1732619772&width=533" alt="Mistletoe Mule Kit" style="aspect-ratio:1/1; object-fit:cover; margin-bottom:12px;">
+          <h3 style="font-size:16px; font-weight:700; text-transform:uppercase; margin-bottom:6px;">THE MISTLETOE MULE HOLIDAY KIT</h3>
+          <p style="font-size:12px; color:#666; margin-bottom:12px; line-height:1.5;">
+            Includes 1x Mistletoe Mule Cocktail Infusion Jar + 1x Spiced Moscow Mule Rimmer + Festive fillable ornament with cranberries &amp; lime.
+          </p>
+          <div style="font-size:16px; font-weight:700; margin-bottom:14px;">$38.00 CAD</div>
+          <button onclick="addItemToCart('The Mistletoe Mule Holiday Kit', 'Gift Boxed Set', 38, 'https://cdn.shopify.com/s/files/1/0891/0277/8667/files/6719FBF5-9D67-475E-8ACD-42E5E7D27599.jpg?v=1732619772&width=533')" class="btn-dawn-primary" style="margin-top:auto;">
+            ADD TO CART
+          </button>
+        </div>
+
+        <!-- Kit 3: Julius Caesar Celebration -->
+        <div class="holiday-kit-card">
+          <span class="holiday-tag">CANADIAN CLASSIC</span>
+          <img src="https://cdn.shopify.com/s/files/1/0891/0277/8667/files/D92979D7-7E68-4B31-BF42-8857CE7BF577.jpg?v=1732619636&width=533" alt="Caesar Kit" style="aspect-ratio:1/1; object-fit:cover; margin-bottom:12px;">
+          <h3 style="font-size:16px; font-weight:700; text-transform:uppercase; margin-bottom:6px;">THE ULTIMATE CAESAR DUO</h3>
+          <p style="font-size:12px; color:#666; margin-bottom:12px; line-height:1.5;">
+            Includes 1x Julius Caesar Cocktail Infusion Jar + 1x Savoury Julius Caesar Spice Glass Rimmer. Just add vodka &amp; Clamato!
+          </p>
+          <div style="font-size:16px; font-weight:700; margin-bottom:14px;">$32.00 CAD</div>
+          <button onclick="addItemToCart('The Ultimate Caesar Duo', 'Jar + Rimmer Kit', 32, 'https://cdn.shopify.com/s/files/1/0891/0277/8667/files/D92979D7-7E68-4B31-BF42-8857CE7BF577.jpg?v=1732619636&width=533')" class="btn-dawn-primary" style="margin-top:auto;">
+            ADD TO CART
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- VIEW 4: COCKTAIL HOUR SOCIETY & THE CAKEHOUSE UPSELL           -->
+  <!-- ============================================================== -->
+  <div id="view-society" class="inner-page-view">
+    <div class="page-width">
+      <div class="cro-pill">
+        ✨ Sister Feature: Recurring subscriptions ($75/mo or $150 3-month gift) + The CakeHouse Baker's Box upsell ($50)
+      </div>
+      <h1 class="page-title">COCKTAIL HOUR <strong>SOCIETY</strong></h1>
+      <p style="text-align:center; max-width:680px; margin:0 auto 20px; font-size:14px; color:#555;">
+        Join our craft cocktail club for exclusive seasonal flavors, mixology guides, or monthly infusion deliveries directly to your door.
+      </p>
+
+      <div class="sub-tier-grid">
+        <!-- Tier 1: Free -->
+        <div class="sub-tier-card">
+          <h3 style="font-size:18px; font-weight:700; text-transform:uppercase;">Cocktail Club Free</h3>
+          <div class="sub-price">FREE <span>/ forever</span></div>
+          <p style="font-size:12px; color:#666;">Perfect for home bartenders exploring new ideas.</p>
+          <ul class="tier-features">
+            <li>10% Off your first online order</li>
+            <li>Monthly seasonal cocktail recipe guide</li>
+            <li>First notice on limited holiday drop releases</li>
+          </ul>
+          <form onsubmit="handleNewsletter(event)" style="margin-top:auto;">
+            <input type="email" required placeholder="Enter email address" class="newsletter-input" style="width:100%; margin-bottom:8px;">
+            <button type="submit" class="btn-dawn-primary" style="width:100%;">JOIN FREE</button>
+          </form>
+        </div>
+
+        <!-- Tier 2: Digital Speakeasy -->
+        <div class="sub-tier-card">
+          <h3 style="font-size:18px; font-weight:700; text-transform:uppercase;">Speakeasy VIP</h3>
+          <div class="sub-price">$9 <span>/ month</span></div>
+          <p style="font-size:12px; color:#666;">For passionate cocktail &amp; mocktail hobbyists.</p>
+          <ul class="tier-features">
+            <li>Everything in Free Tier</li>
+            <li>Behind-the-scenes video mixology masterclasses</li>
+            <li>Secret recipe vault &amp; appetizer pairing downloads</li>
+            <li>15% ongoing member discount on all infusions</li>
+          </ul>
+          <button onclick="alert('In the live store, this activates via Shopify Subscriptions / Flodesk VIP!')" class="btn-dawn-primary" style="width:100%; margin-top:auto;">
+            JOIN VIP SPEAKEASY
+          </button>
+        </div>
+
+        <!-- Tier 3: The Cocktail Box -->
+        <div class="sub-tier-card featured">
+          <span class="tier-ribbon">MOST POPULAR GIFT</span>
+          <h3 style="font-size:18px; font-weight:700; text-transform:uppercase;">The Cocktail Box</h3>
+          <div class="sub-price">$75 <span>/ box</span></div>
+          <p style="font-size:12px; color:#666;">Delivered directly to your door every month or season.</p>
+          <ul class="tier-features">
+            <li>2x Exclusive, member-only cocktail infusions</li>
+            <li>1x Matching handcrafted syrup puck or rimmer</li>
+            <li>Step-by-step mixology recipe &amp; garnish card</li>
+            <li>Option to pre-pay 3 months ($150) as a gift!</li>
+          </ul>
+          <button onclick="addItemToCart('The Cocktail Box Subscription', 'Monthly Delivery', 75, 'https://cdn.shopify.com/s/files/1/0891/0277/8667/files/feb3b897-2766-4d75-b66e-54f961e18caa_a684ab8c-0a9f-4da5-aa38-53a496cb2b7b.jpg?v=1722271940&width=200')" class="btn-dawn-primary" style="width:100%; margin-top:auto;">
+            SUBSCRIBE • $75 / MONTH
+          </button>
+        </div>
+      </div>
+
+      <!-- The CakeHouse Bakery Cross-Sell Box (Tam's Upsell Idea) -->
+      <div class="cakehouse-upsell-box">
+        <div>
+          <span style="font-size:11px; font-weight:700; color:#9b2226; letter-spacing:1px; text-transform:uppercase;">EXCLUSIVELY FROM THE CAKEHOUSE BAKERY</span>
+          <h3 style="font-size:20px; font-weight:700; margin:4px 0 6px;">Want Fresh Artisan Bakery Treats With Your Cocktails?</h3>
+          <p style="font-size:13px; color:#555; max-width:600px; line-height:1.6;">
+            Add a <strong>Baker's Box from The CakeHouse</strong> (+ $50 CAD) to any subscription box or gift set! Includes fresh seasonal gourmet cookies, dessert bars, and savory bakery bites baked fresh in Norwood.
+          </p>
+        </div>
+        <button onclick="addItemToCart('The CakeHouse Baker\'s Box Add-On', 'Monthly Artisan Bakery Goodies', 50, 'https://waywardgentcocktails.ca/cdn/shop/files/feb3b897-2766-4d75-b66e-54f961e18caa_a684ab8c-0a9f-4da5-aa38-53a496cb2b7b.jpg?v=1722271940&width=200')" class="btn-dawn-primary" style="background:#9b2226; border-color:#9b2226; white-space:nowrap;">
+          + ADD BAKER'S BOX ($50)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- VIEW 5: HOW TO USE PAGE (With Text + Searchable SEO)           -->
   <!-- ============================================================== -->
   <div id="view-howto" class="inner-page-view">
     <div class="page-width inner-page-content">
       <div class="cro-pill">
-        âœ¨ Fixes <code>/pages/how-to-use</code>: Replaces the current unreadable 480x480 image with clear, Google-searchable instructions
+        ✨ Fixes unreadable image on live site: Full searchable text guide with steeping FAQ
       </div>
       <h1 class="page-title">HOW TO USE <strong>WAYWARD GENT</strong></h1>
 
@@ -1176,8 +1502,8 @@
         <ul style="margin-left:24px; margin-bottom:20px; font-size:14px; line-height:1.8; color:#333;">
           <li><strong>Fill:</strong> Pour 12oz (a standard 375ml mickey) of your favourite spirit into the jar. Gin, vodka, bourbon, rum, and tequila all work wonderfully.</li>
           <li><strong>Steep:</strong> Seal the jar tightly and leave it at room temperature for <strong>72+ hours</strong>. Give it a gentle swirl once a day.</li>
-          <li><strong>Serve:</strong> Once infused to your desired richness, strain and pour 1.5â€“2 oz over ice. Top with club soda, tonic, ginger beer, or lemonade.</li>
-          <li><strong>Pro-Tip:</strong> Don't throw away the ingredients! Infuse a second time for 5â€“7 days, or steep in hot water for a fragrant, spiced mocktail.</li>
+          <li><strong>Serve:</strong> Once infused to your desired richness, strain and pour 1.5–2 oz over ice. Top with club soda, tonic, ginger beer, or lemonade.</li>
+          <li><strong>Pro-Tip:</strong> Don't throw away the ingredients! Infuse a second time for 5–7 days, or steep in hot water for a fragrant, spiced mocktail.</li>
         </ul>
 
         <h3 style="font-size:18px; font-weight:700; margin:24px 0 8px; text-transform:uppercase;">2. Freeze-Dried Simple Syrup Pucks</h3>
@@ -1186,25 +1512,86 @@
         </p>
         <ul style="margin-left:24px; margin-bottom:20px; font-size:14px; line-height:1.8; color:#333;">
           <li><strong>Simmer:</strong> In a small saucepan, combine 1 puck with 1 cup of water over medium heat until dissolved. Simmer for 5 minutes.</li>
-          <li><strong>Store:</strong> Once cool, bottle and refrigerate. Use Â½ to 1 teaspoon per cocktail or iced latte.</li>
-          <li><strong>Freeze:</strong> Won't use it in 2â€“3 weeks? Pour into small ice cube trays and freeze!</li>
+          <li><strong>Store:</strong> Once cool, bottle and refrigerate. Use ½ to 1 teaspoon per cocktail or iced latte.</li>
+          <li><strong>Freeze:</strong> Won't use it in 2–3 weeks? Pour into small ice cube trays and freeze!</li>
         </ul>
 
         <h3 style="font-size:18px; font-weight:700; margin:24px 0 8px; text-transform:uppercase;">3. Flavoured Cocktail Rimmers</h3>
         <p>
-          Moisten the rim of your glass with a fresh lime wedge or a dab of simple syrup, then gently roll the outer lip through the rimmer tin. Each tin generously coats 12â€“15 cocktails.
+          Moisten the rim of your glass with a fresh lime wedge or a dab of simple syrup, then gently roll the outer lip through the rimmer tin. Each tin generously coats 12–15 cocktails.
         </p>
       </div>
     </div>
   </div>
 
   <!-- ============================================================== -->
-  <!-- VIEW: FIXED OUR STORY PAGE                                     -->
+  <!-- VIEW 6: WHOLESALE PORTAL & APPLICATION ($250 Minimum)          -->
+  <!-- ============================================================== -->
+  <div id="view-wholesale" class="inner-page-view">
+    <div class="page-width inner-page-content">
+      <div class="cro-pill">
+        ✨ Sister Feature: Existing partner login via Shopify app + New partner application with $250 CAD minimum
+      </div>
+      <h1 class="page-title">WHOLESALE <strong>PORTAL</strong></h1>
+
+      <div class="page-body-text">
+        <!-- Existing Account Box -->
+        <div style="background:#f4f4f4; border:1px solid #ddd; padding:24px; margin-bottom:30px; border-radius:4px; text-align:center;">
+          <h3 style="font-size:16px; font-weight:700; text-transform:uppercase; margin-bottom:8px;">
+            Existing Wholesale Partner?
+          </h3>
+          <p style="font-size:13px; color:#555; margin-bottom:14px;">
+            Log in with your authorized wholesale email address. Your product catalog will automatically display wholesale pricing at checkout.
+          </p>
+          <button onclick="alert('In the live store, this connects to Shopify Customer Login which automatically applies your wholesale price tier!')" class="btn-dawn-primary">
+            LOG IN TO WHOLESALE ACCOUNT
+          </button>
+        </div>
+
+        <h3 style="font-size:20px; font-weight:700; text-transform:uppercase; margin-bottom:10px;">
+          Become a Wholesale Stockist
+        </h3>
+        <p style="font-size:14px; color:#555; line-height:1.7;">
+          Interested in stocking Wayward Gent cocktail infusions, syrup pucks, and rimmers in your boutique, gift market, gourmet food shop, or bar? We offer attractive wholesale margins and low opening orders for Canadian independent retailers.
+        </p>
+
+        <div style="background:#ffffff; border:1px solid var(--color-base-border); padding:28px; margin-top:20px; border-radius:4px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; border-bottom:1px solid #eee; padding-bottom:12px;">
+            <span style="font-size:13px; font-weight:700; text-transform:uppercase;">Wholesale Terms:</span>
+            <span style="font-size:12px; background:#eef8f2; color:#137333; font-weight:700; padding:4px 8px; border-radius:3px;">
+              Minimum Order: $250.00 CAD
+            </span>
+          </div>
+
+          <form onsubmit="handleWholesaleSubmit(event)" style="display:flex; flex-direction:column; gap:12px;">
+            <input type="text" required placeholder="Contact Name" class="newsletter-input">
+            <input type="text" required placeholder="Business / Store Name" class="newsletter-input">
+            <input type="email" required placeholder="Business Email Address" class="newsletter-input">
+            <input type="text" placeholder="Store Website or Instagram Handle" class="newsletter-input">
+            <select class="newsletter-input">
+              <option>Boutique / Gift Shop</option>
+              <option>Gourmet Food / Market</option>
+              <option>Bar / Restaurant / Hospitality</option>
+              <option>Corporate Gifting</option>
+            </select>
+            <textarea placeholder="Tell us about your store location and estimated order timeline..." rows="4" class="newsletter-input"></textarea>
+            <button type="submit" class="btn-dawn-primary" style="align-self:flex-start;">SUBMIT WHOLESALE APPLICATION</button>
+            <p id="ws-msg" style="font-size:12px; color:#137333; font-weight:700; display:none;">
+              ✓ Thank you! Tam will review your application and send your wholesale login invitation within 24 hours.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- VIEW 7: OUR STORY                                             -->
   <!-- ============================================================== -->
   <div id="view-story" class="inner-page-view">
     <div class="page-width inner-page-content">
       <div class="cro-pill">
-        âœ¨ Fixes <code>/pages/about-us</code>: The live store page is completely blank. This restores the authentic story of Tam and The CakeHouse in Norwood.
+        ✨ Fixes blank /pages/about-us: Details Tam's journey and bakery roots in Norwood
       </div>
       <h1 class="page-title">OUR <strong>STORY</strong></h1>
 
@@ -1213,7 +1600,7 @@
           Welcome to <strong>Wayward Gent Cocktails</strong>! We are a small, passionate Canadian business founded in <strong>Norwood, Ontario</strong>, with a big dream: making high-brow, lounge-quality cocktails effortless for the home bartender.
         </p>
         <p>
-          Wayward Gent was born inside our beloved local bakery, <strong>The CakeHouse</strong>. As bakers and flavour enthusiasts, we spent years obsessing over spices, aromas, and balance. Whenever friends gathered at our home, we loved serving upscale cocktailsâ€”but hated spending $150 on specialty liqueurs and throwing out half-used bottles of expired simple syrup the following week.
+          Wayward Gent was born inside our beloved local bakery, <strong>The CakeHouse</strong>. As bakers and flavour enthusiasts, we spent years obsessing over spices, aromas, and balance. Whenever friends gathered at our home, we loved serving upscale cocktails—but hated spending $150 on specialty liqueurs and throwing out half-used bottles of expired simple syrup the following week.
         </p>
         <p>
           We knew there had to be a better way. We began dehydrating real, locally sourced fruits, hand-blending botanicals and bitters, and packing them into cocktail infusion kits and shelf-stable simple syrup pucks.
@@ -1221,48 +1608,9 @@
         <p>
           Today, every single jar, refill sachet, rimmer, and syrup puck is hand-packed with care right here in Norwood. Whether you're mixing a Caesar at the cottage in the Kawarthas, hosting a holiday party, or shipping a gift box to friends across Canada, we hope our blends bring ease, celebration, and delicious sips to your glass.
         </p>
-        <p style="font-weight:600; margin-top:24px;">
+        <p style="font-weight:700; margin-top:24px;">
           Cheers,<br>Tam &amp; The Wayward Gent Team
         </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============================================================== -->
-  <!-- VIEW: FIXED WHOLESALE PAGE                                     -->
-  <!-- ============================================================== -->
-  <div id="view-wholesale" class="inner-page-view">
-    <div class="page-width inner-page-content">
-      <div class="cro-pill">
-        âœ¨ Fixes <code>/pages/wholesale-test</code>: Replaces the blank page with a real Wholesale &amp; Private Class inquiry form
-      </div>
-      <h1 class="page-title">WHOLESALE &amp; <strong>PRIVATE CLASSES</strong></h1>
-
-      <div class="page-body-text">
-        <p>
-          Interested in stocking Wayward Gent Cocktails in your boutique, gift market, or farm store? Or looking to book a private cocktail making class in Peterborough or the Kawarthas? We would love to work with you!
-        </p>
-
-        <div style="background:#fafafa; border:1px solid #e8e8e8; padding:30px; margin-top:24px;">
-          <h3 style="font-size:16px; font-weight:700; text-transform:uppercase; margin-bottom:16px;">
-            Inquire for Wholesale Pricing or Event Booking
-          </h3>
-          <form onsubmit="handleWholesaleSubmit(event)" style="display:flex; flex-direction:column; gap:12px;">
-            <input type="text" required placeholder="Your Name" class="newsletter-input">
-            <input type="text" required placeholder="Store / Business Name (if applicable)" class="newsletter-input">
-            <input type="email" required placeholder="Email Address" class="newsletter-input">
-            <select class="newsletter-input">
-              <option>Wholesale Retailer Account</option>
-              <option>Corporate Gifting / Closing Gifts</option>
-              <option>Private Cocktail Class (Peterborough / Norwood)</option>
-            </select>
-            <textarea placeholder="Tell us about your store or event date..." rows="4" class="newsletter-input"></textarea>
-            <button type="submit" class="btn-dawn-primary" style="align-self:flex-start;">SUBMIT INQUIRY</button>
-            <p id="ws-msg" style="font-size:12px; color:#137333; font-weight:600; display:none;">
-              âœ“ Thank you! We will be in touch within 1 business day.
-            </p>
-          </form>
-        </div>
       </div>
     </div>
   </div>
@@ -1276,8 +1624,8 @@
           <p style="font-size:13px; color:#666; line-height:1.6; max-width:320px;">
             High brow cocktails made simple. Hand packed in house at our bakery, The CakeHouse, in Norwood, Ontario.
           </p>
-          <div style="margin-top:14px; font-size:12px; color:#333; font-weight:600;">
-            âœ“ We Accept Interac E-Transfer &amp; Cards
+          <div style="margin-top:14px; font-size:12px; color:#333; font-weight:700;">
+            ✓ We Accept Interac E-Transfer &amp; Cards
           </div>
         </div>
 
@@ -1285,7 +1633,8 @@
           <h4 class="footer-heading">SHOP</h4>
           <ul>
             <li><a href="javascript:void(0)" onclick="setView('home'); scrollToId('featured-grid');">All Products</a></li>
-            <li><a href="javascript:void(0)" onclick="setView('bundle')">Build a 3-Pack (Save 15%)</a></li>
+            <li><a href="javascript:void(0)" onclick="setView('bundle')">Build a Pack (Save 15%)</a></li>
+            <li><a href="javascript:void(0)" onclick="setView('holiday')">Holiday Gift Kits</a></li>
             <li><a href="javascript:void(0)" onclick="setView('home'); filterGrid('infusion');">Cocktail Infusions</a></li>
             <li><a href="javascript:void(0)" onclick="setView('home'); filterGrid('syrup');">Simple Syrup Pucks</a></li>
             <li><a href="javascript:void(0)" onclick="setView('home'); filterGrid('rimmer');">Flavoured Rimmers</a></li>
@@ -1293,53 +1642,52 @@
         </div>
 
         <div>
-          <h4 class="footer-heading">LEARN &amp; CONNECT</h4>
+          <h4 class="footer-heading">COMMUNITY</h4>
           <ul>
+            <li><a href="javascript:void(0)" onclick="setView('society')">Cocktail Hour Society</a></li>
             <li><a href="javascript:void(0)" onclick="setView('howto')">How to Use</a></li>
             <li><a href="javascript:void(0)" onclick="setView('story')">Our Story</a></li>
-            <li><a href="javascript:void(0)" onclick="setView('wholesale')">Wholesale Accounts</a></li>
-            <li><a href="javascript:void(0)" onclick="setView('wholesale')">Peterborough Classes</a></li>
+            <li><a href="javascript:void(0)" onclick="setView('wholesale')">Wholesale ($250 Min)</a></li>
           </ul>
         </div>
 
         <div>
           <h4 class="footer-heading">POLICIES</h4>
           <ul>
-            <li><a href="javascript:void(0)" onclick="alert('Shipping Policy: Free shipping across Canada on orders over $75 CAD! Local pickup available at The CakeHouse in Norwood, ON.')">Shipping Policy</a></li>
-            <li><a href="javascript:void(0)" onclick="alert('Refund Policy: Due to the nature of food and beverage products, all sales are final. If an item arrives damaged, we replace it immediately!')">Refund Policy</a></li>
+            <li><a href="javascript:void(0)" onclick="alert('Shipping Policy: Free shipping across Canada on orders over $200 CAD! Free local pickup available at The CakeHouse in Norwood, ON.')">Shipping Policy ($200 Free Ship)</a></li>
+            <li><a href="javascript:void(0)" onclick="alert('Refund Policy: Due to the perishable nature of handcrafted food and beverage products, all sales are final. If an item arrives damaged, we replace it immediately!')">Refund Policy</a></li>
             <li><span style="font-size:12px; color:#888;">Country: Canada (CAD $)</span></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>&copy; 2026, Wayward Gent Cocktails â€¢ Powered by Shopify</div>
+        <div>&copy; 2026, Wayward Gent Cocktails • Handcrafted at The CakeHouse</div>
         <div>Norwood, Ontario, Canada</div>
       </div>
     </div>
   </footer>
 
   <!-- ============================================================== -->
-  <!-- SLIDE-OUT CART DRAWER WITH $75 FREE SHIPPING PROGRESS BAR      -->
+  <!-- SLIDE-OUT CART DRAWER WITH $200 FREE SHIPPING PROGRESS BAR     -->
   <!-- ============================================================== -->
   <div class="drawer-overlay" id="drawer-overlay" onclick="toggleCartDrawer(false)"></div>
   <aside class="cart-drawer" id="cart-drawer">
     <div class="drawer-header">
       <h3>YOUR CART</h3>
-      <button onclick="toggleCartDrawer(false)" style="font-size:20px; line-height:1;">&times;</button>
+      <button onclick="toggleCartDrawer(false)" style="font-size:22px; line-height:1;">&times;</button>
     </div>
 
-    <!-- Free Shipping Progress Bar ($75 threshold) -->
+    <!-- Free Shipping Progress Bar ($200 threshold as instructed by Tam) -->
     <div class="free-shipping-bar-container">
       <div class="free-shipping-label" id="shipping-label-text">
-        You're <strong>$42.00 CAD</strong> away from <strong>FREE Shipping!</strong>
+        You're <strong>$167.00 CAD</strong> away from <strong>FREE Canada-Wide Shipping!</strong>
       </div>
       <div class="shipping-progress-track">
-        <div class="shipping-progress-fill" id="shipping-progress-bar" style="width: 44%;"></div>
+        <div class="shipping-progress-fill" id="shipping-progress-bar" style="width: 16%;"></div>
       </div>
     </div>
 
-    <!-- Cart Line Items -->
     <div class="drawer-items" id="drawer-items-list">
       <!-- Populated via JS -->
     </div>
@@ -1348,9 +1696,9 @@
     <div style="padding:12px 20px; background:#fbfbfb; border-top:1px solid #eee; display:flex; align-items:center; justify-content:space-between; gap:10px;">
       <div style="font-size:11px;">
         <strong>Add a $7 Simple Syrup Puck?</strong><br>
-        <span style="color:#777;">Blueberry Lavender â€¢ Zero expiry</span>
+        <span style="color:#777;">Blueberry Lavender • Zero expiry panic</span>
       </div>
-      <button onclick="addItemToCart('Blueberry Lavender Simple Syrup Puck', 'Freeze-Dried Puck', 7, 'https://cdn.shopify.com/s/files/1/0891/0277/8667/files/IMG-9951.jpg?v=1762906158&width=200')" class="btn-card-atc" style="width:auto; padding:4px 10px;">
+      <button onclick="addItemToCart('Blueberry Lavender Simple Syrup Puck', 'Freeze-Dried Puck', 7, 'https://cdn.shopify.com/s/files/1/0891/0277/8667/files/IMG-9951.jpg?v=1762906158&width=200')" class="btn-card-atc" style="width:auto; padding:5px 12px;">
         +$7 ADD
       </button>
     </div>
@@ -1363,7 +1711,7 @@
       <p style="font-size:11px; color:#777; margin-bottom:12px; text-align:center;">
         Taxes and shipping calculated at checkout
       </p>
-      <button onclick="alert('In the live store, this connects to Shopify Checkout (Shop Pay, Apple Pay, Credit Card, or Interac e-Transfer)!')" class="btn-dawn-primary" style="width:100%;">
+      <button onclick="alert('In the live store, this connects directly to Shopify Checkout (Shop Pay, Credit Card, Apple Pay, or Interac e-Transfer)!')" class="btn-dawn-primary" style="width:100%;">
         CHECK OUT
       </button>
     </div>
@@ -1429,7 +1777,7 @@
         id: 'blueberry-syrup',
         title: 'BLUEBERRY LAVENDER SIMPLE SYRUP',
         category: 'syrup',
-        spirit: 'Zero Expiry Puck â€¢ Dissolves in 5 Mins',
+        spirit: 'Zero Expiry Puck • Dissolves in 5 Mins',
         rating: '5.0',
         reviews: 31,
         priceJar: 7,
@@ -1451,7 +1799,7 @@
         id: 'caesar-rimmer',
         title: 'JULIUS (CAESAR) COCKTAIL RIMMER',
         category: 'rimmer',
-        spirit: 'Coats 12â€“15 Cocktail Glasses',
+        spirit: 'Coats 12–15 Cocktail Glasses',
         rating: '5.0',
         reviews: 27,
         priceJar: 13,
@@ -1477,14 +1825,14 @@
       { title: 'APPLE PIE COCKTAIL RIMMER', variant: 'Standard Tin', price: 13, img: products[7].img }
     ];
 
-    // Render Product Cards (Authentic Dawn HTML structure)
+    // Render Product Cards
     function renderGrid() {
       const container = document.getElementById('main-product-grid');
       const list = currentFilter === 'all' ? products : products.filter(p => p.category === currentFilter);
 
       container.innerHTML = list.map(p => {
         const price = p.hasVessels ? (p.selectedVessel === 'Jar' ? p.priceJar : p.priceSachet) : p.priceJar;
-        const variantText = p.hasVessels ? (p.selectedVessel === 'Jar' ? '12oz Glass Jar' : 'Refill Sachet') : 'Standard';
+        const variantText = p.hasVessels ? (p.selectedVessel === 'Jar' ? '12oz Glass Jar' : 'Refill Sachet (Use Own Jar)') : 'Standard';
 
         return `
           <div class="dawn-card">
@@ -1494,22 +1842,22 @@
             </div>
             <div class="dawn-card-info">
               <div class="card-reviews-stars">
-                â˜…â˜…â˜…â˜…â˜… <span class="card-reviews-count">(${p.reviews})</span>
+                ★★★★★ <span class="card-reviews-count">(${p.reviews})</span>
               </div>
               <h3 class="dawn-card-title">${p.title}</h3>
               <div class="dawn-card-spirit">${p.spirit}</div>
               <div class="dawn-card-price-row">
                 <span class="price-regular">$${price}.00 CAD</span>
-                ${p.hasVessels ? '<span class="price-unit">(Makes 8â€“12 drinks)</span>' : ''}
+                ${p.hasVessels ? '<span class="price-unit">(Makes 8–12 drinks)</span>' : ''}
               </div>
 
               ${p.hasVessels ? `
                 <div class="card-vessel-switcher">
                   <button onclick="changeVessel('${p.id}', 'Jar')" class="vessel-btn ${p.selectedVessel === 'Jar' ? 'active' : ''}">
-                    ðŸ¥ƒ Jar ($20)
+                    🥃 Jar ($20)
                   </button>
                   <button onclick="changeVessel('${p.id}', 'Sachet')" class="vessel-btn ${p.selectedVessel === 'Sachet' ? 'active' : ''}">
-                    â™»ï¸ Sachet ($16)
+                    ♻️ Sachet ($16)
                   </button>
                 </div>
               ` : ''}
@@ -1543,7 +1891,8 @@
     // View Switching
     function setView(viewKey) {
       document.querySelectorAll('.inner-page-view').forEach(v => v.classList.remove('active'));
-      document.getElementById('view-' + viewKey).classList.add('active');
+      const targetView = document.getElementById('view-' + viewKey);
+      if (targetView) targetView.classList.add('active');
 
       document.querySelectorAll('.proto-tab-btn').forEach(b => b.classList.remove('active'));
       const activeTab = document.getElementById('tab-' + viewKey);
@@ -1567,7 +1916,7 @@
       });
     }
 
-    // Cart Drawer Engine
+    // Cart Drawer Engine ($200 Threshold)
     function toggleCartDrawer(open) {
       const drawer = document.getElementById('cart-drawer');
       const overlay = document.getElementById('drawer-overlay');
@@ -1600,17 +1949,17 @@
       const subtotal = cart.reduce((sum, item) => sum + item.price, 0);
       document.getElementById('drawer-subtotal-display').textContent = `$${subtotal.toFixed(2)} CAD`;
 
-      // $75 Free Shipping Progress Logic
-      const threshold = 75;
+      // $200 Free Shipping Progress Logic (Per Tam's feedback)
+      const threshold = 200;
       const pct = Math.min(100, Math.round((subtotal / threshold) * 100));
       document.getElementById('shipping-progress-bar').style.width = pct + '%';
 
       const label = document.getElementById('shipping-label-text');
       if (subtotal >= threshold) {
-        label.innerHTML = 'ðŸŽ‰ <strong>You unlocked FREE Canada-Wide Shipping!</strong>';
+        label.innerHTML = '🎉 <strong>You unlocked FREE Canada-Wide Shipping!</strong>';
       } else {
         const remaining = (threshold - subtotal).toFixed(2);
-        label.innerHTML = `You're <strong>$${remaining} CAD</strong> away from <strong>FREE Shipping!</strong>`;
+        label.innerHTML = `You're <strong>$${remaining} CAD</strong> away from <strong>FREE Canada-Wide Shipping!</strong>`;
       }
 
       if (cart.length === 0) {
@@ -1631,30 +1980,76 @@
       `).join('');
     }
 
-    // Bundle Builder Engine
-    let bundleVesselMode = 'jar';
-    let bundleChoices = [products[0], products[1]]; // Pre-load 2 so user can test adding 1 more
+    // ==========================================
+    // 4 BUNDLE MODES ENGINE (Tam's Specification)
+    // ==========================================
+    let currentBundleType = 'sachet3'; // 'sachet3' | 'jar3' | 'trio-sachet' | 'trio-jar'
+    let bundleChoices = [products[0], products[1]]; // pre-populate 2
+    let hasGiftBoxAddon = false;
 
-    function setBundleVesselMode(mode) {
-      bundleVesselMode = mode;
-      document.getElementById('b-mode-jar').className = mode === 'jar' ? 'filter-pill active' : 'filter-pill';
-      document.getElementById('b-mode-sachet').className = mode === 'sachet' ? 'filter-pill active' : 'filter-pill';
+    function setBundleType(type) {
+      currentBundleType = type;
+      bundleChoices = []; // Reset on mode change
+      ['sachet3', 'jar3', 'trio-sachet', 'trio-jar'].forEach(k => {
+        const el = document.getElementById('bmode-' + k);
+        if (el) el.className = k === type ? 'bundle-mode-card active' : 'bundle-mode-card';
+      });
+      renderBundle();
+    }
+
+    function toggleGiftBox(checked) {
+      hasGiftBoxAddon = checked;
       renderBundle();
     }
 
     function renderBundle() {
-      const infusions = products.filter(p => p.category === 'infusion');
       const container = document.getElementById('bundle-flavor-picker');
+      let availableItems = [];
+      let maxSlots = 3;
+      let regPrice = 48;
+      let basePrice = 40.80;
 
-      container.innerHTML = infusions.map(p => {
+      if (currentBundleType === 'sachet3') {
+        availableItems = products.filter(p => p.category === 'infusion');
+        maxSlots = 3;
+        regPrice = 48;
+        basePrice = 40.80;
+        document.getElementById('bundle-box-title').textContent = 'YOUR 3x REFILL SACHET PACK';
+      } else if (currentBundleType === 'jar3') {
+        availableItems = products.filter(p => p.category === 'infusion');
+        maxSlots = 3;
+        regPrice = 60;
+        basePrice = 51.00;
+        document.getElementById('bundle-box-title').textContent = 'YOUR 3x GLASS JAR PACK';
+      } else if (currentBundleType === 'trio-sachet') {
+        // Trio: 1 Infusion Sachet ($16) + 1 Rimmer ($13) + 1 Syrup ($7) = $36 Reg -> $30.60 CAD
+        availableItems = products;
+        maxSlots = 3;
+        regPrice = 36;
+        basePrice = 30.60;
+        document.getElementById('bundle-box-title').textContent = 'YOUR SACHET COCKTAIL TRIO (16% OFF)';
+      } else if (currentBundleType === 'trio-jar') {
+        // Trio: 1 Infusion Jar ($20) + 1 Rimmer ($13) + 1 Syrup ($7) = $40 Reg -> $34.00 CAD
+        availableItems = products;
+        maxSlots = 3;
+        regPrice = 40;
+        basePrice = 34.00;
+        document.getElementById('bundle-box-title').textContent = 'YOUR JAR COCKTAIL TRIO (15% OFF)';
+      }
+
+      const finalPrice = hasGiftBoxAddon ? (basePrice + 10) : basePrice;
+      const finalRegPrice = hasGiftBoxAddon ? (regPrice + 10) : regPrice;
+
+      // Render Pickers
+      container.innerHTML = availableItems.map(p => {
         const count = bundleChoices.filter(x => x.id === p.id).length;
         return `
           <div class="flavor-picker-card">
             <img src="${p.img}" alt="${p.title}">
             <div class="flavor-name">${p.title}</div>
-            <div class="flavor-spirit">${p.spirit}</div>
-            <button onclick="addFlavorToBundle('${p.id}')" ${bundleChoices.length >= 3 ? 'disabled style="opacity:0.5"' : ''} class="btn-flavor-add">
-              ${count > 0 ? `ADDED (${count})` : '+ ADD TO BOX'}
+            <div class="flavor-spirit">${p.category.toUpperCase()} • ${p.spirit}</div>
+            <button onclick="addFlavorToBundle('${p.id}', ${maxSlots})" ${bundleChoices.length >= maxSlots ? 'disabled style="opacity:0.5"' : ''} class="btn-flavor-add">
+              ${count > 0 ? `ADDED (${count})` : '+ ADD TO PACK'}
             </button>
           </div>
         `;
@@ -1663,44 +2058,42 @@
       // Slots
       const slotsContainer = document.getElementById('bundle-slots-container');
       let slotsHtml = '';
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < maxSlots; i++) {
         const item = bundleChoices[i];
         if (item) {
           slotsHtml += `
             <div class="bundle-slot-item filled">
-              <span><strong>${i + 1}.</strong> ${item.title.replace(' COCKTAIL INFUSION', '')} (${bundleVesselMode.toUpperCase()})</span>
+              <span><strong>Slot ${i + 1}:</strong> ${item.title.replace(' COCKTAIL INFUSION', '')}</span>
               <button onclick="removeBundleChoice(${i})" style="color:#888; font-size:16px;">&times;</button>
             </div>
           `;
         } else {
           slotsHtml += `
             <div class="bundle-slot-item">
-              <span style="color:#888;">Slot ${i + 1}: Select a flavour</span>
+              <span style="color:#888;">Slot ${i + 1}: Click '+ ADD TO PACK'</span>
             </div>
           `;
         }
       }
       slotsContainer.innerHTML = slotsHtml;
 
-      const reg = bundleVesselMode === 'jar' ? 60 : 48;
-      const bPrice = bundleVesselMode === 'jar' ? 51 : 40.80;
-      document.getElementById('b-reg-price').textContent = `$${reg.toFixed(2)} CAD`;
-      document.getElementById('b-bundle-price').textContent = `$${bPrice.toFixed(2)} CAD`;
+      document.getElementById('b-reg-price').textContent = `$${finalRegPrice.toFixed(2)} CAD`;
+      document.getElementById('b-bundle-price').textContent = `$${finalPrice.toFixed(2)} CAD`;
 
       const atcBtn = document.getElementById('btn-add-bundle');
-      if (bundleChoices.length === 3) {
+      if (bundleChoices.length === maxSlots) {
         atcBtn.disabled = false;
         atcBtn.style.opacity = '1';
-        atcBtn.textContent = `ADD 3-PACK TO CART â€” $${bPrice.toFixed(2)} CAD`;
+        atcBtn.textContent = `ADD PACK TO CART • $${finalPrice.toFixed(2)} CAD`;
       } else {
         atcBtn.disabled = true;
         atcBtn.style.opacity = '0.5';
-        atcBtn.textContent = `SELECT ${3 - bundleChoices.length} MORE FLAVOUR(S)`;
+        atcBtn.textContent = `CHOOSE ${maxSlots - bundleChoices.length} MORE ITEM(S)`;
       }
     }
 
-    function addFlavorToBundle(id) {
-      if (bundleChoices.length < 3) {
+    function addFlavorToBundle(id, max) {
+      if (bundleChoices.length < max) {
         const p = products.find(x => x.id === id);
         if (p) bundleChoices.push(p);
         renderBundle();
@@ -1713,26 +2106,41 @@
     }
 
     function addBundleBoxToCart() {
-      const price = bundleVesselMode === 'jar' ? 51 : 40.80;
-      const title = `Custom 3-Pack Box (${bundleVesselMode === 'jar' ? 'Jars' : 'Refill Sachets'})`;
-      const desc = bundleChoices.map(x => x.title.replace(' COCKTAIL INFUSION', '')).join(' + ');
+      let basePrice = 40.80;
+      let label = '3x Refill Sachet Pack';
+      if (currentBundleType === 'jar3') { basePrice = 51.00; label = '3x Glass Jar Pack'; }
+      if (currentBundleType === 'trio-sachet') { basePrice = 30.60; label = 'Sachet Cocktail Trio'; }
+      if (currentBundleType === 'trio-jar') { basePrice = 34.00; label = 'Jar Cocktail Trio'; }
+
+      const price = hasGiftBoxAddon ? (basePrice + 10) : basePrice;
+      const title = `Custom Bundle: ${label}${hasGiftBoxAddon ? ' + Holiday Gift Box' : ''}`;
+      const desc = bundleChoices.map(x => x.title).join(' • ');
       addItemToCart(title, desc, price, bundleChoices[0].img);
     }
 
     // Forms
     function handleNewsletter(e) {
       e.preventDefault();
-      document.getElementById('nl-success-msg').style.display = 'block';
+      alert('✓ Welcome to the Cocktail Hour Society! Use code WAYWARD10 at checkout for 10% off your first order.');
     }
     function handleWholesaleSubmit(e) {
       e.preventDefault();
       document.getElementById('ws-msg').style.display = 'block';
     }
-    function openSocietyModal() {
-      setView('home');
-      scrollToId('nl-email');
-      document.getElementById('nl-email').focus();
-    }
+
+    // 72-Hour Timer Simulation
+    let secondsLeft = 72 * 3600;
+    setInterval(() => {
+      secondsLeft--;
+      if (secondsLeft < 0) secondsLeft = 72 * 3600;
+      const hrs = Math.floor(secondsLeft / 3600);
+      const mins = Math.floor((secondsLeft % 3600) / 60);
+      const secs = secondsLeft % 60;
+      const display = document.getElementById('clock-display');
+      if (display) {
+        display.textContent = `${String(hrs).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+      }
+    }, 1000);
 
     // Initialize
     renderGrid();
