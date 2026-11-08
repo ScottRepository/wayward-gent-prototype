@@ -144,6 +144,7 @@
     .header-wrapper {
       background: #ffffff;
       border-bottom: 1px solid var(--color-base-border);
+      transition: all 0.2s ease;
     }
     .header {
       display: grid;
@@ -155,6 +156,31 @@
       display: flex;
       align-items: center;
       gap: 12px;
+    }
+    .header-brand-mini {
+      display: none;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #121212;
+    }
+    .header-brand-mini img {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid #ddd;
+      object-fit: cover;
+      object-position: top;
+      background: #fff;
+    }
+    .header-brand-mini .brand-text {
+      font-family: 'Georgia', serif;
+      font-weight: 800;
+      font-size: 16px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      line-height: 1;
+      color: #121212;
     }
     .header-logo-container {
       text-align: center;
@@ -252,37 +278,231 @@
       color: #fff;
     }
 
-    /* CRO HIGHLIGHT PILL */
-    .cro-pill {
-      display: inline-flex;
+    /* ============================================================== */
+    /* LAYOUT MODE STYLES (SPLIT-HERO SHOWCASE VS CLASSIC)           */
+    /* ============================================================== */
+
+    /* Split-Hero Mode: Streamlines header to single row, keeps menu top */
+    body.layout-split .header-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    body.layout-split .header {
+      display: flex;
       align-items: center;
-      gap: 6px;
-      background: #eef8f2;
-      color: #137333;
-      border: 1px solid #c6ebd2;
-      padding: 5px 12px;
-      border-radius: 4px;
-      font-size: 11px;
-      font-weight: 600;
-      margin-bottom: 14px;
-      line-height: 1.4;
+      justify-content: space-between;
+      padding: 10px 0;
+      gap: 16px;
+    }
+    body.layout-split .header-logo-container {
+      display: none;
+    }
+    body.layout-split .header-brand-mini {
+      display: inline-flex;
+    }
+    body.layout-split .header-nav {
+      padding: 0;
+      border-top: none;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    body.layout-split .header-nav ul {
+      gap: 18px;
     }
 
-    /* DAWN HERO BANNER */
+    /* Classic Mode: Restores original vertical center logo */
+    body.layout-classic .header-brand-mini {
+      display: none !important;
+    }
+    body.layout-classic .header-logo-container {
+      display: block !important;
+    }
+    body.layout-classic .header {
+      display: grid !important;
+      grid-template-columns: 1fr auto 1fr !important;
+      align-items: center !important;
+      padding: 22px 0 14px !important;
+    }
+    body.layout-classic .header-nav {
+      border-top: 1px solid transparent !important;
+      padding: 8px 0 16px !important;
+      text-align: center !important;
+      display: block !important;
+    }
+    body.layout-classic .banner-split-container {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+    }
+    body.layout-classic .banner-logo-column {
+      display: none !important;
+    }
+    body.layout-classic .banner-box-split {
+      text-align: center !important;
+      max-width: 680px !important;
+      margin: 0 auto !important;
+    }
+    body.layout-classic .banner-hero-perks {
+      justify-content: center !important;
+    }
+    body.layout-classic .banner-cta-group {
+      justify-content: center !important;
+    }
+
+    /* SPLIT HERO SHOWCASE SECTION */
     .banner {
       position: relative;
-      min-height: 520px;
+      min-height: 480px;
       background-image: url('https://waywardgentcocktails.ca/cdn/shop/files/7716774d-07ed-4c98-8e98-04b17ca75c2d.jpg?v=1722222554&width=1780');
       background-size: cover;
       background-position: center;
       display: flex;
-      align-items: flex-end;
+      align-items: center;
       justify-content: center;
-      padding: 40px 16px;
+      padding: 36px 16px;
     }
     .banner::before {
       content: '';
       position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.40);
+    }
+    .banner-split-container {
+      display: grid;
+      grid-template-columns: 310px 1fr;
+      gap: 36px;
+      align-items: center;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+    .banner-logo-column {
+      display: flex;
+      justify-content: center;
+    }
+    .banner-logo-card {
+      background: #ffffff;
+      padding: 16px 22px 18px;
+      border-radius: 6px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 2px 8px rgba(0,0,0,0.2);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      text-align: center;
+      max-width: 270px;
+      width: 100%;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .banner-logo-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55);
+    }
+    .crest-tag {
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #666;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 6px;
+    }
+    .banner-crest-img {
+      max-width: 200px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    .crest-caption {
+      font-size: 11px;
+      font-style: italic;
+      color: #444;
+      margin-top: 8px;
+      border-top: 1px solid #eee;
+      padding-top: 6px;
+    }
+
+    /* RIGHT COLUMN (Marketing & CTAs) */
+    .banner-content-column {
+      display: flex;
+    }
+    .banner-box-split {
+      position: relative;
+      background: rgba(18, 18, 18, 0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #ffffff;
+      padding: 34px 40px;
+      border-radius: 6px;
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+      text-align: left;
+    }
+    .banner-eyebrow {
+      font-size: 11px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      color: #e0a96d;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .banner-heading {
+      font-size: 32px;
+      letter-spacing: 2px;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      line-height: 1.15;
+    }
+    .banner-subtext {
+      font-size: 14.5px;
+      color: #eaeaea;
+      margin-bottom: 22px;
+      letter-spacing: 0.3px;
+      line-height: 1.6;
+      max-width: 620px;
+    }
+    .banner-cta-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .banner-hero-perks {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: #cfcfcf;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 16px;
+    }
+    .banner-hero-perks span {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    @media (max-width: 960px) {
+      .banner-split-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .banner-box-split {
+        text-align: center;
+        padding: 24px;
+      }
+      .banner-cta-group,
+      .banner-hero-perks {
+        justify-content: center;
+      }
+    }
       inset: 0;
       background: rgba(0, 0, 0, 0.25);
     }
@@ -1045,7 +1265,7 @@
     }
   </style>
 </head>
-<body>
+<body class="layout-split">
 
   <!-- PROTOTYPE CONTROLLER BAR -->
   <div class="proto-bar">
@@ -1068,6 +1288,13 @@
       <button onclick="setView('story')" id="tab-story" class="proto-tab-btn">7. Our Story</button>
     </div>
 
+    <!-- Layout Mode Switcher (Split-Hero Showcase vs Classic) -->
+    <div style="display:flex; align-items:center; gap:6px; background:#242424; padding:3px 8px; border-radius:4px; border:1px solid #444;">
+      <span style="font-size:10px; color:#aaa; font-weight:700; letter-spacing:0.8px;">LAYOUT:</span>
+      <button onclick="setLayoutMode('split')" id="btn-layout-split" style="background:#137333; color:#fff; border:none; padding:4px 9px; border-radius:3px; font-size:11px; font-weight:700; cursor:pointer;">⚡ Split-Hero (New)</button>
+      <button onclick="setLayoutMode('classic')" id="btn-layout-classic" style="background:transparent; color:#bbb; border:1px solid #444; padding:3px 9px; border-radius:3px; font-size:11px; cursor:pointer;">Classic Center</button>
+    </div>
+
     <label class="proto-note-toggle">
       <input type="checkbox" id="badge-toggle" checked onchange="togglePills(this.checked)">
       <span>Show Sister Feedback Notes</span>
@@ -1088,48 +1315,52 @@
   <!-- SHOPIFY DAWN HEADER -->
   <div class="header-wrapper">
     <header class="header page-width">
-      <!-- Left: Region -->
+      <!-- Left: Compact Brand + Region -->
       <div class="header-left">
-        <span style="font-size:12px; letter-spacing:1px; text-transform:uppercase; color:#777;">
-          🇨🇦 Canada | CAD $
+        <a href="javascript:void(0)" onclick="setView('home')" class="header-brand-mini" title="Wayward Gent Cocktails">
+          <img src="https://waywardgentcocktails.ca/cdn/shop/files/feb3b897-2766-4d75-b66e-54f961e18caa_a684ab8c-0a9f-4da5-aa38-53a496cb2b7b.jpg?v=1722271940&width=210" alt="Wayward Gent">
+          <span class="brand-text">Wayward Gent</span>
+        </a>
+        <span class="header-region-tag" style="font-size:12px; letter-spacing:1px; text-transform:uppercase; color:#777;">
+          🇨🇦 CAD $
         </span>
       </div>
 
-      <!-- Center: WAYWARD GENT LOGO -->
+      <!-- Center: WAYWARD GENT LOGO (Shown in Classic Mode) -->
       <div class="header-logo-container">
         <a href="javascript:void(0)" onclick="setView('home')">
           <img src="https://waywardgentcocktails.ca/cdn/shop/files/feb3b897-2766-4d75-b66e-54f961e18caa_a684ab8c-0a9f-4da5-aa38-53a496cb2b7b.jpg?v=1722271940&width=210" alt="Wayward Gent Cocktails" width="210">
         </a>
       </div>
 
+      <!-- INLINE NAVIGATION (Includes Build a Pack, Holiday Kits, and Wholesale) -->
+      <nav class="header-nav page-width" id="header-main-nav">
+        <ul>
+          <li><a href="javascript:void(0)" onclick="setView('home')" id="nav-home" class="active">HOME</a></li>
+          <li><a href="javascript:void(0)" onclick="setView('home'); scrollToId('featured-grid');">SHOP ALL</a></li>
+          <li><a href="javascript:void(0)" onclick="setView('bundle')" id="nav-bundle">BUILD A PACK <span class="nav-badge">SAVE 15%</span></a></li>
+          <li><a href="javascript:void(0)" onclick="setView('holiday')" id="nav-holiday">HOLIDAY KITS <span class="nav-badge nav-badge-holiday">NEW</span></a></li>
+          <li><a href="javascript:void(0)" onclick="setView('howto')" id="nav-howto">HOW TO USE</a></li>
+          <li><a href="javascript:void(0)" onclick="setView('society')" id="nav-society">COCKTAIL HOUR SOCIETY</a></li>
+          <li><a href="javascript:void(0)" onclick="setView('wholesale')" id="nav-wholesale">WHOLESALE</a></li>
+          <li><a href="javascript:void(0)" onclick="setView('story')" id="nav-story">OUR STORY</a></li>
+        </ul>
+      </nav>
+
       <!-- Right: Search, Account & Cart -->
       <div class="header-right">
-        <button class="header-icon-btn" aria-label="Search" onclick="alert('Shopify Predictive Search: Search all 42 flavours!')">
+        <button class="header-icon-btn" aria-label="Search" onclick="alert('Shopify Predictive Search: Search all 42 flavours!')" title="Search">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         </button>
-        <button class="header-icon-btn" aria-label="Account" onclick="setView('wholesale')">
+        <button class="header-icon-btn" aria-label="Account" onclick="setView('wholesale')" title="Wholesale / Account">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
         </button>
-        <button onclick="toggleCartDrawer(true)" class="header-icon-btn" aria-label="Cart">
+        <button onclick="toggleCartDrawer(true)" class="header-icon-btn" aria-label="Cart" title="Cart">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
           <span class="cart-bubble" id="header-cart-count">2</span>
         </button>
       </div>
     </header>
-
-    <!-- INLINE NAVIGATION (Includes Build a Pack, Holiday Kits, and Wholesale) -->
-    <nav class="header-nav page-width">
-      <ul>
-        <li><a href="javascript:void(0)" onclick="setView('home')" id="nav-home" class="active">HOME</a></li>
-        <li><a href="javascript:void(0)" onclick="setView('home'); scrollToId('featured-grid');">SHOP ALL</a></li>
-        <li><a href="javascript:void(0)" onclick="setView('bundle')" id="nav-bundle">BUILD A PACK <span class="nav-badge">SAVE 15%</span></a></li>
-        <li><a href="javascript:void(0)" onclick="setView('holiday')" id="nav-holiday">HOLIDAY KITS <span class="nav-badge nav-badge-holiday">NEW</span></a></li>
-        <li><a href="javascript:void(0)" onclick="setView('howto')" id="nav-howto">HOW TO USE</a></li>
-        <li><a href="javascript:void(0)" onclick="setView('society')" id="nav-society">COCKTAIL HOUR SOCIETY</a></li>
-        <li><a href="javascript:void(0)" onclick="setView('wholesale')" id="nav-wholesale">WHOLESALE</a></li>
-        <li><a href="javascript:void(0)" onclick="setView('story')" id="nav-story">OUR STORY</a></li>
-      </ul>
-    </nav>
   </div>
 
   <!-- ============================================================== -->
@@ -1137,19 +1368,39 @@
   <!-- ============================================================== -->
   <div id="view-home" class="inner-page-view active">
 
-    <!-- HERO IMAGE BANNER -->
+    <!-- HERO IMAGE BANNER (SPLIT-HERO SHOWCASE) -->
     <section class="banner">
-      <div class="banner-box">
-        <div class="cro-pill">
-          ✨ Sister Note: Direct call-to-actions to purchase right away + $200 free shipping threshold
+      <div class="page-width banner-split-container">
+        <!-- Left Column: The Full Vertical Signature Logo Crest -->
+        <div class="banner-logo-column">
+          <div class="banner-logo-card">
+            <div class="crest-tag">Small Batch • Est. Norwood ON</div>
+            <img src="https://waywardgentcocktails.ca/cdn/shop/files/feb3b897-2766-4d75-b66e-54f961e18caa_a684ab8c-0a9f-4da5-aa38-53a496cb2b7b.jpg?v=1722271940&width=210" alt="The Wayward Gent" class="banner-crest-img">
+            <div class="crest-caption">High Brow Cocktails Made Simple</div>
+          </div>
         </div>
-        <h1 class="banner-heading">PICK YOUR POISON</h1>
-        <p style="font-size:14px; color:#ddd; margin-bottom:22px; letter-spacing:0.5px; line-height:1.6;">
-          Handcrafted cocktail infusions, freeze-dried simple syrup pucks, and flavoured rimmers. Hand-packed in Norwood, Ontario.
-        </p>
-        <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
-          <a href="#featured-grid" class="btn-dawn-secondary">SHOP ALL FLAVOURS</a>
-          <a href="javascript:void(0)" onclick="setView('bundle')" class="btn-dawn-secondary" style="background:#121212; color:#fff; border-color:#fff;">BUILD A PACK (SAVE 15%)</a>
+
+        <!-- Right Column: Marketing Hook & Primary CTAs -->
+        <div class="banner-content-column">
+          <div class="banner-box-split">
+            <div class="cro-pill">
+              ✨ Sister Note: Direct call-to-actions to purchase right away + $200 free shipping threshold
+            </div>
+            <div class="banner-eyebrow">HIGH BROW COCKTAILS MADE SIMPLE</div>
+            <h1 class="banner-heading">PICK YOUR POISON</h1>
+            <p class="banner-subtext">
+              Handcrafted cocktail infusions, freeze-dried simple syrup pucks, and flavoured rimmers. Hand-packed in house at <strong>The CakeHouse</strong> in Norwood, Ontario.
+            </p>
+            <div class="banner-cta-group">
+              <a href="#featured-grid" class="btn-dawn-secondary">SHOP ALL FLAVOURS</a>
+              <a href="javascript:void(0)" onclick="setView('bundle')" class="btn-dawn-secondary" style="background:#121212; color:#fff; border-color:#fff;">BUILD A PACK (SAVE 15%)</a>
+            </div>
+            <div class="banner-hero-perks">
+              <span>🚚 Free Shipping Over $200 CAD</span>
+              <span>🥃 1 Infusion = 8–12 Cocktails</span>
+              <span>🧁 Free Pickup in Norwood</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1914,6 +2165,43 @@
       document.querySelectorAll('.cro-pill').forEach(el => {
         el.style.display = show ? 'inline-flex' : 'none';
       });
+    }
+
+    // Layout Switcher: Split-Hero Showcase vs Classic Vertical
+    function setLayoutMode(mode) {
+      const splitBtn = document.getElementById('btn-layout-split');
+      const classicBtn = document.getElementById('btn-layout-classic');
+      if (mode === 'split') {
+        document.body.classList.remove('layout-classic');
+        document.body.classList.add('layout-split');
+        if (splitBtn) {
+          splitBtn.style.background = '#137333';
+          splitBtn.style.color = '#fff';
+          splitBtn.style.border = 'none';
+          splitBtn.style.fontWeight = '700';
+        }
+        if (classicBtn) {
+          classicBtn.style.background = 'transparent';
+          classicBtn.style.color = '#bbb';
+          classicBtn.style.border = '1px solid #444';
+          classicBtn.style.fontWeight = '400';
+        }
+      } else {
+        document.body.classList.remove('layout-split');
+        document.body.classList.add('layout-classic');
+        if (classicBtn) {
+          classicBtn.style.background = '#137333';
+          classicBtn.style.color = '#fff';
+          classicBtn.style.border = 'none';
+          classicBtn.style.fontWeight = '700';
+        }
+        if (splitBtn) {
+          splitBtn.style.background = 'transparent';
+          splitBtn.style.color = '#bbb';
+          splitBtn.style.border = '1px solid #444';
+          splitBtn.style.fontWeight = '400';
+        }
+      }
     }
 
     // Cart Drawer Engine ($200 Threshold)
