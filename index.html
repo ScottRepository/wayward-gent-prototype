@@ -485,34 +485,12 @@
       border-top: 1px solid rgba(224, 169, 109, 0.25);
       padding-top: 18px;
     }
-      letter-spacing: 0.5px;
-      color: #cfcfcf;
-      border-top: 1px solid rgba(255, 255, 255, 0.15);
-      padding-top: 16px;
-    }
     .banner-hero-perks span {
       display: inline-flex;
       align-items: center;
       gap: 5px;
     }
 
-    @media (max-width: 960px) {
-      .banner-split-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-      .banner-box-split {
-        text-align: center;
-        padding: 24px;
-      }
-      .banner-cta-group,
-      .banner-hero-perks {
-        justify-content: center;
-      }
-    }
-      inset: 0;
-      background: rgba(0, 0, 0, 0.25);
-    }
     .banner-box {
       position: relative;
       background: rgba(18, 18, 18, 0.90);
@@ -572,7 +550,7 @@
     }
     .value-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 20px;
       text-align: center;
     }
@@ -1821,18 +1799,464 @@
       display: flex;
       gap: 8px;
     }
+
+    /* ============================================================== */
+    /* MOBILE NAVIGATION DRAWER & BUTTON                             */
+    /* ============================================================== */
+    .mobile-menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 4px;
+      color: #121212;
+      background: transparent;
+      transition: background 0.15s ease;
+      cursor: pointer;
+      margin-right: 4px;
+      flex-shrink: 0;
+    }
+    .mobile-menu-toggle:hover {
+      background: #f0f0f0;
+    }
+    .mobile-nav-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(4px);
+      z-index: 9998;
+      display: none;
+      animation: wgFadeIn 0.2s ease;
+    }
+    .mobile-nav-overlay.open {
+      display: block;
+    }
+    .mobile-nav-drawer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 320px;
+      max-width: 86vw;
+      background: #181818;
+      color: #ffffff;
+      z-index: 9999;
+      transform: translateX(-100%);
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      box-shadow: 4px 0 25px rgba(0, 0, 0, 0.5);
+    }
+    .mobile-nav-drawer.open {
+      transform: translateX(0);
+    }
+    .mobile-nav-header {
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #282828;
+    }
+    .mobile-nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #e0a96d;
+      text-transform: uppercase;
+    }
+    .mobile-nav-brand img {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid #e0a96d;
+    }
+    .mobile-nav-close {
+      color: #aaa;
+      font-size: 30px;
+      line-height: 1;
+      padding: 4px 8px;
+      cursor: pointer;
+    }
+    .mobile-nav-close:hover { color: #fff; }
+    .mobile-nav-body {
+      padding: 10px 0 0;
+      overflow-y: auto;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .mobile-nav-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .mobile-nav-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 13px 20px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      color: #ddd;
+      border-bottom: 1px solid #242424;
+      text-transform: uppercase;
+      transition: all 0.15s ease;
+    }
+    .mobile-nav-link:hover,
+    .mobile-nav-link.active {
+      background: #251e18;
+      color: #e0a96d;
+      border-left: 4px solid #e0a96d;
+      padding-left: 16px;
+    }
+    .mobile-nav-link.highlight {
+      color: #fff;
+    }
+    .mobile-nav-extras {
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: auto;
+    }
+    .mobile-nav-cta-btn {
+      width: 100%;
+      padding: 12px;
+      border-radius: 4px;
+      font-size: 12.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .mobile-nav-footer {
+      padding: 14px 20px;
+      background: #111;
+      border-top: 1px solid #282828;
+      font-size: 11px;
+      color: #aaa;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    /* ============================================================== */
+    /* COMPREHENSIVE RESPONSIVE STYLES (MOBILE & TABLET)              */
+    /* ============================================================== */
+    @media (max-width: 900px) {
+      .header-nav {
+        display: none !important;
+      }
+      .mobile-menu-toggle {
+        display: inline-flex !important;
+      }
+      .header {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 10px 16px !important;
+      }
+      body.layout-split .header-brand-mini,
+      body.layout-classic .header-brand-mini {
+        display: inline-flex !important;
+      }
+      body.layout-classic .header-logo-container {
+        display: none !important;
+      }
+      .header-brand-mini img {
+        width: 34px !important;
+        height: 34px !important;
+      }
+      .header-brand-mini .brand-text {
+        font-size: 16px !important;
+      }
+      .header-region-tag {
+        display: none !important;
+      }
+      .proto-bar {
+        padding: 8px 12px;
+        gap: 8px;
+      }
+      .proto-tabs {
+        gap: 4px;
+      }
+      .proto-tab-btn {
+        padding: 5px 9px;
+        font-size: 11px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      html, body {
+        overflow-x: hidden;
+      }
+      .page-width {
+        padding: 0 16px;
+      }
+      .announcement-bar {
+        font-size: 10.5px;
+        padding: 8px 12px;
+        gap: 8px;
+        line-height: 1.4;
+      }
+      .announcement-bar .divider {
+        display: none;
+      }
+      .banner {
+        min-height: auto !important;
+        padding: 24px 12px !important;
+      }
+      .banner-split-container {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+      .banner-logo-column {
+        display: flex !important;
+        justify-content: center !important;
+      }
+      .banner-crest-card {
+        max-width: 140px !important;
+        padding: 10px 12px !important;
+        margin: 0 auto !important;
+      }
+      .banner-crest-img {
+        max-width: 110px !important;
+      }
+      .crest-caption {
+        font-size: 10px !important;
+        margin-top: 6px !important;
+      }
+      .banner-box-split {
+        padding: 24px 18px !important;
+        text-align: center !important;
+      }
+      .banner-eyebrow {
+        font-size: 11px !important;
+        letter-spacing: 2px !important;
+      }
+      .banner-heading {
+        font-size: 24px !important;
+        letter-spacing: 1px !important;
+        margin-bottom: 10px !important;
+      }
+      .banner-subtext {
+        font-size: 13.5px !important;
+        line-height: 1.55 !important;
+        margin-bottom: 18px !important;
+      }
+      .banner-cta-group {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 10px !important;
+      }
+      .banner-cta-group .btn-dawn-primary,
+      .banner-cta-group .btn-dawn-secondary {
+        width: 100% !important;
+        padding: 13px !important;
+        text-align: center !important;
+      }
+      .banner-hero-perks {
+        justify-content: center !important;
+        font-size: 11px !important;
+        gap: 10px !important;
+        flex-direction: column !important;
+        align-items: center !important;
+      }
+      .value-strip {
+        padding: 16px 0 !important;
+      }
+      .value-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+      }
+      .value-item {
+        padding: 8px 4px !important;
+      }
+      .value-item h4 {
+        font-size: 11px !important;
+      }
+      .value-item p {
+        font-size: 10.5px !important;
+      }
+      .product-grid {
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+      }
+      .filter-pills {
+        justify-content: flex-start !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        padding-bottom: 6px !important;
+        flex-wrap: nowrap !important;
+      }
+      .filter-pill {
+        flex-shrink: 0 !important;
+        font-size: 11px !important;
+        padding: 8px 14px !important;
+      }
+      .steps-grid {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+      }
+      .clock-display {
+        font-size: 34px !important;
+        letter-spacing: 2px !important;
+      }
+      .events-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+      .holiday-kits-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+      .bundle-layout {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+      }
+      .bundle-flavor-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+      }
+      .bundle-modes-strip {
+        gap: 8px !important;
+      }
+      .bundle-mode-card {
+        flex: 1 1 calc(50% - 6px) !important;
+        min-width: 135px !important;
+        padding: 10px !important;
+      }
+      .bundle-summary-box {
+        position: static !important;
+      }
+      .page-title {
+        font-size: 22px !important;
+        margin-bottom: 10px !important;
+      }
+      .inner-page-content {
+        padding: 24px 0 !important;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+      }
+      .footer-bottom {
+        flex-direction: column !important;
+        gap: 8px !important;
+        text-align: center !important;
+      }
+
+      /* Quick View Modal Mobile Polish */
+      .quickview-overlay {
+        padding: 10px !important;
+      }
+      .quickview-box {
+        grid-template-columns: 1fr !important;
+        max-height: 94vh !important;
+        border-radius: 6px !important;
+      }
+      .quickview-media img {
+        min-height: 180px !important;
+        max-height: 210px !important;
+        width: 100% !important;
+        object-fit: cover !important;
+      }
+      .quickview-content {
+        padding: 18px 16px !important;
+      }
+      .quickview-close {
+        top: 8px !important;
+        right: 8px !important;
+        background: #ffffff !important;
+        border: 1px solid #ddd !important;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2) !important;
+      }
+
+      /* 10% Promo Modal Mobile Polish */
+      .promo-modal-box {
+        padding: 26px 18px 20px !important;
+        max-width: 95vw !important;
+      }
+      .promo-title {
+        font-size: 20px !important;
+        margin-bottom: 8px !important;
+      }
+      .promo-desc {
+        font-size: 12.5px !important;
+        margin-bottom: 16px !important;
+      }
+
+      /* AI Chatbot Concierge Mobile Polish */
+      .wg-chat-launcher {
+        bottom: 16px !important;
+        right: 16px !important;
+        padding: 10px 14px !important;
+        font-size: 13px !important;
+        border-radius: 30px !important;
+      }
+      .wg-chat-modal {
+        inset: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 100% !important;
+        max-height: 100% !important;
+        border-radius: 0 !important;
+        bottom: 0 !important;
+        right: 0 !important;
+        border: none !important;
+      }
+      .wg-chat-body {
+        padding: 14px !important;
+      }
+
+      /* Cart Drawer Mobile */
+      .cart-drawer {
+        max-width: 100vw !important;
+      }
+    }
   </style>
 </head>
 <body class="layout-split">
 
   <!-- PROTOTYPE CONTROLLER BAR -->
   <div class="proto-bar">
-    <div style="display:flex; align-items:center; gap:10px;">
-      <span class="proto-badge">
-        <span class="dot"></span>
-        v2.0 Sister Feedback Release
-      </span>
-      <span style="font-size:12px; color:#bbb;">Updated with Tam's requirements (Oct 28 Chat)</span>
+    <div style="display:flex; align-items:center; justify-content:space-between; width:100%; flex-wrap:wrap; gap:8px;">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <span class="proto-badge">
+          <span class="dot"></span>
+          v3.0 Mobile-Friendly &amp; Strategy Release
+        </span>
+        <span class="proto-bar-subtitle" style="font-size:12px; color:#bbb;">Sister Meeting Updates (Nov 9)</span>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
+        <!-- Layout Mode Switcher -->
+        <div style="display:flex; align-items:center; gap:4px; background:#242424; padding:2px 6px; border-radius:4px; border:1px solid #444;">
+          <span style="font-size:10px; color:#aaa; font-weight:700;">LAYOUT:</span>
+          <button onclick="setLayoutMode('split')" id="btn-layout-split" style="background:#137333; color:#fff; border:none; padding:3px 7px; border-radius:3px; font-size:10.5px; font-weight:700; cursor:pointer;">⚡ Split-Hero</button>
+          <button onclick="setLayoutMode('classic')" id="btn-layout-classic" style="background:transparent; color:#bbb; border:1px solid #444; padding:2px 7px; border-radius:3px; font-size:10.5px; cursor:pointer;">Classic</button>
+        </div>
+
+        <!-- 10% Promo Modal Trigger -->
+        <button onclick="openPromoModal()" style="background:#b45309; color:#fff; border:none; padding:4px 8px; border-radius:3px; font-size:10.5px; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:4px;">
+          🎁 10% Popup
+        </button>
+
+        <!-- AI Chatbot Launcher in Demo Bar -->
+        <button onclick="toggleChat(true)" style="background:#4338ca; color:#fff; border:none; padding:4px 8px; border-radius:3px; font-size:10.5px; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:4px;">
+          💬 Concierge
+        </button>
+
+        <label class="proto-note-toggle">
+          <input type="checkbox" id="badge-toggle" checked onchange="togglePills(this.checked)">
+          <span>Show Notes</span>
+        </label>
+      </div>
     </div>
 
     <!-- View Switcher -->
@@ -1846,28 +2270,6 @@
       <button onclick="setView('wholesale')" id="tab-wholesale" class="proto-tab-btn">7. Wholesale ($250 Min + Login)</button>
       <button onclick="setView('story')" id="tab-story" class="proto-tab-btn">8. Our Story</button>
     </div>
-
-    <!-- Layout Mode Switcher (Split-Hero Showcase vs Classic) -->
-    <div style="display:flex; align-items:center; gap:6px; background:#242424; padding:3px 8px; border-radius:4px; border:1px solid #444;">
-      <span style="font-size:10px; color:#aaa; font-weight:700; letter-spacing:0.8px;">LAYOUT:</span>
-      <button onclick="setLayoutMode('split')" id="btn-layout-split" style="background:#137333; color:#fff; border:none; padding:4px 9px; border-radius:3px; font-size:11px; font-weight:700; cursor:pointer;">⚡ Split-Hero (New)</button>
-      <button onclick="setLayoutMode('classic')" id="btn-layout-classic" style="background:transparent; color:#bbb; border:1px solid #444; padding:3px 9px; border-radius:3px; font-size:11px; cursor:pointer;">Classic Center</button>
-    </div>
-
-    <!-- 10% Promo Modal Trigger -->
-    <button onclick="openPromoModal()" style="background:#b45309; color:#fff; border:none; padding:4px 10px; border-radius:3px; font-size:11px; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:5px;">
-      🎁 Test 10% Popup
-    </button>
-
-    <!-- AI Chatbot Launcher in Demo Bar -->
-    <button onclick="toggleChat(true)" style="background:#4338ca; color:#fff; border:none; padding:4px 10px; border-radius:3px; font-size:11px; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:5px;">
-      💬 Open AI Concierge
-    </button>
-
-    <label class="proto-note-toggle">
-      <input type="checkbox" id="badge-toggle" checked onchange="togglePills(this.checked)">
-      <span>Show Sister Feedback Notes</span>
-    </label>
   </div>
 
   <!-- ANNOUNCEMENT BAR (Updated: $200 CAD Free Shipping Threshold as requested by Tam) -->
@@ -1884,8 +2286,15 @@
   <!-- SHOPIFY DAWN HEADER -->
   <div class="header-wrapper">
     <header class="header page-width">
-      <!-- Left: Compact Brand + Region -->
+      <!-- Left: Mobile Menu Hamburger + Compact Brand -->
       <div class="header-left">
+        <button class="mobile-menu-toggle" onclick="toggleMobileNav(true)" aria-label="Open navigation menu">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="22" height="22">
+            <line x1="3" y1="6" x2="21" y2="6" stroke-width="2" stroke-linecap="round"/>
+            <line x1="3" y1="12" x2="21" y2="12" stroke-width="2" stroke-linecap="round"/>
+            <line x1="3" y1="18" x2="21" y2="18" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
         <a href="javascript:void(0)" onclick="setView('home')" class="header-brand-mini" title="Wayward Gent Cocktails">
           <img src="https://waywardgentcocktails.ca/cdn/shop/files/feb3b897-2766-4d75-b66e-54f961e18caa_a684ab8c-0a9f-4da5-aa38-53a496cb2b7b.jpg?v=1722271940&width=210" alt="Wayward Gent">
           <span class="brand-text">Wayward Gent</span>
@@ -1934,6 +2343,88 @@
   </div>
 
   <!-- ============================================================== -->
+  <!-- MOBILE NAVIGATION DRAWER & OVERLAY                             -->
+  <!-- ============================================================== -->
+  <div id="mobile-nav-overlay" class="mobile-nav-overlay" onclick="toggleMobileNav(false)"></div>
+  <aside id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="Mobile Navigation Drawer">
+    <div class="mobile-nav-header">
+      <div class="mobile-nav-brand">
+        <img src="https://waywardgentcocktails.ca/cdn/shop/files/feb3b897-2766-4d75-b66e-54f961e18caa_a684ab8c-0a9f-4da5-aa38-53a496cb2b7b.jpg?v=1722271940&width=210" alt="Wayward Gent">
+        <span>Wayward Gent</span>
+      </div>
+      <button class="mobile-nav-close" onclick="toggleMobileNav(false)" aria-label="Close menu">&times;</button>
+    </div>
+
+    <div class="mobile-nav-body">
+      <ul class="mobile-nav-list">
+        <li>
+          <a href="javascript:void(0)" onclick="mobileNavigate('home')" id="mnav-home" class="mobile-nav-link active">
+            <span>🏠 Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" onclick="mobileNavigate('home', 'featured-grid')" class="mobile-nav-link">
+            <span>🍸 Shop All Flavours</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" onclick="mobileNavigate('bundle')" id="mnav-bundle" class="mobile-nav-link highlight">
+            <span>🎁 Build a Pack</span>
+            <span class="nav-badge" style="background:#137333;">SAVE 15%</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" onclick="mobileNavigate('holiday')" id="mnav-holiday" class="mobile-nav-link highlight">
+            <span>🎄 Holiday Kits &amp; Gifts</span>
+            <span class="nav-badge nav-badge-holiday">NEW</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" onclick="mobileNavigate('events')" id="mnav-events" class="mobile-nav-link">
+            <span>🎪 Where to Find Me</span>
+            <span class="nav-badge" style="background:#b45309;">SHOWS</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" onclick="mobileNavigate('howto')" id="mnav-howto" class="mobile-nav-link">
+            <span>⏱️ How to Use (72h Steeping)</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" onclick="mobileNavigate('society')" id="mnav-society" class="mobile-nav-link">
+            <span>🥃 Cocktail Club Box</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" onclick="mobileNavigate('wholesale')" id="mnav-wholesale" class="mobile-nav-link">
+            <span>👔 Wholesale Portal</span>
+            <span class="nav-badge" style="background:#444;">$250 MIN</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" onclick="mobileNavigate('story')" id="mnav-story" class="mobile-nav-link">
+            <span>📖 Our Story (Bakery Roots)</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="mobile-nav-extras">
+        <button onclick="toggleMobileNav(false); openPromoModal();" class="mobile-nav-cta-btn" style="background:#5a2d0c; color:#ffdd99; border:1px solid #e0a96d;">
+          🎁 Claim 10% Welcome Discount
+        </button>
+        <button onclick="toggleMobileNav(false); toggleChat(true);" class="mobile-nav-cta-btn" style="background:#252525; color:#fff; border:1px solid #444;">
+          💬 Ask AI Mixologist
+        </button>
+      </div>
+
+      <div class="mobile-nav-footer">
+        <div style="color:#e0a96d; font-weight:700; margin-bottom:4px;">🚚 FREE SHIPPING OVER $200 CAD</div>
+        <div>📍 Free Local Pickup at The CakeHouse in Norwood, ON</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============================================================== -->
   <!-- VIEW 1: HOMEPAGE                                              -->
   <!-- ============================================================== -->
   <div id="view-home" class="inner-page-view active">
@@ -1978,7 +2469,7 @@
 
     <!-- TRUST STRIP (TAM'S REQUEST: REAL INGREDIENTS, VEGAN, GLUTEN-FREE, NO CUPCAKE) -->
     <div class="value-strip">
-      <div class="page-width value-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+      <div class="page-width value-grid">
         <div class="value-item">
           <h4>🌿 100% REAL INGREDIENTS</h4>
           <p>Real dehydrated fruits, organic botanicals &amp; whole spices</p>
@@ -3060,6 +3551,31 @@
       renderGrid();
     }
 
+    // Mobile Navigation Logic
+    function toggleMobileNav(open) {
+      const drawer = document.getElementById('mobile-nav-drawer');
+      const overlay = document.getElementById('mobile-nav-overlay');
+      if (open) {
+        drawer.classList.add('open');
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      } else {
+        drawer.classList.remove('open');
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function mobileNavigate(viewKey, scrollToElementId) {
+      toggleMobileNav(false);
+      setView(viewKey);
+      if (scrollToElementId) {
+        setTimeout(() => {
+          scrollToId(scrollToElementId);
+        }, 220);
+      }
+    }
+
     // View Switching
     function setView(viewKey) {
       document.querySelectorAll('.inner-page-view').forEach(v => v.classList.remove('active'));
@@ -3073,6 +3589,10 @@
       document.querySelectorAll('.header-nav a').forEach(a => a.classList.remove('active'));
       const activeNav = document.getElementById('nav-' + viewKey);
       if (activeNav) activeNav.classList.add('active');
+
+      document.querySelectorAll('.mobile-nav-link').forEach(el => el.classList.remove('active'));
+      const activeMobileNav = document.getElementById('mnav-' + viewKey);
+      if (activeMobileNav) activeMobileNav.classList.add('active');
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
