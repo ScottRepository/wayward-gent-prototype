@@ -1263,6 +1263,297 @@
       font-size: 12px;
       color: #777;
     }
+
+    /* ============================================================== */
+    /* AI CHATBOT CONCIERGE & ORDER SUPPORT WIDGET                   */
+    /* ============================================================== */
+    .wg-chat-launcher {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #181818;
+      color: #ffffff;
+      border: 1px solid rgba(224, 169, 109, 0.4);
+      padding: 8px 16px 8px 10px;
+      border-radius: 999px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: all 0.25s ease;
+    }
+    .wg-chat-launcher:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+      border-color: #e0a96d;
+    }
+    .wg-chat-avatar-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #ffffff;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #e0a96d;
+      flex-shrink: 0;
+    }
+    .wg-chat-avatar-icon img {
+      width: 28px;
+      height: auto;
+      object-fit: cover;
+      object-position: top;
+    }
+    .wg-chat-badge {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: #25d366;
+      border-radius: 50%;
+      box-shadow: 0 0 6px #25d366;
+    }
+
+    /* CHAT MODAL WINDOW */
+    .wg-chat-modal {
+      position: fixed;
+      bottom: 84px;
+      right: 24px;
+      width: 390px;
+      max-width: calc(100vw - 32px);
+      height: 560px;
+      max-height: calc(100vh - 110px);
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), 0 4px 12px rgba(0, 0, 0, 0.15);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 10000;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      animation: wgChatSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes wgChatSlideUp {
+      from { opacity: 0; transform: translateY(16px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .wg-chat-modal.open {
+      display: flex;
+    }
+
+    /* MODAL HEADER */
+    .wg-chat-header {
+      background: #181818;
+      color: #ffffff;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #e0a96d;
+    }
+    .wg-chat-header-profile {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .wg-chat-header-title {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+    .wg-chat-header-status {
+      font-size: 11px;
+      color: #bbb;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .wg-chat-close-btn {
+      background: transparent;
+      border: none;
+      color: #bbb;
+      font-size: 20px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px;
+      transition: color 0.15s;
+    }
+    .wg-chat-close-btn:hover {
+      color: #fff;
+    }
+
+    /* MESSAGE LIST */
+    .wg-chat-body {
+      flex: 1;
+      padding: 16px;
+      overflow-y: auto;
+      background: #fdfcf9;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .wg-msg {
+      display: flex;
+      flex-direction: column;
+      max-width: 88%;
+    }
+    .wg-msg.bot {
+      align-self: flex-start;
+    }
+    .wg-msg.user {
+      align-self: flex-end;
+    }
+    .wg-msg-bubble {
+      padding: 11px 14px;
+      border-radius: 10px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .wg-msg.bot .wg-msg-bubble {
+      background: #ffffff;
+      color: #1a1a1a;
+      border: 1px solid #e9e6df;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      border-top-left-radius: 2px;
+    }
+    .wg-msg.user .wg-msg-bubble {
+      background: #181818;
+      color: #ffffff;
+      border-top-right-radius: 2px;
+    }
+    .wg-msg-time {
+      font-size: 10px;
+      color: #999;
+      margin-top: 4px;
+      padding: 0 2px;
+    }
+    .wg-msg.user .wg-msg-time {
+      align-self: flex-end;
+    }
+
+    /* QUICK ACTION PILLS */
+    .wg-quick-chips {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 10px;
+    }
+    .wg-chip {
+      background: #f3eee6;
+      color: #4a3828;
+      border: 1px solid #e0d5c3;
+      padding: 7px 11px;
+      border-radius: 6px;
+      font-size: 11.5px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .wg-chip:hover {
+      background: #e7dcce;
+      border-color: #c7b299;
+      transform: translateX(2px);
+    }
+
+    /* SIMULATED ORDER CARD */
+    .wg-order-card {
+      background: #ffffff;
+      border: 1px solid #cce1d4;
+      border-left: 4px solid #137333;
+      padding: 12px;
+      border-radius: 6px;
+      margin-top: 8px;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    .wg-order-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #e6f4ea;
+      color: #137333;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 10.5px;
+      margin-bottom: 6px;
+    }
+
+    /* FOOTER INPUT */
+    .wg-chat-footer {
+      padding: 10px 14px;
+      background: #ffffff;
+      border-top: 1px solid #eee;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .wg-chat-input {
+      flex: 1;
+      padding: 9px 12px;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      font-size: 13px;
+      outline: none;
+      font-family: inherit;
+      transition: border-color 0.2s;
+    }
+    .wg-chat-input:focus {
+      border-color: #181818;
+    }
+    .wg-chat-send-btn {
+      background: #181818;
+      color: #ffffff;
+      border: none;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s;
+      flex-shrink: 0;
+    }
+    .wg-chat-send-btn:hover {
+      background: #e0a96d;
+    }
+
+    /* TYPING INDICATOR */
+    .wg-typing {
+      display: inline-flex;
+      gap: 4px;
+      padding: 8px 12px;
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      align-self: flex-start;
+    }
+    .wg-typing-dot {
+      width: 6px;
+      height: 6px;
+      background: #999;
+      border-radius: 50%;
+      animation: wgBlink 1.4s infinite;
+    }
+    .wg-typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .wg-typing-dot:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes wgBlink {
+      0%, 80%, 100% { opacity: 0.2; transform: scale(0.8); }
+      40% { opacity: 1; transform: scale(1.1); }
+    }
   </style>
 </head>
 <body class="layout-split">
@@ -1294,6 +1585,11 @@
       <button onclick="setLayoutMode('split')" id="btn-layout-split" style="background:#137333; color:#fff; border:none; padding:4px 9px; border-radius:3px; font-size:11px; font-weight:700; cursor:pointer;">⚡ Split-Hero (New)</button>
       <button onclick="setLayoutMode('classic')" id="btn-layout-classic" style="background:transparent; color:#bbb; border:1px solid #444; padding:3px 9px; border-radius:3px; font-size:11px; cursor:pointer;">Classic Center</button>
     </div>
+
+    <!-- AI Chatbot Launcher in Demo Bar -->
+    <button onclick="toggleChat(true)" style="background:#4338ca; color:#fff; border:none; padding:4px 10px; border-radius:3px; font-size:11px; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:5px;">
+      💬 Open AI Concierge
+    </button>
 
     <label class="proto-note-toggle">
       <input type="checkbox" id="badge-toggle" checked onchange="togglePills(this.checked)">
@@ -1968,6 +2264,64 @@
     </div>
   </aside>
 
+  <!-- ============================================================== -->
+  <!-- AI CHATBOT CONCIERGE & ORDER SUPPORT WIDGET                   -->
+  <!-- ============================================================== -->
+  <!-- Floating Launcher Button -->
+  <button id="wg-chat-btn" class="wg-chat-launcher" onclick="toggleChat()" aria-label="Open virtual mixologist and order support">
+    <span class="wg-chat-avatar-icon">
+      <img src="https://waywardgentcocktails.ca/cdn/shop/files/feb3b897-2766-4d75-b66e-54f961e18caa_a684ab8c-0a9f-4da5-aa38-53a496cb2b7b.jpg?v=1722271940&width=210" alt="Wayward Gent">
+    </span>
+    <span>Ask the Wayward Gent</span>
+    <span class="wg-chat-badge" title="Online 24/7"></span>
+  </button>
+
+  <!-- Chat Modal Window -->
+  <div id="wg-chat-window" class="wg-chat-modal" role="dialog" aria-labelledby="chat-title">
+    <!-- Header -->
+    <div class="wg-chat-header">
+      <div class="wg-chat-header-profile">
+        <div class="wg-chat-avatar-icon" style="width:36px; height:36px;">
+          <img src="https://waywardgentcocktails.ca/cdn/shop/files/feb3b897-2766-4d75-b66e-54f961e18caa_a684ab8c-0a9f-4da5-aa38-53a496cb2b7b.jpg?v=1722271940&width=210" alt="Wayward Gent">
+        </div>
+        <div>
+          <div id="chat-title" class="wg-chat-header-title">Wayward Gent Concierge</div>
+          <div class="wg-chat-header-status">
+            <span class="wg-chat-badge"></span> Virtual Mixologist &amp; Support
+          </div>
+        </div>
+      </div>
+      <button class="wg-chat-close-btn" onclick="toggleChat(false)" aria-label="Close chat">&times;</button>
+    </div>
+
+    <!-- Message History -->
+    <div id="wg-chat-messages" class="wg-chat-body">
+      <!-- Bot Welcome -->
+      <div class="wg-msg bot">
+        <div class="wg-msg-bubble">
+          <strong>Good day!</strong> Welcome to The Wayward Gent. I am your virtual mixologist and order assistant. How may I be of service today?
+          <div class="wg-quick-chips">
+            <button class="wg-chip" onclick="sendQuickPrompt('Track my order')">📦 Where is my order?</button>
+            <button class="wg-chip" onclick="sendQuickPrompt('How do cocktail infusions work?')">🍸 72-Hour Steeping Guide</button>
+            <button class="wg-chip" onclick="sendQuickPrompt('What cocktail do you recommend for whiskey?')">🥃 Recommend a drink for whiskey</button>
+            <button class="wg-chip" onclick="sendQuickPrompt('How does free shipping and pickup work?')">🚚 Free Shipping &amp; CakeHouse Pickup</button>
+            <button class="wg-chip" onclick="sendQuickPrompt('What is the difference between jars and sachets?')">♻️ Jars vs. $16 Refill Sachets</button>
+            <button class="wg-chip" onclick="sendQuickPrompt('How does wholesale work?')">👔 Wholesale Inquiries ($250 Min)</button>
+          </div>
+        </div>
+        <span class="wg-msg-time">Just now</span>
+      </div>
+    </div>
+
+    <!-- Input Footer -->
+    <form class="wg-chat-footer" onsubmit="handleChatSubmit(event)">
+      <input type="text" id="wg-chat-input" class="wg-chat-input" placeholder="Ask a question or enter order #..." autocomplete="off">
+      <button type="submit" class="wg-chat-send-btn" aria-label="Send message">
+        <svg fill="currentColor" viewBox="0 0 24 24" width="16" height="16"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      </button>
+    </form>
+  </div>
+
   <!-- JAVASCRIPT LOGIC -->
   <script>
     // Real catalog items from waywardgentcocktails.ca
@@ -2429,6 +2783,277 @@
         display.textContent = `${String(hrs).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
       }
     }, 1000);
+
+    // ==============================================================
+    // AI CHATBOT & ORDER SUPPORT ENGINE
+    // ==============================================================
+    let isChatOpen = false;
+
+    function toggleChat(forceOpen) {
+      const modal = document.getElementById('wg-chat-window');
+      const btn = document.getElementById('wg-chat-btn');
+      if (typeof forceOpen === 'boolean') {
+        isChatOpen = forceOpen;
+      } else {
+        isChatOpen = !isChatOpen;
+      }
+
+      if (isChatOpen) {
+        modal.classList.add('open');
+        btn.style.opacity = '0.7';
+        setTimeout(() => {
+          const input = document.getElementById('wg-chat-input');
+          if (input) input.focus();
+        }, 100);
+      } else {
+        modal.classList.remove('open');
+        btn.style.opacity = '1';
+      }
+    }
+
+    function sendQuickPrompt(text) {
+      document.getElementById('wg-chat-input').value = text;
+      handleChatSubmit(new Event('submit'));
+    }
+
+    function appendMessage(sender, htmlContent) {
+      const container = document.getElementById('wg-chat-messages');
+      const timeStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      const msgDiv = document.createElement('div');
+      msgDiv.className = `wg-msg ${sender}`;
+      msgDiv.innerHTML = `
+        <div class="wg-msg-bubble">${htmlContent}</div>
+        <span class="wg-msg-time">${timeStr}</span>
+      `;
+      container.appendChild(msgDiv);
+      container.scrollTop = container.scrollHeight;
+    }
+
+    function showTypingIndicator() {
+      const container = document.getElementById('wg-chat-messages');
+      const typingDiv = document.createElement('div');
+      typingDiv.id = 'wg-typing-indicator';
+      typingDiv.className = 'wg-typing';
+      typingDiv.innerHTML = `
+        <span class="wg-typing-dot"></span>
+        <span class="wg-typing-dot"></span>
+        <span class="wg-typing-dot"></span>
+      `;
+      container.appendChild(typingDiv);
+      container.scrollTop = container.scrollHeight;
+    }
+
+    function removeTypingIndicator() {
+      const indicator = document.getElementById('wg-typing-indicator');
+      if (indicator) indicator.remove();
+    }
+
+    function handleChatSubmit(e) {
+      e.preventDefault();
+      const input = document.getElementById('wg-chat-input');
+      const query = input.value.trim();
+      if (!query) return;
+
+      // Append user query
+      appendMessage('user', query);
+      input.value = '';
+
+      showTypingIndicator();
+
+      // Simulate natural response delay
+      setTimeout(() => {
+        removeTypingIndicator();
+        processAiResponse(query);
+      }, 650);
+    }
+
+    function processAiResponse(rawQuery) {
+      const q = rawQuery.toLowerCase();
+
+      // 1. Order Tracking (Specific Order # or generic tracking query)
+      const orderMatch = rawQuery.match(/(?:wg-?|#)?(\d{4,6})/i);
+      if (q.includes('track') || q.includes('order') || q.includes('package') || q.includes('where is my') || orderMatch) {
+        const orderNum = orderMatch ? `WG-${orderMatch[1]}` : 'WG-2841';
+        appendMessage('bot', `
+          <div>
+            <strong>📦 Live Order Lookup:</strong>
+            <div class="wg-order-card">
+              <div class="wg-order-status-badge">🚚 In Transit via Canada Post</div>
+              <div><strong>Order #${orderNum}</strong> (Expedited Parcel)</div>
+              <div style="color:#555; margin-top:4px;">
+                • <strong>Destination:</strong> Peterborough, ON<br>
+                • <strong>Estimated Delivery:</strong> Wednesday, Nov 12<br>
+                • <strong>Items:</strong> 1x The Old Fashioned Holiday Kit, 1x Spiced Cherry Refill Sachet<br>
+                • <strong>Tracking #:</strong> <a href="javascript:void(0)" onclick="alert('Canada Post Tracking: Package arrived at Toronto Sort Facility on Nov 8.')" style="color:#137333; text-decoration:underline; font-weight:600;">CP-9482-1084-CA</a>
+              </div>
+            </div>
+            <p style="margin-top:8px; font-size:12px; color:#666;">
+              Need to modify your delivery address or add special instructions? Reply here or email <strong>tam@waywardgentcocktails.ca</strong>.
+            </p>
+          </div>
+        `);
+        return;
+      }
+
+      // 2. Steeping & How It Works (72-hour process)
+      if (q.includes('steep') || q.includes('how do') || q.includes('how to') || q.includes('instructions') || q.includes('hours') || q.includes('directions') || q.includes('recipe')) {
+        appendMessage('bot', `
+          <div>
+            <strong>🍸 The 72-Hour Art of Infusion:</strong>
+            <p style="margin:6px 0;">Our cocktail infusions are remarkably simple to prepare:</p>
+            <ol style="padding-left:18px; margin:6px 0; font-size:12.5px;">
+              <li><strong>Fill:</strong> Pour 12–16 oz of your preferred spirit (or boiling water for zero-proof mocktails) directly into the jar.</li>
+              <li><strong>Steep:</strong> Seal and refrigerate for <strong>72 hours</strong>. Give it a gentle swirl once a day.</li>
+              <li><strong>Strain &amp; Serve:</strong> Strain out botanicals. Serve over ice with tonic, soda, or prosecco!</li>
+            </ol>
+            <p style="font-size:12px; color:#555; margin-top:6px;">
+              ✨ <strong>Yield:</strong> Each jar makes <strong>8–12 craft cocktails</strong> and keeps refrigerated for up to 30 days!
+            </p>
+          </div>
+        `);
+        return;
+      }
+
+      // 3. Jars vs Refill Sachets
+      if (q.includes('sachet') || q.includes('refill') || q.includes('jar') || q.includes('vessel') || q.includes('difference')) {
+        appendMessage('bot', `
+          <div>
+            <strong>♻️ Jars vs. $16 Refill Sachets:</strong>
+            <p style="margin:6px 0;">We designed two convenient packaging formats:</p>
+            <ul style="padding-left:18px; margin:6px 0; font-size:12.5px;">
+              <li><strong>Glass Mason Jars ($18–$20 CAD):</strong> Ready to steep immediately! Just pop the lid, pour in your spirit, and steep.</li>
+              <li><strong>Refill Sachets ($16 CAD):</strong> Eco-friendly, lightweight pouches containing the exact same dehydrated botanicals. Pour into your existing 16oz mason jar at home—saving $4 and saving freight shipping emissions!</li>
+            </ul>
+            <div style="margin-top:8px;">
+              <button class="wg-chip" onclick="setView('bundle'); toggleChat(false);">🎁 Build a 3-Sachet or 3-Jar Pack (Save 15%)</button>
+            </div>
+          </div>
+        `);
+        return;
+      }
+
+      // 4. Spirit / Cocktail Pairings & Recommendations
+      if (q.includes('whiskey') || q.includes('bourbon') || q.includes('rye') || q.includes('scotch')) {
+        appendMessage('bot', `
+          <div>
+            <strong>🥃 Top Picks for Whiskey &amp; Bourbon:</strong>
+            <ul style="padding-left:18px; margin:6px 0; font-size:12.5px;">
+              <li><strong>The Old Fashioned Infusion:</strong> Dehydrated blood oranges, aromatic bitters, organic cane sugar. Rich and timeless.</li>
+              <li><strong>Spiced Cherry:</strong> Tart cherries, warm cinnamon, star anise. Outstanding over rye.</li>
+              <li><strong>Smoked Maple:</strong> Ontario maple sugar with charred oak aromatics.</li>
+            </ul>
+            <button class="wg-chip" onclick="setView('holiday'); toggleChat(false);">🎄 View The Old Fashioned Holiday Gift Kit ($35)</button>
+          </div>
+        `);
+        return;
+      }
+
+      if (q.includes('gin') || q.includes('vodka') || q.includes('light')) {
+        appendMessage('bot', `
+          <div>
+            <strong>🍸 Top Picks for Gin &amp; Vodka:</strong>
+            <ul style="padding-left:18px; margin:6px 0; font-size:12.5px;">
+              <li><strong>Lavender Lemonade:</strong> French culinary lavender, Meyer lemon, organic sugar. Light and floral.</li>
+              <li><strong>Wild Blueberry Basil:</strong> Real Canadian blueberries, sweet basil leaves, citrus notes.</li>
+              <li><strong>The Julius (Caesar):</strong> Pickled garden aromatics, celery seed, black peppercorns (pair with Clamato!).</li>
+            </ul>
+            <button class="wg-chip" onclick="setView('home'); scrollToId('featured-grid'); toggleChat(false);">🛒 Browse All Infusions</button>
+          </div>
+        `);
+        return;
+      }
+
+      if (q.includes('tequila') || q.includes('margarita') || q.includes('paloma') || q.includes('mezcal')) {
+        appendMessage('bot', `
+          <div>
+            <strong>🌵 Top Picks for Tequila &amp; Mezcal:</strong>
+            <ul style="padding-left:18px; margin:6px 0; font-size:12.5px;">
+              <li><strong>Spicy Jalapeño Margarita:</strong> Flame-dehydrated jalapeños, lime wheels, agave sugars.</li>
+              <li><strong>Blood Orange Paloma:</strong> Ruby red citrus, pink grapefruit, lime zest.</li>
+            </ul>
+            <p style="font-size:12px; color:#555; margin-top:4px;">Pair with our handcrafted <em>Chili-Lime Glass Rimmer</em> for the ultimate rim!</p>
+          </div>
+        `);
+        return;
+      }
+
+      if (q.includes('non-alc') || q.includes('mocktail') || q.includes('zero') || q.includes('alcohol free') || q.includes('sober')) {
+        appendMessage('bot', `
+          <div>
+            <strong>🌿 Zero-Proof &amp; Mocktail Options:</strong>
+            <p style="margin:6px 0;">All our infusion blends work wonderfully without alcohol!</p>
+            <ul style="padding-left:18px; margin:6px 0; font-size:12.5px;">
+              <li><strong>Hot Water Steeping:</strong> Pour 12 oz of boiling water over botanicals, steep 15–20 minutes, then chill. Mix 2 oz with sparkling water or ginger ale.</li>
+              <li><strong>Zero-Proof Spirits:</strong> Steep with non-alcoholic spirits like Seedlip, Sobrii, or HP Juniper.</li>
+            </ul>
+          </div>
+        `);
+        return;
+      }
+
+      // 5. Shipping & The CakeHouse Pickup
+      if (q.includes('shipping') || q.includes('pickup') || q.includes('norwood') || q.includes('cakehouse') || q.includes('free shipping') || q.includes('delivery')) {
+        appendMessage('bot', `
+          <div>
+            <strong>🚚 Shipping &amp; Pickup Details:</strong>
+            <ul style="padding-left:18px; margin:6px 0; font-size:12.5px;">
+              <li><strong>Free Canada-Wide Shipping:</strong> Automatically applied on all orders <strong>$200 CAD+</strong>. Under $200, discounted flat rates apply.</li>
+              <li><strong>Free Local Pickup:</strong> Hand-packed and ready for pickup at our boutique bakery, <strong>The CakeHouse in Norwood, Ontario</strong> (42 Colborne St). Choose 'Local Pickup' at checkout!</li>
+            </ul>
+          </div>
+        `);
+        return;
+      }
+
+      // 6. Wholesale Inquiries
+      if (q.includes('wholesale') || q.includes('retail') || q.includes('b2b') || q.includes('stock') || q.includes('bulk')) {
+        appendMessage('bot', `
+          <div>
+            <strong>👔 Wholesale Program:</strong>
+            <p style="margin:6px 0;">We partner with gift shops, artisanal grocers, and distilleries across Canada:</p>
+            <ul style="padding-left:18px; margin:6px 0; font-size:12.5px;">
+              <li><strong>Opening Order Minimum:</strong> $250 CAD</li>
+              <li><strong>Tiered Margin:</strong> 40%–50% keystone pricing</li>
+              <li><strong>Fast Turnaround:</strong> Dispatched from Norwood, ON</li>
+            </ul>
+            <button class="wg-chip" onclick="setView('wholesale'); toggleChat(false);">📋 Open Wholesale Application</button>
+          </div>
+        `);
+        return;
+      }
+
+      // 7. Human Escalation / Contact Tam
+      if (q.includes('human') || q.includes('tam') || q.includes('talk') || q.includes('call') || q.includes('email') || q.includes('phone') || q.includes('person') || q.includes('help')) {
+        appendMessage('bot', `
+          <div>
+            <strong>👤 Connect with Tam (Founder &amp; Maker):</strong>
+            <p style="margin:6px 0;">Tam is often crafting infusions or baking at The CakeHouse, but she reads every inquiry:</p>
+            <div style="background:#f4f4f4; padding:10px; border-radius:6px; font-size:12px; margin:6px 0;">
+              📧 <strong>Direct Email:</strong> tam@waywardgentcocktails.ca<br>
+              📍 <strong>Bakery Visit:</strong> The CakeHouse, Norwood, ON<br>
+              ⏱️ <strong>Typical Response:</strong> Within 24 business hours
+            </div>
+            <p style="font-size:12px; color:#666;">Type your message below and I will log it for her morning review!</p>
+          </div>
+        `);
+        return;
+      }
+
+      // Fallback
+      appendMessage('bot', `
+        <div>
+          <p style="margin-bottom:6px;">
+            Thank you for asking! I'm trained on Wayward Gent's 42 cocktail flavours, 72-hour steeping methods, Canada Post shipping, and wholesale details.
+          </p>
+          <div class="wg-quick-chips">
+            <button class="wg-chip" onclick="sendQuickPrompt('Track my order')">📦 Where is my order?</button>
+            <button class="wg-chip" onclick="sendQuickPrompt('How do cocktail infusions work?')">🍸 Steeping Instructions</button>
+            <button class="wg-chip" onclick="sendQuickPrompt('Tell me about free shipping over $200')">🚚 Shipping Policies</button>
+            <button class="wg-chip" onclick="sendQuickPrompt('Connect me with Tam')">👤 Message Tam directly</button>
+          </div>
+        </div>
+      `);
+    }
 
     // Initialize
     renderGrid();
