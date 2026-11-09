@@ -238,19 +238,19 @@
       gap: 24px;
     }
     .header-nav a {
-      font-size: 13px;
-      letter-spacing: 1.2px;
-      font-weight: 500;
+      font-size: 13.5px;
+      letter-spacing: 1.5px;
+      font-weight: 700;
       text-transform: uppercase;
-      color: rgba(18, 18, 18, 0.85);
+      color: #121212;
       padding: 6px 0;
       position: relative;
-      transition: color 0.15s ease;
+      transition: all 0.15s ease;
     }
     .header-nav a:hover,
     .header-nav a.active {
-      color: #121212;
-      font-weight: 700;
+      color: #b45309;
+      font-weight: 800;
     }
     .header-nav a.active::after {
       content: '';
@@ -258,8 +258,8 @@
       bottom: 0;
       left: 0;
       right: 0;
-      height: 2px;
-      background: #121212;
+      height: 2.5px;
+      background: #b45309;
     }
     .nav-badge {
       display: inline-block;
@@ -425,59 +425,66 @@
       padding-top: 6px;
     }
 
-    /* RIGHT COLUMN (Marketing & CTAs) */
+    /* RIGHT COLUMN (Marketing & CTAs - Spruced Up Highbrow Cocktail Lounge Aesthetic) */
     .banner-content-column {
       display: flex;
     }
     .banner-box-split {
       position: relative;
-      background: rgba(18, 18, 18, 0.92);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      background: linear-gradient(140deg, rgba(18, 18, 18, 0.95) 0%, rgba(32, 24, 20, 0.94) 100%);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       color: #ffffff;
-      padding: 34px 40px;
-      border-radius: 6px;
+      padding: 38px 44px;
+      border-radius: 8px;
       width: 100%;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(224, 169, 109, 0.45);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.1);
       text-align: left;
     }
     .banner-eyebrow {
-      font-size: 11px;
-      letter-spacing: 2px;
+      font-size: 12px;
+      letter-spacing: 2.5px;
       font-weight: 700;
       color: #e0a96d;
       text-transform: uppercase;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
+      font-family: 'Georgia', serif;
     }
     .banner-heading {
-      font-size: 32px;
+      font-size: 36px;
       letter-spacing: 2px;
-      font-weight: 800;
+      font-weight: 900;
       text-transform: uppercase;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       line-height: 1.15;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
     .banner-subtext {
-      font-size: 14.5px;
-      color: #eaeaea;
-      margin-bottom: 22px;
+      font-size: 15px;
+      color: #ece7e0;
+      margin-bottom: 24px;
       letter-spacing: 0.3px;
-      line-height: 1.6;
+      line-height: 1.65;
       max-width: 620px;
     }
     .banner-cta-group {
       display: flex;
-      gap: 12px;
+      gap: 14px;
       flex-wrap: wrap;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
     .banner-hero-perks {
       display: flex;
       gap: 18px;
       flex-wrap: wrap;
-      font-size: 11.5px;
+      font-size: 12px;
       font-weight: 600;
+      letter-spacing: 0.5px;
+      color: #d6cebf;
+      border-top: 1px solid rgba(224, 169, 109, 0.25);
+      padding-top: 18px;
+    }
       letter-spacing: 0.5px;
       color: #cfcfcf;
       border-top: 1px solid rgba(255, 255, 255, 0.15);
@@ -784,30 +791,40 @@
       color: #777;
     }
 
-    /* CARD VESSEL SWITCHER */
+    /* CARD VESSEL SWITCHER (TAM'S REQUEST: LARGER, BOLD UPPERCASE) */
     .card-vessel-switcher {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4px;
-      margin-bottom: 10px;
-      background: #f4f4f4;
-      padding: 3px;
+      gap: 6px;
+      margin-bottom: 12px;
+      background: #f0ede6;
+      padding: 4px;
       border-radius: 4px;
+      border: 1px solid #e2ddd3;
     }
     .vessel-btn {
-      font-size: 11px;
-      padding: 5px 6px;
+      font-size: 13px;
+      padding: 8px 6px;
       text-align: center;
-      font-weight: 600;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
       color: #666;
       border-radius: 3px;
       transition: all 0.15s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .vessel-btn:hover {
+      color: #121212;
+      background: rgba(255,255,255,0.6);
     }
     .vessel-btn.active {
-      background: #ffffff;
-      color: #121212;
-      font-weight: 700;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      background: #181818;
+      color: #ffffff;
+      font-weight: 800;
+      border-color: #181818;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.18);
     }
     .btn-card-atc {
       width: 100%;
@@ -1554,6 +1571,256 @@
       0%, 80%, 100% { opacity: 0.2; transform: scale(0.8); }
       40% { opacity: 1; transform: scale(1.1); }
     }
+    /* ============================================================== */
+    /* 10% OFF LEAD MAGNET POPUP (TAM'S REQUEST)                     */
+    /* ============================================================== */
+    .promo-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(6px);
+      z-index: 10002;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      animation: wgFadeIn 0.25s ease;
+    }
+    .promo-modal-overlay.open {
+      display: flex;
+    }
+    @keyframes wgFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .promo-modal-box {
+      background: linear-gradient(145deg, #181818 0%, #241c16 100%);
+      color: #ffffff;
+      border: 1px solid rgba(224, 169, 109, 0.5);
+      border-radius: 8px;
+      max-width: 480px;
+      width: 100%;
+      padding: 38px 34px 30px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 25px 65px rgba(0,0,0,0.65);
+      animation: wgScaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes wgScaleUp {
+      from { transform: scale(0.92); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .promo-modal-close {
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      background: transparent;
+      border: none;
+      color: #bbb;
+      font-size: 24px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px;
+      transition: color 0.15s;
+    }
+    .promo-modal-close:hover { color: #fff; }
+    .promo-badge-tag {
+      font-size: 11px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #e0a96d;
+      margin-bottom: 10px;
+    }
+    .promo-title {
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .promo-desc {
+      font-size: 13.5px;
+      color: #ccc;
+      line-height: 1.6;
+      margin-bottom: 22px;
+    }
+    .promo-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .promo-input {
+      padding: 12px 16px;
+      border-radius: 4px;
+      border: 1px solid #444;
+      background: #111;
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+      text-align: center;
+      font-family: inherit;
+    }
+    .promo-input:focus {
+      border-color: #e0a96d;
+    }
+    .promo-disclaimer {
+      font-size: 11px;
+      color: #999;
+      line-height: 1.4;
+    }
+    .promo-disclaimer strong {
+      color: #e0a96d;
+    }
+
+    /* ============================================================== */
+    /* QUICK VIEW PRODUCT DETAILS MODAL (TAM'S REQUEST)              */
+    /* ============================================================== */
+    .quickview-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.72);
+      backdrop-filter: blur(5px);
+      z-index: 10001;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .quickview-overlay.open { display: flex; }
+    .quickview-box {
+      background: #ffffff;
+      color: #121212;
+      border-radius: 8px;
+      max-width: 760px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+      animation: wgScaleUp 0.25s ease;
+    }
+    @media (max-width: 700px) {
+      .quickview-box { grid-template-columns: 1fr; }
+    }
+    .quickview-close {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      background: #ffffff;
+      border: 1px solid #eee;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+    .quickview-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      min-height: 340px;
+    }
+    .quickview-content {
+      padding: 30px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* ============================================================== */
+    /* SHOW CALENDAR / "WHERE TO FIND ME" (TAM'S REQUEST)            */
+    /* ============================================================== */
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+    .event-card {
+      background: #ffffff;
+      border: 1px solid var(--color-base-border);
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .event-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+    .event-poster-wrapper {
+      position: relative;
+      height: 220px;
+      background: #181818;
+      overflow: hidden;
+    }
+    .event-poster-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.88;
+      transition: transform 0.3s ease;
+    }
+    .event-card:hover .event-poster-img {
+      transform: scale(1.03);
+      opacity: 1;
+    }
+    .event-date-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: #b45309;
+      color: #fff;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 3px;
+    }
+    .event-info {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .event-title {
+      font-size: 17px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .event-location {
+      font-size: 12.5px;
+      color: #666;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .event-desc {
+      font-size: 13px;
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .event-btn-row {
+      margin-top: auto;
+      display: flex;
+      gap: 8px;
+    }
   </style>
 </head>
 <body class="layout-split">
@@ -1573,10 +1840,11 @@
       <button onclick="setView('home')" id="tab-home" class="proto-tab-btn active">1. Homepage</button>
       <button onclick="setView('bundle')" id="tab-bundle" class="proto-tab-btn">2. 4 Build-a-Pack Modes</button>
       <button onclick="setView('holiday')" id="tab-holiday" class="proto-tab-btn">3. Holiday Kits &amp; Gifts</button>
-      <button onclick="setView('society')" id="tab-society" class="proto-tab-btn">4. Cocktail Club &amp; Bakery Box</button>
-      <button onclick="setView('howto')" id="tab-howto" class="proto-tab-btn">5. How-To (72h Timer)</button>
-      <button onclick="setView('wholesale')" id="tab-wholesale" class="proto-tab-btn">6. Wholesale ($250 Min + Login)</button>
-      <button onclick="setView('story')" id="tab-story" class="proto-tab-btn">7. Our Story</button>
+      <button onclick="setView('events')" id="tab-events" class="proto-tab-btn">4. Where to Find Me (Shows)</button>
+      <button onclick="setView('society')" id="tab-society" class="proto-tab-btn">5. Cocktail Club Box</button>
+      <button onclick="setView('howto')" id="tab-howto" class="proto-tab-btn">6. How-To (72h Timer)</button>
+      <button onclick="setView('wholesale')" id="tab-wholesale" class="proto-tab-btn">7. Wholesale ($250 Min + Login)</button>
+      <button onclick="setView('story')" id="tab-story" class="proto-tab-btn">8. Our Story</button>
     </div>
 
     <!-- Layout Mode Switcher (Split-Hero Showcase vs Classic) -->
@@ -1585,6 +1853,11 @@
       <button onclick="setLayoutMode('split')" id="btn-layout-split" style="background:#137333; color:#fff; border:none; padding:4px 9px; border-radius:3px; font-size:11px; font-weight:700; cursor:pointer;">⚡ Split-Hero (New)</button>
       <button onclick="setLayoutMode('classic')" id="btn-layout-classic" style="background:transparent; color:#bbb; border:1px solid #444; padding:3px 9px; border-radius:3px; font-size:11px; cursor:pointer;">Classic Center</button>
     </div>
+
+    <!-- 10% Promo Modal Trigger -->
+    <button onclick="openPromoModal()" style="background:#b45309; color:#fff; border:none; padding:4px 10px; border-radius:3px; font-size:11px; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:5px;">
+      🎁 Test 10% Popup
+    </button>
 
     <!-- AI Chatbot Launcher in Demo Bar -->
     <button onclick="toggleChat(true)" style="background:#4338ca; color:#fff; border:none; padding:4px 10px; border-radius:3px; font-size:11px; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:5px;">
@@ -1603,7 +1876,7 @@
     <span class="divider">|</span>
     <span><strong>FREE SHIPPING ACROSS CANADA</strong> ON ORDERS OVER $200 CAD</span>
     <span class="divider">|</span>
-    <span>FREE LOCAL PICKUP AT THE CAKEHOUSE IN NORWOOD, ON</span>
+    <span>FREE LOCAL PICKUP IN NORWOOD, ON</span>
     <span class="divider">|</span>
     <a href="javascript:void(0)" onclick="setView('bundle')">BUILD A PACK &amp; SAVE 15%</a>
   </div>
@@ -1629,15 +1902,16 @@
         </a>
       </div>
 
-      <!-- INLINE NAVIGATION (Includes Build a Pack, Holiday Kits, and Wholesale) -->
+      <!-- INLINE NAVIGATION (Includes Build a Pack, Holiday Kits, Where to Find Me, and Wholesale) -->
       <nav class="header-nav page-width" id="header-main-nav">
         <ul>
           <li><a href="javascript:void(0)" onclick="setView('home')" id="nav-home" class="active">HOME</a></li>
           <li><a href="javascript:void(0)" onclick="setView('home'); scrollToId('featured-grid');">SHOP ALL</a></li>
           <li><a href="javascript:void(0)" onclick="setView('bundle')" id="nav-bundle">BUILD A PACK <span class="nav-badge">SAVE 15%</span></a></li>
           <li><a href="javascript:void(0)" onclick="setView('holiday')" id="nav-holiday">HOLIDAY KITS <span class="nav-badge nav-badge-holiday">NEW</span></a></li>
+          <li><a href="javascript:void(0)" onclick="setView('events')" id="nav-events">WHERE TO FIND ME <span class="nav-badge" style="background:#b45309;">SHOWS</span></a></li>
           <li><a href="javascript:void(0)" onclick="setView('howto')" id="nav-howto">HOW TO USE</a></li>
-          <li><a href="javascript:void(0)" onclick="setView('society')" id="nav-society">COCKTAIL HOUR SOCIETY</a></li>
+          <li><a href="javascript:void(0)" onclick="setView('society')" id="nav-society">COCKTAIL CLUB</a></li>
           <li><a href="javascript:void(0)" onclick="setView('wholesale')" id="nav-wholesale">WHOLESALE</a></li>
           <li><a href="javascript:void(0)" onclick="setView('story')" id="nav-story">OUR STORY</a></li>
         </ul>
@@ -1664,7 +1938,7 @@
   <!-- ============================================================== -->
   <div id="view-home" class="inner-page-view active">
 
-    <!-- HERO IMAGE BANNER (SPLIT-HERO SHOWCASE) -->
+    <!-- HERO IMAGE BANNER (SPLIT-HERO SHOWCASE - ELEVATED COCKTAIL LOUNGE VIBE) -->
     <section class="banner">
       <div class="page-width banner-split-container">
         <!-- Left Column: The Full Vertical Signature Logo Crest -->
@@ -1676,49 +1950,54 @@
           </div>
         </div>
 
-        <!-- Right Column: Marketing Hook & Primary CTAs -->
+        <!-- Right Column: Marketing Hook & Primary CTAs (Spruced Up per Tam's Feedback) -->
         <div class="banner-content-column">
           <div class="banner-box-split">
             <div class="cro-pill">
-              ✨ Sister Note: Direct call-to-actions to purchase right away + $200 free shipping threshold
+              ✨ Tam Feedback: Pure cocktail brand identity + elevated highbrow lounge aesthetic
             </div>
-            <div class="banner-eyebrow">HIGH BROW COCKTAILS MADE SIMPLE</div>
+            <div class="banner-eyebrow">✦ HIGHBROW COCKTAILS MADE SIMPLE AT HOME ✦</div>
             <h1 class="banner-heading">PICK YOUR POISON</h1>
             <p class="banner-subtext">
-              Handcrafted cocktail infusions, freeze-dried simple syrup pucks, and flavoured rimmers. Hand-packed in house at <strong>The CakeHouse</strong> in Norwood, Ontario.
+              Handcrafted cocktail infusions, freeze-dried simple syrup pucks, and flavoured rimmers. Hand-packed in-house at <strong>The Wayward Gent</strong> located in Norwood, Ontario.
             </p>
             <div class="banner-cta-group">
               <a href="#featured-grid" class="btn-dawn-secondary">SHOP ALL FLAVOURS</a>
-              <a href="javascript:void(0)" onclick="setView('bundle')" class="btn-dawn-secondary" style="background:#121212; color:#fff; border-color:#fff;">BUILD A PACK (SAVE 15%)</a>
+              <a href="javascript:void(0)" onclick="setView('bundle')" class="btn-dawn-secondary" style="background:#b45309; color:#fff; border-color:#e0a96d;">BUILD A PACK (SAVE 15%)</a>
             </div>
             <div class="banner-hero-perks">
               <span>🚚 Free Shipping Over $200 CAD</span>
               <span>🥃 1 Infusion = 8–12 Cocktails</span>
-              <span>🧁 Free Pickup in Norwood</span>
+              <span>🌿 Real Botanicals • Vegan • Gluten-Free</span>
+              <span>📍 Free Pickup in Norwood</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- TRUST STRIP -->
+    <!-- TRUST STRIP (TAM'S REQUEST: REAL INGREDIENTS, VEGAN, GLUTEN-FREE, NO CUPCAKE) -->
     <div class="value-strip">
-      <div class="page-width value-grid">
+      <div class="page-width value-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+        <div class="value-item">
+          <h4>🌿 100% REAL INGREDIENTS</h4>
+          <p>Real dehydrated fruits, organic botanicals &amp; whole spices</p>
+        </div>
+        <div class="value-item">
+          <h4>🌱 VEGAN &amp; GLUTEN-FREE</h4>
+          <p>Naturally pure, plant-based handcrafted recipes</p>
+        </div>
+        <div class="value-item">
+          <h4>🥃 1 INFUSION = 8–12 COCKTAILS</h4>
+          <p>Steep 72h with your favourite spirits or mocktails</p>
+        </div>
         <div class="value-item">
           <h4>🚚 FREE SHIPPING OVER $200 CAD</h4>
           <p>Dispatched across Canada from Norwood, ON</p>
         </div>
         <div class="value-item">
-          <h4>🧁 HAND-PACKED AT THE CAKEHOUSE</h4>
-          <p>Crafted locally at our boutique bakery</p>
-        </div>
-        <div class="value-item">
-          <h4>🥃 1 INFUSION = 8–12 COCKTAILS</h4>
-          <p>Steep with your favourite spirits or mocktails</p>
-        </div>
-        <div class="value-item">
-          <h4>♻️ $16 REFILL SACHETS</h4>
-          <p>Use your own mason jar &amp; save on shipping</p>
+          <h4>📍 FREE LOCAL PICKUP</h4>
+          <p>Collect in Norwood, ON at 42 Colborne St</p>
         </div>
       </div>
     </div>
@@ -1731,9 +2010,7 @@
           We are a small business located in <strong>Norwood, Ontario</strong> with a big dream of creating high brow cocktails made simple for the home bartender.
         </p>
         <p style="font-size:15px; line-height:1.8; color:#555;">
-          Our products are locally sourced when possible, hand packed in house at our bakery 
-          <a href="javascript:void(0)" onclick="setView('story')" style="text-decoration:underline; font-weight:700;">The CakeHouse</a> 
-          and curated with the utmost attention paid to flavours &amp; appearance.
+          Our products are locally sourced when possible, hand packed in-house at our dedicated facility in Norwood and curated with the utmost attention paid to flavours &amp; appearance.
         </p>
       </div>
     </section>
@@ -1898,24 +2175,24 @@
   <div id="view-holiday" class="inner-page-view">
     <div class="page-width">
       <div class="cro-pill">
-        ✨ Sister Feature: Tam's pre-made holiday kits, fillable citrus ornaments, and holiday gift packs
+        ✨ Tam Update: Old Fashioned Bitters Holiday Kit + festive fillable citrus ornaments
       </div>
       <h1 class="page-title">HANDCRAFTED <strong>HOLIDAY KITS</strong></h1>
       <p style="text-align:center; max-width:680px; margin:0 auto 24px; font-size:14px; color:#555;">
-        Complete, ready-to-gift holiday cocktail kits hand-packed at The CakeHouse in Norwood. Each kit includes decorative holiday packaging with custom fillable ornaments!
+        Complete, ready-to-gift holiday cocktail kits hand-packed in-house in Norwood, Ontario. Each kit arrives pre-boxed with decorative holiday packaging, custom fillable ornaments, and artisanal garnish picks!
       </p>
 
       <div class="holiday-kits-grid">
-        <!-- Kit 1: Old Fashioned -->
+        <!-- Kit 1: Old Fashioned Bitters Kit (Tam's Signature Request) -->
         <div class="holiday-kit-card">
-          <span class="holiday-tag">HOLIDAY BESTSELLER</span>
-          <img src="https://cdn.shopify.com/s/files/1/0891/0277/8667/files/168AB2BE-7368-4162-B843-FE0B995A78F5.jpg?v=1732619825&width=533" alt="Old Fashioned Kit" style="aspect-ratio:1/1; object-fit:cover; margin-bottom:12px;">
-          <h3 style="font-size:16px; font-weight:700; text-transform:uppercase; margin-bottom:6px;">THE OLD FASHIONED HOLIDAY KIT</h3>
+          <span class="holiday-tag" style="background:#b45309;">TAM'S HOLIDAY SIGNATURE</span>
+          <img src="https://cdn.shopify.com/s/files/1/0891/0277/8667/files/168AB2BE-7368-4162-B843-FE0B995A78F5.jpg?v=1732619825&width=533" alt="Old Fashioned Bitters Holiday Kit" style="aspect-ratio:1/1; object-fit:cover; margin-bottom:12px;">
+          <h3 style="font-size:16px; font-weight:700; text-transform:uppercase; margin-bottom:6px;">THE OLD FASHIONED BITTERS HOLIDAY KIT</h3>
           <p style="font-size:12px; color:#666; margin-bottom:12px; line-height:1.5;">
-            Includes 1x Old Fashioned Cocktail Infusion Jar + Aromatic Bitters Cocktail Picks + Fillable Holiday Citrus Ornament.
+            Includes 1x Old Fashioned Cocktail Infusion Jar + 1x Artisanal Aromatic Bitters dropper + 2x Gold stainless cocktail picks + Festive fillable ornament with dehydrated citrus wheels.
           </p>
-          <div style="font-size:16px; font-weight:700; margin-bottom:14px;">$35.00 CAD</div>
-          <button onclick="addItemToCart('The Old Fashioned Holiday Kit', 'Gift Boxed Set', 35, 'https://cdn.shopify.com/s/files/1/0891/0277/8667/files/168AB2BE-7368-4162-B843-FE0B995A78F5.jpg?v=1732619825&width=533')" class="btn-dawn-primary" style="margin-top:auto;">
+          <div style="font-size:16px; font-weight:700; margin-bottom:14px;">$38.00 CAD</div>
+          <button onclick="addItemToCart('The Old Fashioned Bitters Holiday Kit', 'Gift Boxed Set', 38, 'https://cdn.shopify.com/s/files/1/0891/0277/8667/files/168AB2BE-7368-4162-B843-FE0B995A78F5.jpg?v=1732619825&width=533')" class="btn-dawn-primary" style="margin-top:auto;">
             ADD TO CART
           </button>
         </div>
@@ -1926,7 +2203,7 @@
           <img src="https://cdn.shopify.com/s/files/1/0891/0277/8667/files/6719FBF5-9D67-475E-8ACD-42E5E7D27599.jpg?v=1732619772&width=533" alt="Mistletoe Mule Kit" style="aspect-ratio:1/1; object-fit:cover; margin-bottom:12px;">
           <h3 style="font-size:16px; font-weight:700; text-transform:uppercase; margin-bottom:6px;">THE MISTLETOE MULE HOLIDAY KIT</h3>
           <p style="font-size:12px; color:#666; margin-bottom:12px; line-height:1.5;">
-            Includes 1x Mistletoe Mule Cocktail Infusion Jar + 1x Spiced Moscow Mule Rimmer + Festive fillable ornament with cranberries &amp; lime.
+            Includes 1x Mistletoe Mule Cocktail Infusion Jar + 1x Spiced Moscow Mule Rimmer + Festive fillable ornament with cranberries &amp; lime wheels.
           </p>
           <div style="font-size:16px; font-weight:700; margin-bottom:14px;">$38.00 CAD</div>
           <button onclick="addItemToCart('The Mistletoe Mule Holiday Kit', 'Gift Boxed Set', 38, 'https://cdn.shopify.com/s/files/1/0891/0277/8667/files/6719FBF5-9D67-475E-8ACD-42E5E7D27599.jpg?v=1732619772&width=533')" class="btn-dawn-primary" style="margin-top:auto;">
@@ -1940,10 +2217,10 @@
           <img src="https://cdn.shopify.com/s/files/1/0891/0277/8667/files/D92979D7-7E68-4B31-BF42-8857CE7BF577.jpg?v=1732619636&width=533" alt="Caesar Kit" style="aspect-ratio:1/1; object-fit:cover; margin-bottom:12px;">
           <h3 style="font-size:16px; font-weight:700; text-transform:uppercase; margin-bottom:6px;">THE ULTIMATE CAESAR DUO</h3>
           <p style="font-size:12px; color:#666; margin-bottom:12px; line-height:1.5;">
-            Includes 1x Julius Caesar Cocktail Infusion Jar + 1x Savoury Julius Caesar Spice Glass Rimmer. Just add vodka &amp; Clamato!
+            Includes 1x Julius Caesar Cocktail Infusion Jar + 1x Savoury Julius Caesar Spice Glass Rimmer. Just add vodka, gin, or tequila &amp; your favorite Clamato!
           </p>
-          <div style="font-size:16px; font-weight:700; margin-bottom:14px;">$32.00 CAD</div>
-          <button onclick="addItemToCart('The Ultimate Caesar Duo', 'Jar + Rimmer Kit', 32, 'https://cdn.shopify.com/s/files/1/0891/0277/8667/files/D92979D7-7E68-4B31-BF42-8857CE7BF577.jpg?v=1732619636&width=533')" class="btn-dawn-primary" style="margin-top:auto;">
+          <div style="font-size:16px; font-weight:700; margin-bottom:14px;">$34.00 CAD</div>
+          <button onclick="addItemToCart('The Ultimate Caesar Duo', 'Jar + Rimmer Kit', 34, 'https://cdn.shopify.com/s/files/1/0891/0277/8667/files/D92979D7-7E68-4B31-BF42-8857CE7BF577.jpg?v=1732619636&width=533')" class="btn-dawn-primary" style="margin-top:auto;">
             ADD TO CART
           </button>
         </div>
@@ -1952,87 +2229,146 @@
   </div>
 
   <!-- ============================================================== -->
-  <!-- VIEW 4: COCKTAIL HOUR SOCIETY & THE CAKEHOUSE UPSELL           -->
+  <!-- VIEW 4: WHERE TO FIND ME • SHOW & EVENT CALENDAR (Tam's Request) -->
   <!-- ============================================================== -->
-  <div id="view-society" class="inner-page-view">
-    <div class="page-width">
+  <div id="view-events" class="inner-page-view">
+    <div class="page-width inner-page-content">
       <div class="cro-pill">
-        ✨ Sister Feature: Recurring subscriptions ($75/mo or $150 3-month gift) + The CakeHouse Baker's Box upsell ($50)
+        ✨ Tam Request: Live event calendar with show posters, location links, and tasting booth details
       </div>
-      <h1 class="page-title">COCKTAIL HOUR <strong>SOCIETY</strong></h1>
-      <p style="text-align:center; max-width:680px; margin:0 auto 20px; font-size:14px; color:#555;">
-        Join our craft cocktail club for exclusive seasonal flavors, mixology guides, or monthly infusion deliveries directly to your door.
+      <h1 class="page-title">WHERE TO FIND ME • <strong>SHOW CALENDAR</strong></h1>
+      <p style="text-align:center; max-width:680px; margin:0 auto 24px; font-size:14.5px; color:#555; line-height:1.6;">
+        Come taste our cocktail infusions in person, meet Tam, and shop exclusive show specials, pre-wrapped holiday gift sets, and custom Build-a-Pack boxes!
       </p>
 
-      <div class="sub-tier-grid">
-        <!-- Tier 1: Free -->
-        <div class="sub-tier-card">
-          <h3 style="font-size:18px; font-weight:700; text-transform:uppercase;">Cocktail Club Free</h3>
-          <div class="sub-price">FREE <span>/ forever</span></div>
-          <p style="font-size:12px; color:#666;">Perfect for home bartenders exploring new ideas.</p>
-          <ul class="tier-features">
-            <li>10% Off your first online order</li>
-            <li>Monthly seasonal cocktail recipe guide</li>
-            <li>First notice on limited holiday drop releases</li>
-          </ul>
-          <form onsubmit="handleNewsletter(event)" style="margin-top:auto;">
-            <input type="email" required placeholder="Enter email address" class="newsletter-input" style="width:100%; margin-bottom:8px;">
-            <button type="submit" class="btn-dawn-primary" style="width:100%;">JOIN FREE</button>
-          </form>
+      <div class="events-grid">
+        <!-- Event 1: Rolling Grape -->
+        <div class="event-card">
+          <div class="event-poster-wrapper">
+            <span class="event-date-badge">THIS WEEKEND • NOV 14–16</span>
+            <img src="https://waywardgentcocktails.ca/cdn/shop/files/7716774d-07ed-4c98-8e98-04b17ca75c2d.jpg?v=1722222554&width=1780" alt="Rolling Grape Vineyard Market" class="event-poster-img">
+          </div>
+          <div class="event-info">
+            <h3 class="event-title">Rolling Grape Vineyard Holiday Market</h3>
+            <div class="event-location">
+              📍 <strong>Rolling Grape Vineyard</strong> — Bailieboro, Ontario
+            </div>
+            <p class="event-desc">
+              Join us for a cozy weekend at the vineyard! Free infusion tastings, live cocktail demonstrations, pre-wrapped holiday kits, and full refill sachet bundles.
+            </p>
+            <div class="event-btn-row">
+              <a href="https://rollinggrape.com" target="_blank" class="btn-dawn-primary" style="flex:1; text-align:center; font-size:12px; padding:10px;">
+                VISIT VENUE WEBSITE ↗
+              </a>
+              <button onclick="alert('Directions: Rolling Grape Vineyard, 260 County Rd 2, Bailieboro, ON. Friday 12–7pm, Saturday 10–5pm, Sunday 11–4pm!')" class="btn-dawn-secondary" style="font-size:12px; padding:10px 14px;">
+                HOURS &amp; MAP
+              </button>
+            </div>
+          </div>
         </div>
 
-        <!-- Tier 2: Digital Speakeasy -->
-        <div class="sub-tier-card">
-          <h3 style="font-size:18px; font-weight:700; text-transform:uppercase;">Speakeasy VIP</h3>
-          <div class="sub-price">$9 <span>/ month</span></div>
-          <p style="font-size:12px; color:#666;">For passionate cocktail &amp; mocktail hobbyists.</p>
-          <ul class="tier-features">
-            <li>Everything in Free Tier</li>
-            <li>Behind-the-scenes video mixology masterclasses</li>
-            <li>Secret recipe vault &amp; appetizer pairing downloads</li>
-            <li>15% ongoing member discount on all infusions</li>
-          </ul>
-          <button onclick="alert('In the live store, this activates via Shopify Subscriptions / Flodesk VIP!')" class="btn-dawn-primary" style="width:100%; margin-top:auto;">
-            JOIN VIP SPEAKEASY
-          </button>
+        <!-- Event 2: Peterborough Craft Show -->
+        <div class="event-card">
+          <div class="event-poster-wrapper">
+            <span class="event-date-badge">LATE NOVEMBER • NOV 28–30</span>
+            <img src="https://cdn.shopify.com/s/files/1/0891/0277/8667/files/D92979D7-7E68-4B31-BF42-8857CE7BF577.jpg?v=1732619636&width=533" alt="Peterborough Holiday Craft Market" class="event-poster-img">
+          </div>
+          <div class="event-info">
+            <h3 class="event-title">Peterborough Holiday Craft Market</h3>
+            <div class="event-location">
+              📍 <strong>Morrow Building</strong> — Peterborough, Ontario
+            </div>
+            <p class="event-desc">
+              Browse all 42 signature cocktail flavours, custom 3-pack &amp; 4-pack bundles, and artisanal glass rimmers. Order on-site for free local delivery or holiday shipping!
+            </p>
+            <div class="event-btn-row">
+              <button onclick="alert('Morrow Building: 151 Lansdowne St W, Peterborough, ON. Booth #42. Tam will be on site all weekend!')" class="btn-dawn-primary" style="flex:1; font-size:12px; padding:10px;">
+                BOOTH DETAILS &amp; DATES
+              </button>
+            </div>
+          </div>
         </div>
 
-        <!-- Tier 3: The Cocktail Box -->
-        <div class="sub-tier-card featured">
-          <span class="tier-ribbon">MOST POPULAR GIFT</span>
-          <h3 style="font-size:18px; font-weight:700; text-transform:uppercase;">The Cocktail Box</h3>
-          <div class="sub-price">$75 <span>/ box</span></div>
-          <p style="font-size:12px; color:#666;">Delivered directly to your door every month or season.</p>
-          <ul class="tier-features">
-            <li>2x Exclusive, member-only cocktail infusions</li>
-            <li>1x Matching handcrafted syrup puck or rimmer</li>
-            <li>Step-by-step mixology recipe &amp; garnish card</li>
-            <li>Option to pre-pay 3 months ($150) as a gift!</li>
-          </ul>
-          <button onclick="addItemToCart('The Cocktail Box Subscription', 'Monthly Delivery', 75, 'https://cdn.shopify.com/s/files/1/0891/0277/8667/files/feb3b897-2766-4d75-b66e-54f961e18caa_a684ab8c-0a9f-4da5-aa38-53a496cb2b7b.jpg?v=1722271940&width=200')" class="btn-dawn-primary" style="width:100%; margin-top:auto;">
-            SUBSCRIBE • $75 / MONTH
-          </button>
+        <!-- Event 3: Norwood Country Christmas -->
+        <div class="event-card">
+          <div class="event-poster-wrapper">
+            <span class="event-date-badge">EARLY DECEMBER • DEC 5–7</span>
+            <img src="https://cdn.shopify.com/s/files/1/0891/0277/8667/files/6719FBF5-9D67-475E-8ACD-42E5E7D27599.jpg?v=1732619772&width=533" alt="Norwood Country Christmas" class="event-poster-img">
+          </div>
+          <div class="event-info">
+            <h3 class="event-title">Norwood Country Christmas Fair</h3>
+            <div class="event-location">
+              📍 <strong>Norwood Fairgrounds</strong> — Norwood, Ontario
+            </div>
+            <p class="event-desc">
+              Our hometown market! Last chance for local guaranteed Christmas shopping before our December 18 holiday shipping cutoff. Free pickup also available in town!
+            </p>
+            <div class="event-btn-row">
+              <button onclick="alert('Norwood Fairgrounds: 48 Alma St, Norwood, ON. Holiday hours: Saturday 9am–4pm, Sunday 10am–3pm!')" class="btn-dawn-primary" style="flex:1; font-size:12px; padding:10px;">
+                EVENT DETAILS
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- The CakeHouse Bakery Cross-Sell Box (Tam's Upsell Idea) -->
-      <div class="cakehouse-upsell-box">
-        <div>
-          <span style="font-size:11px; font-weight:700; color:#9b2226; letter-spacing:1px; text-transform:uppercase;">EXCLUSIVELY FROM THE CAKEHOUSE BAKERY</span>
-          <h3 style="font-size:20px; font-weight:700; margin:4px 0 6px;">Want Fresh Artisan Bakery Treats With Your Cocktails?</h3>
-          <p style="font-size:13px; color:#555; max-width:600px; line-height:1.6;">
-            Add a <strong>Baker's Box from The CakeHouse</strong> (+ $50 CAD) to any subscription box or gift set! Includes fresh seasonal gourmet cookies, dessert bars, and savory bakery bites baked fresh in Norwood.
+      <!-- Private Workshop Booking Banner -->
+      <div style="margin-top:40px; background:#f7f5f0; border:1px solid #e0d8cc; padding:28px; border-radius:6px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px;">
+        <div style="max-width:620px;">
+          <span style="font-size:11px; font-weight:700; color:#b45309; letter-spacing:1px; text-transform:uppercase;">PRIVATE WORKSHOPS &amp; MASTERCLASSES</span>
+          <h3 style="font-size:20px; font-weight:800; margin:4px 0 8px;">Want to Host a Private Cocktail Infusion Masterclass?</h3>
+          <p style="font-size:13.5px; color:#555; line-height:1.6;">
+            Tam hosts hands-on cocktail infusion workshops for private parties, holiday gatherings, corporate events, and bachelorettes in Peterborough and Norwood. Each guest crafts their own custom jar to take home!
           </p>
         </div>
-        <button onclick="addItemToCart('The CakeHouse Baker\'s Box Add-On', 'Monthly Artisan Bakery Goodies', 50, 'https://waywardgentcocktails.ca/cdn/shop/files/feb3b897-2766-4d75-b66e-54f961e18caa_a684ab8c-0a9f-4da5-aa38-53a496cb2b7b.jpg?v=1722271940&width=200')" class="btn-dawn-primary" style="background:#9b2226; border-color:#9b2226; white-space:nowrap;">
-          + ADD BAKER'S BOX ($50)
+        <button onclick="alert('To book a private workshop, email tam@waywardgentcocktails.ca with your preferred dates, group size, and location!')" class="btn-dawn-primary" style="background:#181818; white-space:nowrap;">
+          INQUIRE ABOUT WORKSHOPS
         </button>
       </div>
     </div>
   </div>
 
   <!-- ============================================================== -->
-  <!-- VIEW 5: HOW TO USE PAGE (With Text + Searchable SEO)           -->
+  <!-- VIEW 5: COCKTAIL HOUR SOCIETY (Tam's Single Simple Option)       -->
+  <!-- ============================================================== -->
+  <div id="view-society" class="inner-page-view">
+    <div class="page-width inner-page-content">
+      <div class="cro-pill">
+        ✨ Tam Decision: 1 simple recurring cocktail box to prevent fulfillment errors
+      </div>
+      <h1 class="page-title">THE WAYWARD GENT <strong>COCKTAIL CLUB</strong></h1>
+      <p style="text-align:center; max-width:680px; margin:0 auto 24px; font-size:14.5px; color:#555; line-height:1.6;">
+        Elevate your home bar with fresh, rotating seasonal craft infusions delivered directly to your doorstep every month. Zero guesswork, zero waste.
+      </p>
+
+      <div style="max-width:580px; margin:0 auto;">
+        <div class="sub-tier-card featured" style="padding:36px 32px;">
+          <span class="tier-ribbon">SIMPLE MONTHLY CRAFT BOX</span>
+          <h3 style="font-size:22px; font-weight:800; text-transform:uppercase;">The Wayward Gent Cocktail Box</h3>
+          <div class="sub-price">$38.00 CAD <span>/ month • Free Canada Shipping</span></div>
+          <p style="font-size:13px; color:#666; margin-bottom:18px;">
+            Hand-packed in-house in Norwood, Ontario. Ships on the 1st of every month.
+          </p>
+          <ul class="tier-features" style="margin-bottom:24px; font-size:13.5px;">
+            <li><strong>2x Seasonal Cocktail Infusions:</strong> Rotating small-batch releases unavailable in standard stores (makes 16–24 craft cocktails)</li>
+            <li><strong>1x Artisanal Companion Product:</strong> Handcrafted freeze-dried syrup puck or cocktail rimmer</li>
+            <li><strong>Curated Recipe Cards:</strong> Detailed spirit pairings, non-alcoholic mocktail guides, and tasting notes</li>
+            <li><strong>Free Expedited Shipping:</strong> Direct to your home across Canada, or free Norwood pickup</li>
+            <li><strong>Total Flexibility:</strong> Pause, skip a month, or cancel anytime with 1 click before next billing</li>
+          </ul>
+          <button onclick="addItemToCart('The Wayward Gent Cocktail Box Subscription', 'Monthly Delivery (2 Infusions + Companion Item)', 38, 'https://cdn.shopify.com/s/files/1/0891/0277/8667/files/168AB2BE-7368-4162-B843-FE0B995A78F5.jpg?v=1732619825&width=533')" class="btn-dawn-primary" style="width:100%; font-size:14px; padding:14px;">
+            SUBSCRIBE • $38.00 CAD / MONTH
+          </button>
+          <div style="font-size:11px; color:#888; text-align:center; margin-top:10px;">
+            *First order billed today, ships within 48h. Recurring deliveries billed monthly.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- VIEW 6: HOW TO USE PAGE (With Text + Searchable SEO)           -->
   <!-- ============================================================== -->
   <div id="view-howto" class="inner-page-view">
     <div class="page-width inner-page-content">
@@ -2072,16 +2408,21 @@
   </div>
 
   <!-- ============================================================== -->
-  <!-- VIEW 6: WHOLESALE PORTAL & APPLICATION ($250 Minimum)          -->
+  <!-- VIEW 7: WHOLESALE PORTAL & APPLICATION ($250 Minimum)          -->
   <!-- ============================================================== -->
   <div id="view-wholesale" class="inner-page-view">
     <div class="page-width inner-page-content">
       <div class="cro-pill">
-        ✨ Sister Feature: Existing partner login via Shopify app + New partner application with $250 CAD minimum
+        ✨ Tam Update: Retail display imagery + strict $250 opening order policy notice
       </div>
       <h1 class="page-title">WHOLESALE <strong>PORTAL</strong></h1>
 
       <div class="page-body-text">
+        <!-- Retail Display Showcase Image (Tam's Request) -->
+        <div style="margin-bottom:24px; border-radius:6px; overflow:hidden; border:1px solid #ddd; max-height:280px;">
+          <img src="https://waywardgentcocktails.ca/cdn/shop/files/7716774d-07ed-4c98-8e98-04b17ca75c2d.jpg?v=1722222554&width=1780" alt="Wayward Gent Retail Display" style="width:100%; height:100%; object-fit:cover; display:block;">
+        </div>
+
         <!-- Existing Account Box -->
         <div style="background:#f4f4f4; border:1px solid #ddd; padding:24px; margin-bottom:30px; border-radius:4px; text-align:center;">
           <h3 style="font-size:16px; font-weight:700; text-transform:uppercase; margin-bottom:8px;">
@@ -2106,7 +2447,7 @@
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; border-bottom:1px solid #eee; padding-bottom:12px;">
             <span style="font-size:13px; font-weight:700; text-transform:uppercase;">Wholesale Terms:</span>
             <span style="font-size:12px; background:#eef8f2; color:#137333; font-weight:700; padding:4px 8px; border-radius:3px;">
-              Minimum Order: $250.00 CAD
+              Strict Opening Order: $250.00 CAD Minimum
             </span>
           </div>
 
@@ -2133,7 +2474,7 @@
   </div>
 
   <!-- ============================================================== -->
-  <!-- VIEW 7: OUR STORY                                             -->
+  <!-- VIEW 8: OUR STORY                                             -->
   <!-- ============================================================== -->
   <div id="view-story" class="inner-page-view">
     <div class="page-width inner-page-content">
@@ -2265,6 +2606,79 @@
   </aside>
 
   <!-- ============================================================== -->
+  <!-- 10% OFF LEAD MAGNET POPUP (TAM'S REQUEST)                     -->
+  <!-- ============================================================== -->
+  <div id="wg-promo-modal" class="promo-modal-overlay" onclick="handlePromoBackdrop(event)">
+    <div class="promo-modal-box">
+      <button class="promo-modal-close" onclick="closePromoModal()" aria-label="Close modal">&times;</button>
+      <div class="promo-badge-tag">GENTLEMEN'S CLUB EXCLUSIVE</div>
+      <div class="promo-title">ENJOY 10% OFF YOUR FIRST ORDER</div>
+      <p class="promo-desc">
+        Subscribe to our private tasting notes, seasonal cocktail releases, and receive an instant <strong>10% welcome discount</strong> for your first order.
+      </p>
+      <form id="promo-form" class="promo-form" onsubmit="handlePromoSubmit(event)">
+        <input type="email" id="promo-email-input" class="promo-input" placeholder="Enter your email address" required />
+        <button type="submit" class="btn-dawn-primary" style="background:#e0a96d; color:#121212; border:none; font-weight:800; letter-spacing:1px;">
+          CLAIM MY 10% OFF
+        </button>
+      </form>
+      <div id="promo-success-msg" style="display:none; padding:14px; background:rgba(30,130,76,0.2); border:1px solid #2ecc71; border-radius:4px; margin-bottom:12px; text-align:center;">
+        <div style="color:#2ecc71; font-weight:800; font-size:15px; margin-bottom:6px;">🎉 Welcome to the Club!</div>
+        <div style="font-size:13px; color:#f0f0f0; margin-bottom:6px;">Your 10% code has been copied to your clipboard:</div>
+        <div style="font-size:18px; font-weight:900; letter-spacing:2px; color:#e0a96d; background:#111; padding:6px 12px; border-radius:4px; display:inline-block; border:1px dashed #e0a96d;">WAYWARD10</div>
+        <div style="margin-top:8px;">
+          <button onclick="closePromoModal()" class="btn-dawn-secondary" style="font-size:11px; padding:4px 12px; color:#ccc; border-color:#555;">Start Shopping</button>
+        </div>
+      </div>
+      <div class="promo-disclaimer">
+        * Discount applies to craft jars, refill sachets, simple syrups, and rimmers. Excludes recurring monthly subscriptions. One code per customer.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- QUICK VIEW PRODUCT MODAL (TAM'S REQUEST)                      -->
+  <!-- ============================================================== -->
+  <div id="wg-quickview-modal" class="quickview-overlay" onclick="handleQuickViewBackdrop(event)">
+    <div class="quickview-box">
+      <button class="quickview-close" onclick="closeQuickView()" aria-label="Close quick view">&times;</button>
+      <div class="quickview-media">
+        <img id="qv-img" src="" alt="Product Detail">
+      </div>
+      <div class="quickview-content">
+        <span id="qv-badge" class="dawn-card-badge" style="position:static; display:inline-block; margin-bottom:10px; width:fit-content;">INFUSION</span>
+        <h2 id="qv-title" style="font-size:22px; font-weight:800; letter-spacing:0.8px; margin-bottom:6px; line-height:1.2;">PRODUCT TITLE</h2>
+        <div id="qv-spirit" style="font-size:13.5px; font-weight:700; color:#b45309; margin-bottom:8px;">Just Add: Spirit</div>
+        <div class="card-reviews-stars" style="margin-bottom:12px;">
+          ★★★★★ <span id="qv-reviews" class="card-reviews-count">(38 reviews)</span>
+        </div>
+        <div id="qv-price" style="font-size:20px; font-weight:800; color:#121212; margin-bottom:14px;">$20.00 CAD</div>
+        
+        <div id="qv-desc" style="font-size:13.5px; line-height:1.6; color:#444; margin-bottom:14px;"></div>
+
+        <div style="background:#fbf8f4; border:1px solid #ebd9c5; border-radius:6px; padding:12px 14px; margin-bottom:14px;">
+          <div style="font-size:11px; font-weight:800; letter-spacing:1px; color:#854d0e; text-transform:uppercase; margin-bottom:4px;">100% Real Dehydrated Botanicals:</div>
+          <div id="qv-ingredients" style="font-size:12.5px; color:#555; line-height:1.5;"></div>
+        </div>
+
+        <div id="qv-instructions-wrap" style="font-size:12px; color:#555; margin-bottom:16px; line-height:1.5; background:#f9f9f9; padding:10px 12px; border-radius:4px;">
+          <strong style="color:#222;">How to prepare:</strong> <span id="qv-instructions"></span>
+        </div>
+
+        <div id="qv-vessel-switcher-wrap" style="margin-bottom:16px; display:none;">
+          <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:#666; text-transform:uppercase; margin-bottom:6px;">Select Vessel:</div>
+          <div class="card-vessel-switcher">
+            <button id="qv-btn-jar" onclick="setQuickViewVessel('Jar')" class="vessel-btn active">JAR $20</button>
+            <button id="qv-btn-sachet" onclick="setQuickViewVessel('Sachet')" class="vessel-btn">SACHET $16</button>
+          </div>
+        </div>
+
+        <button id="qv-atc-btn" onclick="addQuickViewToCart()" class="btn-dawn-primary" style="width:100%; padding:14px;">ADD TO CART</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
   <!-- AI CHATBOT CONCIERGE & ORDER SUPPORT WIDGET                   -->
   <!-- ============================================================== -->
   <!-- Floating Launcher Button -->
@@ -2324,26 +2738,29 @@
 
   <!-- JAVASCRIPT LOGIC -->
   <script>
-    // Real catalog items from waywardgentcocktails.ca
+    // Real catalog items from waywardgentcocktails.ca with enriched details for Quick View
     const products = [
       {
         id: 'old-fashioned',
         title: 'OLD FASHIONED COCKTAIL INFUSION',
         category: 'infusion',
-        spirit: 'Bourbon, Rye, or Dark Rum',
+        spirit: 'Just Add: Bourbon, Rye, or Dark Rum',
         rating: '4.9',
         reviews: 38,
         priceJar: 20,
         priceSachet: 16,
         hasVessels: true,
         selectedVessel: 'Jar',
-        img: 'https://cdn.shopify.com/s/files/1/0891/0277/8667/files/168AB2BE-7368-4162-B843-FE0B995A78F5.jpg?v=1732619825&width=533'
+        img: 'https://cdn.shopify.com/s/files/1/0891/0277/8667/files/168AB2BE-7368-4162-B843-FE0B995A78F5.jpg?v=1732619825&width=533',
+        desc: 'A smoky, sophisticated classic. Our blood oranges are dehydrated at peak ripeness to preserve essential citrus oils, paired with slow-dissolving organic raw cane sugar cubes and small-batch aromatic bitters.',
+        ingredients: 'Dehydrated blood orange slices, organic raw cane sugar cube, all-natural aromatic bitter cube.',
+        instructions: 'Pour 12 oz of bourbon or rye directly into jar. Steep refrigerated for 72 hours. Strain 1.5–2 oz over large craft ice and garnish with an orange wheel.'
       },
       {
         id: 'caesar',
         title: 'JULIUS (CAESAR) COCKTAIL INFUSION',
         category: 'infusion',
-        spirit: 'Vodka, Gin, or Tequila + Clamato',
+        spirit: 'Just Add: Vodka, Gin, or Tequila',
         rating: '5.0',
         reviews: 44,
         priceJar: 20,
@@ -2356,73 +2773,96 @@
         id: 'mule',
         title: 'MOSCOW MULE COCKTAIL INFUSION',
         category: 'infusion',
-        spirit: 'Vodka, Bourbon, or Rum + Ginger Beer',
+        spirit: 'Just Add: Vodka, Bourbon, or Rum',
         rating: '4.9',
         reviews: 29,
         priceJar: 20,
         priceSachet: 16,
         hasVessels: true,
         selectedVessel: 'Jar',
-        img: 'https://cdn.shopify.com/s/files/1/0891/0277/8667/files/6719FBF5-9D67-475E-8ACD-42E5E7D27599.jpg?v=1732619772&width=533'
+        img: 'https://cdn.shopify.com/s/files/1/0891/0277/8667/files/6719FBF5-9D67-475E-8ACD-42E5E7D27599.jpg?v=1732619772&width=533',
+        desc: 'Crisp, zesty, and fiery. Real candied ginger pieces blend seamlessly with fresh Ontario mint leaves and vibrant dehydrated Persian limes.',
+        ingredients: 'Dehydrated Persian lime wheels, candied ginger root, dried spearmint leaves, pure cane sugar.',
+        instructions: 'Pour 12 oz vodka or bourbon into jar. Steep for 72 hours in the fridge. Strain 1.5 oz over ice, top with 4–6 oz ginger beer and fresh lime.'
       },
       {
         id: 'blue-basil',
         title: 'BLUE BASIL COCKTAIL INFUSION',
         category: 'infusion',
-        spirit: 'Gin, Vodka, or Lemonade',
+        spirit: 'Just Add: Gin, Vodka, or Tequila',
         rating: '4.9',
         reviews: 21,
         priceJar: 20,
         priceSachet: 16,
         hasVessels: true,
         selectedVessel: 'Jar',
-        img: 'https://cdn.shopify.com/s/files/1/0891/0277/8667/files/IMG-6862.jpg?v=1732619370&width=533'
+        img: 'https://cdn.shopify.com/s/files/1/0891/0277/8667/files/IMG-6862.jpg?v=1732619370&width=533',
+        desc: 'Wild Canadian blueberries meet sweet aromatic garden basil and tart lemon zest. Produces an enchanting deep indigo cocktail.',
+        ingredients: 'Wild dehydrated blueberries, sweet genovese basil leaves, lemon rounds, organic cane sugar.',
+        instructions: 'Pour 12 oz gin or vodka into jar. Steep for 72 hours. Strain 1.5 oz into glass, top with fresh lemonade or sparkling water.'
       },
       {
         id: 'blueberry-syrup',
         title: 'BLUEBERRY LAVENDER SIMPLE SYRUP',
         category: 'syrup',
-        spirit: 'Zero Expiry Puck • Dissolves in 5 Mins',
+        spirit: 'Just Add Hot Water (Makes 8 oz)',
         rating: '5.0',
         reviews: 31,
         priceJar: 7,
         hasVessels: false,
-        img: 'https://cdn.shopify.com/s/files/1/0891/0277/8667/files/IMG-9951.jpg?v=1762906158&width=533'
+        img: 'https://cdn.shopify.com/s/files/1/0891/0277/8667/files/IMG-9951.jpg?v=1762906158&width=533',
+        desc: 'Innovative zero-expiry dehydrated puck! No messy refrigerated bottles spoiling in your door. Just drop puck in a mug, add hot water, and dissolve in 5 minutes.',
+        ingredients: 'Pure blueberry powder, organic culinary French lavender, evaporated cane sugar.',
+        instructions: 'Place puck in heat-safe vessel. Add 8 oz hot water, stir until dissolved, and let cool. Makes 8 oz rich craft simple syrup.'
       },
       {
         id: 'chai-syrup',
         title: 'CHAI SIMPLE SYRUP PUCK',
         category: 'syrup',
-        spirit: 'Spiced Pucks for Cocktails & Lattes',
+        spirit: 'Just Add Hot Water for Drinks & Lattes',
         rating: '4.9',
         reviews: 24,
         priceJar: 7,
         hasVessels: false,
-        img: 'https://cdn.shopify.com/s/files/1/0891/0277/8667/files/IMG-9952.jpg?v=1762906158&width=533'
+        img: 'https://cdn.shopify.com/s/files/1/0891/0277/8667/files/IMG-9952.jpg?v=1762906158&width=533',
+        desc: 'Whole spice aromatics pressed into a dry syrup puck. Imparts rich cardamom, cinnamon, and warm ginger into cocktails, mocktails, or hot espresso lattes.',
+        ingredients: 'Green cardamom, crushed cinnamon quill, ginger root, whole cloves, organic cane sugar.',
+        instructions: 'Dissolve puck in 8 oz boiling water. Stir well. Use 1 oz per cocktail or latte.'
       },
       {
         id: 'caesar-rimmer',
         title: 'JULIUS (CAESAR) COCKTAIL RIMMER',
         category: 'rimmer',
-        spirit: 'Coats 12–15 Cocktail Glasses',
+        spirit: 'Craft Rim Salt • Coats 12–15 Glasses',
         rating: '5.0',
         reviews: 27,
         priceJar: 13,
         hasVessels: false,
-        img: 'https://cdn.shopify.com/s/files/1/0891/0277/8667/files/IMG-9956.jpg?v=1762907695&width=533'
+        img: 'https://cdn.shopify.com/s/files/1/0891/0277/8667/files/IMG-9956.jpg?v=1762907695&width=533',
+        desc: 'The quintessential Canadian garnish. Coarse sea salt blended with garlic, cracked black pepper, smoked paprika, and aromatic celery seed.',
+        ingredients: 'Flaked Pacific sea salt, celery salt, smoked Spanish paprika, dill seed, garlic powder, tellicherry black pepper.',
+        instructions: 'Moisten glass rim with a fresh lime or lemon wedge, twist into rimmer tin, and fill with your Caesar.'
       },
       {
         id: 'apple-pie-rimmer',
         title: 'APPLE PIE COCKTAIL RIMMER',
         category: 'rimmer',
-        spirit: 'Cinnamon & Spiced Brown Sugar',
+        spirit: 'Sweet Rim Sugar • Coats 12–15 Glasses',
         rating: '4.9',
         reviews: 19,
         priceJar: 13,
         hasVessels: false,
-        img: 'https://cdn.shopify.com/s/files/1/0891/0277/8667/files/IMG-9973.jpg?v=1762916155&width=533'
+        img: 'https://cdn.shopify.com/s/files/1/0891/0277/8667/files/IMG-9973.jpg?v=1762916155&width=533',
+        desc: 'Warm comforting spices meet golden granulated brown sugar. Perfect for cider cocktails, spiced rum, and holiday eggnog rims.',
+        ingredients: 'Demerara brown sugar, Saigon cinnamon, ground nutmeg, Jamaican allspice.',
+        instructions: 'Wet rim with maple syrup or citrus wedge, dip into spice sugar, and pour drink.'
       }
     ];
+
+    // Caesar specific details
+    products[1].desc = 'Canada\'s undisputed brunch legend elevated. Botanicals, celery seed, whole peppercorns, and dried herbs infuse into pure vodka, creating the savory base for your ultimate Caesar.';
+    products[1].ingredients = 'Pickled garden botanicals, celery seed, black peppercorns, dried horseradish, sea salt, dried aromatics.';
+    products[1].instructions = 'Pour 12 oz vodka, gin, or tequila into jar. Steep for 72 hours. Pour 1.5 oz infused spirit over ice, top with fresh Clamato, Worcestershire, and hot sauce. Rim with Julius Craft Rimmer!';
 
     let currentFilter = 'all';
     let cart = [
@@ -2441,7 +2881,7 @@
 
         return `
           <div class="dawn-card">
-            <div class="dawn-card-media">
+            <div class="dawn-card-media" onclick="openQuickView('${p.id}')" style="cursor:pointer;" title="Click for Quick View">
               <img src="${p.img}" alt="${p.title}">
               <span class="dawn-card-badge">${p.category.toUpperCase()}</span>
             </div>
@@ -2449,7 +2889,7 @@
               <div class="card-reviews-stars">
                 ★★★★★ <span class="card-reviews-count">(${p.reviews})</span>
               </div>
-              <h3 class="dawn-card-title">${p.title}</h3>
+              <h3 class="dawn-card-title" onclick="openQuickView('${p.id}')" style="cursor:pointer;" title="Click for Quick View">${p.title}</h3>
               <div class="dawn-card-spirit">${p.spirit}</div>
               <div class="dawn-card-price-row">
                 <span class="price-regular">$${price}.00 CAD</span>
@@ -2459,22 +2899,149 @@
               ${p.hasVessels ? `
                 <div class="card-vessel-switcher">
                   <button onclick="changeVessel('${p.id}', 'Jar')" class="vessel-btn ${p.selectedVessel === 'Jar' ? 'active' : ''}">
-                    🥃 Jar ($20)
+                    JAR $${p.priceJar}
                   </button>
                   <button onclick="changeVessel('${p.id}', 'Sachet')" class="vessel-btn ${p.selectedVessel === 'Sachet' ? 'active' : ''}">
-                    ♻️ Sachet ($16)
+                    SACHET $${p.priceSachet}
                   </button>
                 </div>
               ` : ''}
 
-              <button onclick="addItemToCart('${p.title.replace(/'/g, "\\'")}', '${variantText}', ${price}, '${p.img}')" class="btn-card-atc">
-                ADD TO CART
-              </button>
+              <div style="display:flex; gap:8px;">
+                <button onclick="openQuickView('${p.id}')" class="btn-dawn-secondary" style="font-size:11px; padding:10px 12px; letter-spacing:1px; flex-shrink:0;">
+                  QUICK VIEW
+                </button>
+                <button onclick="addItemToCart('${p.title.replace(/'/g, "\\'")}', '${variantText}', ${price}, '${p.img}')" class="btn-card-atc" style="flex-grow:1;">
+                  ADD TO CART
+                </button>
+              </div>
             </div>
           </div>
         `;
       }).join('');
     }
+
+    // Quick View Modal Logic
+    let quickViewProduct = null;
+    let quickViewSelectedVessel = 'Jar';
+
+    function openQuickView(id) {
+      const p = products.find(x => x.id === id);
+      if (!p) return;
+      quickViewProduct = p;
+      quickViewSelectedVessel = p.selectedVessel || 'Jar';
+
+      document.getElementById('qv-img').src = p.img;
+      document.getElementById('qv-badge').textContent = p.category.toUpperCase();
+      document.getElementById('qv-title').textContent = p.title;
+      document.getElementById('qv-spirit').textContent = p.spirit;
+      document.getElementById('qv-reviews').textContent = `(${p.reviews} reviews)`;
+      document.getElementById('qv-desc').textContent = p.desc || '';
+      document.getElementById('qv-ingredients').textContent = p.ingredients || 'Dehydrated whole craft botanicals and organic cane sugars.';
+      
+      const instrWrap = document.getElementById('qv-instructions-wrap');
+      if (p.instructions) {
+        instrWrap.style.display = 'block';
+        document.getElementById('qv-instructions').textContent = p.instructions;
+      } else {
+        instrWrap.style.display = 'none';
+      }
+
+      const vesselWrap = document.getElementById('qv-vessel-switcher-wrap');
+      if (p.hasVessels) {
+        vesselWrap.style.display = 'block';
+        updateQuickViewVesselUI();
+      } else {
+        vesselWrap.style.display = 'none';
+        document.getElementById('qv-price').textContent = `$${p.priceJar}.00 CAD`;
+        document.getElementById('qv-atc-btn').textContent = `ADD TO CART • $${p.priceJar}.00 CAD`;
+      }
+
+      document.getElementById('wg-quickview-modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function updateQuickViewVesselUI() {
+      if (!quickViewProduct) return;
+      const jarBtn = document.getElementById('qv-btn-jar');
+      const sachetBtn = document.getElementById('qv-btn-sachet');
+      if (quickViewSelectedVessel === 'Jar') {
+        jarBtn.classList.add('active');
+        sachetBtn.classList.remove('active');
+        document.getElementById('qv-price').textContent = `$${quickViewProduct.priceJar}.00 CAD`;
+        document.getElementById('qv-atc-btn').textContent = `ADD TO CART (12oz Glass Jar) • $${quickViewProduct.priceJar}.00 CAD`;
+      } else {
+        sachetBtn.classList.add('active');
+        jarBtn.classList.remove('active');
+        document.getElementById('qv-price').textContent = `$${quickViewProduct.priceSachet}.00 CAD`;
+        document.getElementById('qv-atc-btn').textContent = `ADD TO CART (Refill Sachet) • $${quickViewProduct.priceSachet}.00 CAD`;
+      }
+    }
+
+    function setQuickViewVessel(vessel) {
+      quickViewSelectedVessel = vessel;
+      updateQuickViewVesselUI();
+    }
+
+    function addQuickViewToCart() {
+      if (!quickViewProduct) return;
+      const price = quickViewProduct.hasVessels ? (quickViewSelectedVessel === 'Jar' ? quickViewProduct.priceJar : quickViewProduct.priceSachet) : quickViewProduct.priceJar;
+      const variantText = quickViewProduct.hasVessels ? (quickViewSelectedVessel === 'Jar' ? '12oz Glass Jar' : 'Refill Sachet (Use Own Jar)') : 'Standard';
+      addItemToCart(quickViewProduct.title, variantText, price, quickViewProduct.img);
+      closeQuickView();
+    }
+
+    function closeQuickView() {
+      document.getElementById('wg-quickview-modal').classList.remove('open');
+      document.body.style.overflow = '';
+      quickViewProduct = null;
+    }
+
+    function handleQuickViewBackdrop(e) {
+      if (e.target.id === 'wg-quickview-modal') {
+        closeQuickView();
+      }
+    }
+
+    // 10% Promo Modal Logic
+    function openPromoModal() {
+      document.getElementById('wg-promo-modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePromoModal() {
+      document.getElementById('wg-promo-modal').classList.remove('open');
+      document.body.style.overflow = '';
+      sessionStorage.setItem('wg_promo_closed', 'true');
+    }
+
+    function handlePromoBackdrop(e) {
+      if (e.target.id === 'wg-promo-modal') {
+        closePromoModal();
+      }
+    }
+
+    function handlePromoSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('promo-email-input').value.trim();
+      if (!email) return;
+
+      // Copy coupon code to clipboard
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText('WAYWARD10').catch(() => {});
+      }
+
+      document.getElementById('promo-form').style.display = 'none';
+      document.getElementById('promo-success-msg').style.display = 'block';
+      sessionStorage.setItem('wg_promo_closed', 'true');
+    }
+
+    // Auto-prompt 10% popup after 6 seconds if not dismissed
+    setTimeout(() => {
+      if (!sessionStorage.getItem('wg_promo_closed')) {
+        openPromoModal();
+      }
+    }, 6000);
 
     function changeVessel(id, vessel) {
       const item = products.find(p => p.id === id);
@@ -3022,7 +3589,24 @@
         return;
       }
 
-      // 7. Human Escalation / Contact Tam
+      // 7. Shows, Markets & Where to Find Me
+      if (q.includes('event') || q.includes('show') || q.includes('market') || q.includes('booth') || q.includes('calendar') || q.includes('in person') || q.includes('fair') || q.includes('where to find')) {
+        appendMessage('bot', `
+          <div>
+            <strong>🎪 Where to Find Me • Show &amp; Market Calendar:</strong>
+            <p style="margin:6px 0;">Tam is hitting the road this holiday season! Stop by our booth for live cocktail tastings and show specials:</p>
+            <ul style="padding-left:18px; margin:6px 0; font-size:12.5px;">
+              <li><strong>Nov 14–16:</strong> Rolling Grape Vineyard Holiday Market (Bailieboro)</li>
+              <li><strong>Nov 22–23:</strong> Peterborough Artisanal Craft Market (Morrow Building)</li>
+              <li><strong>Nov 29–30:</strong> Norwood Country Christmas Fair (Norwood Fairgrounds)</li>
+            </ul>
+            <button class="wg-chip" onclick="setView('events'); toggleChat(false);">📅 View Full Show Calendar &amp; Locations</button>
+          </div>
+        `);
+        return;
+      }
+
+      // 8. Human Escalation / Contact Tam
       if (q.includes('human') || q.includes('tam') || q.includes('talk') || q.includes('call') || q.includes('email') || q.includes('phone') || q.includes('person') || q.includes('help')) {
         appendMessage('bot', `
           <div>

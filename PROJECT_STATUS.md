@@ -4,11 +4,11 @@
 > **Client / Store:** [Wayward Gent Cocktails](https://waywardgentcocktails.ca/) (Norwood, Ontario, Canada)  
 > **Founder / Owner:** Tam (Affiliated with *The CakeHouse* Bakery)  
 > **Consultant:** Scott  
-> **Status:** Phase 1 Complete • **Prototype v2.0 Released** (Post-Sister Review Update)  
+> **Status:** Phase 1 Complete • **Prototype v3.0 Released** (Post-Nov 9 Sister Review & Strategy Meeting)  
 > **Live Prototype URL:** [https://scottrepository.github.io/wayward-gent-prototype/](https://scottrepository.github.io/wayward-gent-prototype/)  
 > **GitHub Repository:** [ScottRepository/wayward-gent-prototype](https://github.com/ScottRepository/wayward-gent-prototype)  
 > **Local Prototype File:** [`/home/scottcarpentier/wayward-gent-prototype/index.html`](file:///home/scottcarpentier/wayward-gent-prototype/index.html)  
-> **Last Updated:** October 28, 2026  
+> **Last Updated:** November 9, 2026  
 
 ---
 
@@ -17,19 +17,34 @@
 ### 1.1 Executive Summary
 Wayward Gent Cocktails handcrafts upscale cocktail infusions (available in reusable mason jars or eco-friendly refill sachets), inventive freeze-dried simple syrup pucks, flavoured glass rimmers, and hosts mixology workshops in Norwood and Peterborough, Ontario.
 
-Following an in-depth strategy review between Scott and Tam on October 28, 2026, the interactive prototype has been upgraded to **Version 2.0**. This release reflects Tam's specific real-world operational requirements, shipping economics across Canada, seasonal holiday kits, and wholesale account handling.
+Following an in-depth follow-up strategy meeting between Scott and Tam on November 9, 2026, the interactive prototype has been upgraded to **Version 3.0**. This release elevates the visual brand design from "sterile business" to a moody, highbrow cocktail lounge aesthetic, resolves customer confusion regarding steeping vs. serving mixers, introduces a 10% discount lead capture modal, adds an interactive Quick View product details modal, launches a dedicated "Where to Find Me" show calendar, and simplifies subscription and wholesale models.
 
 ```mermaid
 flowchart TD
     A["Initial Technical & CRO Crawl\n(waywardgentcocktails.ca)"] --> B["Storefront Prototype v1.0\n(Dawn 15.0 Architecture)"]
-    B --> C["Sister Strategy Review\n(Oct 28 Transcript Analysis)"]
-    C --> D["Storefront Prototype v2.0\n(Shipping, Bundles, Holiday, Wholesale)"]
+    B --> C["Sister Strategy Review v2.0\n(Oct 28 Review)"]
+    C --> D["Sister Strategy Review v3.0\n(Nov 9 Strategy Meeting Updates)"]
     D --> E["Phase 2 Implementation on Live Shopify Store\n(Theme Customizer, Liquid, Apps)"]
 ```
 
 ---
 
-## 2. Updates Implemented in Prototype v2.0 (From Sister Feedback)
+## 2. Updates Implemented in Prototype v3.0 (November 9 Strategy Meeting)
+
+| Feature / Area | Previous Setting | **Nov 9 Meeting Update (Prototype v3.0)** | Strategic Rationale |
+| :--- | :---: | :--- | :--- |
+| **Aesthetic Elevation & Typography** | Thin navigation, standard buttons | **Upscale Speakeasy Aesthetic:**<br>• Bolder 13.5px / 700-weight top navigation with amber accents<br>• Split-hero card upgraded with an obsidian-to-amber cocktail gradient, warm brass borders, and polished typography<br>• Vessel buttons enlarged, uppercase, and stripped of emojis (`JAR $20` / `SACHET $16`) | Elevates perceived value to compete with premium spirits brands; replaces "plain e-commerce" with highbrow craft lounge energy. |
+| **10% Lead Magnet Popup** | Static footer/page form | **Exit/Intent 10% Welcome Modal (`#wg-promo-modal`):**<br>• Auto-prompts or triggers via top test pill<br>• One-click copy code (`WAYWARD10`)<br>• Explicitly excludes subscriptions to protect recurring margins | Captures first-time visitor emails without risking subscription margin bleed. |
+| **Product Quick View Modal** | Standard product page redirect | **Instant Quick View Modal (`#wg-quickview-modal`):**<br>• Opens directly on card click<br>• Displays 100% dehydrated botanical breakdown<br>• Explains 72-hour refrigerator infusion instructions<br>• In-modal vessel switcher (`JAR` vs `SACHET`) & instant Add-to-Cart | Solves customer hesitation by clarifying ingredients and preparation without taking them away from the shop catalog. |
+| **Product Card Subtitles & Mixers** | "+ Clamato" or "+ Ginger Beer" | **Strictly "Just Add: [Booze]" Format:**<br>• E.g. `Just Add: Bourbon, Rye, or Dark Rum`<br>• Mixers (ginger beer, Clamato, soda) moved strictly to serving instructions | Eliminates Tam's #1 customer misunderstanding where customers poured mixers into the dry jar during the 72-hour steep. |
+| **Where to Find Me (Shows)** | Not listed on site | **Dedicated Show & Event Calendar (`view-events`):**<br>• Rolling Grape Vineyard Holiday Market (Nov 14–16)<br>• Peterborough Artisanal Craft Market (Nov 22–23)<br>• Norwood Country Christmas Fair (Nov 29–30)<br>• Private Cocktail Workshop Inquiries | Drives holiday shoppers directly to Tam's physical market booths across Peterborough County. |
+| **Subscription Box Model** | Proposed multi-tier complex model | **Streamlined to Exactly 1 Subscription:**<br>• *The Wayward Gent Cocktail Box ($38.00 CAD/month)* with free Canadian shipping<br>• Tam explicitly rejected multi-frequency complexity to prevent fulfillment headaches while traveling | Maximizes execution feasibility for a solo founder while delivering steady recurring revenue. |
+| **Wholesale Minimums** | Generic contact form | **Enforced $250 CAD Minimum Opening Order:**<br>• Retail display packaging imagery<br>• Clear per-order minimum to protect wholesale margins from micro-orders | Filters unqualified retail inquiries and guarantees profitability on B2B consignments. |
+| **AI Concierge Integration** | Basic prompt coverage | **Upgraded with Nov 9 Knowledge:**<br>• Show calendar dates & booth lookup<br>• Steeping vs. serving mixer clarity<br>• Single $38/mo subscription details | 24/7 automated answers for market visitors and online customers alike. |
+
+---
+
+## 3. Updates Implemented in Prototype v2.0 (From Sister Feedback)
 
 | Feature / Area | Previous Setting | **Sister Feedback (Tam) & v2.0 Update** | Strategic Rationale |
 | :--- | :---: | :--- | :--- |
